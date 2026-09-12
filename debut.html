@@ -1,0 +1,874 @@
+ ```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Pop Debut Dates ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 8% 12%, #eadfff 0 13px, transparent 14px),
+                radial-gradient(circle at 92% 15%, #ddf3ff 0 12px, transparent 13px),
+                radial-gradient(circle at 7% 82%, #f3e4ff 0 11px, transparent 12px),
+                radial-gradient(circle at 93% 86%, #e2f5ff 0 13px, transparent 14px),
+                linear-gradient(135deg, #f8f3ff, #eff9ff, #fdf7ff);
+
+            color: #4d4267;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            position: relative;
+            z-index: 10;
+
+            background: linear-gradient(90deg, #8060bd, #79a8d7);
+
+            padding: 24px 18px;
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 16px;
+
+            font-size: 34px;
+
+            letter-spacing: 4px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+
+            padding: 9px 17px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.16);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #7054a0;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .container {
+            width: 91%;
+            max-width: 1100px;
+
+            margin: 50px auto;
+        }
+
+
+        /* =========================
+           TITLE
+           ========================= */
+
+        .page-title {
+            text-align: center;
+
+            color: #674c9d;
+
+            font-size: 47px;
+
+            margin-bottom: 10px;
+
+            text-shadow: 2px 3px 0 #e3d7ff;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #83798f;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+        .top-decoration {
+            text-align: center;
+
+            margin: 22px 0 45px;
+
+            color: #9a7aca;
+
+            font-size: 24px;
+
+            letter-spacing: 9px;
+        }
+
+
+        /* =========================
+           FEATURED
+           ========================= */
+
+        .featured {
+            padding: 32px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                rgba(255,255,255,0.97),
+                #f4eeff,
+                #eefaff
+            );
+
+            border: 2px solid #dfd3f8;
+
+            border-radius: 30px;
+
+            box-shadow: 0 10px 30px rgba(90,70,140,0.12);
+
+            margin-bottom: 50px;
+        }
+
+        .featured-icon {
+            font-size: 55px;
+        }
+
+        .featured h2 {
+            color: #6d529b;
+
+            font-size: 30px;
+
+            margin: 10px 0;
+        }
+
+        .featured p {
+            color: #777;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           DEBUT GRID
+           ========================= */
+
+        .debut-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 24px;
+        }
+
+
+        /* =========================
+           DEBUT CARD
+           ========================= */
+
+        .debut-card {
+            position: relative;
+
+            background: rgba(255,255,255,0.96);
+
+            padding: 27px;
+
+            border-radius: 25px;
+
+            border: 2px solid #e7ddf8;
+
+            box-shadow:
+                0 8px 22px rgba(90,70,140,0.10);
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        .debut-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #ccb9ee;
+
+            box-shadow:
+                0 15px 30px rgba(90,70,140,0.16);
+        }
+
+        .debut-card::before {
+            content: "✦ ♡";
+
+            position: absolute;
+
+            top: 10px;
+            right: 13px;
+
+            color: #b299da;
+
+            font-size: 18px;
+        }
+
+        .debut-number {
+            text-align: center;
+
+            font-size: 32px;
+
+            margin-bottom: 5px;
+        }
+
+        .debut-card h2 {
+            text-align: center;
+
+            color: #604988;
+
+            font-size: 25px;
+
+            margin: 8px 0;
+        }
+
+        .debut-date {
+            text-align: center;
+
+            padding: 11px;
+
+            margin-top: 15px;
+
+            border-radius: 16px;
+
+            background: #f2ecff;
+
+            color: #7155a0;
+
+            font-weight: bold;
+        }
+
+        .debut-info {
+            margin-top: 15px;
+
+            color: #706a78;
+
+            text-align: center;
+
+            line-height: 1.7;
+        }
+
+        .debut-song {
+            margin-top: 14px;
+
+            padding: 10px;
+
+            border-radius: 15px;
+
+            background: #eef8ff;
+
+            color: #6383a5;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           CATEGORY TITLES
+           ========================= */
+
+        .section-title {
+            text-align: center;
+
+            color: #70559e;
+
+            font-size: 31px;
+
+            margin: 55px 0 28px;
+        }
+
+        .section-title::before {
+            content: "🎀 ✦ ";
+        }
+
+        .section-title::after {
+            content: " ✦ ♡";
+        }
+
+
+        /* =========================
+           NOTE
+           ========================= */
+
+        .note {
+            margin-top: 50px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 23px;
+
+            background: linear-gradient(
+                135deg,
+                #faf7ff,
+                #effaff
+            );
+
+            border: 2px dashed #d8c8f4;
+
+            color: #75678e;
+
+            line-height: 1.8;
+        }
+
+        .note strong {
+            color: #6d549c;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           DIVIDER
+           ========================= */
+
+        .divider {
+            text-align: center;
+
+            color: #a184d0;
+
+            font-size: 22px;
+
+            letter-spacing: 8px;
+
+            margin: 50px 0;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            text-align: center;
+
+            background: linear-gradient(
+                90deg,
+                #6d559d,
+                #7399c5
+            );
+
+            color: white;
+
+            padding: 30px;
+
+            margin-top: 70px;
+        }
+
+        footer::before {
+            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
+
+            display: block;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .page-title {
+                font-size: 35px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .debut-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+    <h1>K-POP LYRICS ♡</h1>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="songs.html">Songs</a>
+        <a href="members.html">Members</a>
+        <a href="soloists.html">Soloists</a>
+        <a href="releases.html">Releases</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="news.html">News</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="container">
+
+
+    <h1 class="page-title">
+        📅 K-Pop Debut Dates 📅
+    </h1>
+
+    <p class="subtitle">
+        ♡ Discover when your favorite K-Pop groups officially debuted ♡
+    </p>
+
+    <div class="top-decoration">
+        ✦ ♡ 🎀 📅 ♫ 📅 🎀 ♡ ✦
+    </div>
+
+
+    <!-- =========================
+         FEATURED
+         ========================= -->
+
+    <section class="featured">
+
+        <div class="featured-icon">
+            🌟
+        </div>
+
+        <h2>
+            Debut Day
+        </h2>
+
+        <p>
+            Every group has a day that marks the beginning of its K-Pop journey.
+            Explore the debut dates and debut songs of the groups featured on K-POP LYRICS.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         DEBUT DATES
+         ========================= -->
+
+    <h2 class="section-title">
+        Group Debuts
+    </h2>
+
+
+    <div class="debut-grid">
+
+
+        <!-- TUIDE -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🌊</div>
+
+            <h2>TUIDE</h2>
+
+            <div class="debut-date">
+                📅 August 24, 2026
+            </div>
+
+            <div class="debut-info">
+                7-member girl group
+                <br>
+                HYBE / ABD
+            </div>
+
+            <div class="debut-song">
+                🎵 Debut EP: TUNE & PLAY
+                <br>
+                Title Track: SUN KISS
+            </div>
+
+        </div>
+
+
+        <!-- BABYMONSTER -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">👑</div>
+
+            <h2>BABYMONSTER</h2>
+
+            <div class="debut-date">
+                📅 April 1, 2024
+            </div>
+
+            <div class="debut-info">
+                7-member girl group
+                <br>
+                YG Entertainment
+            </div>
+
+            <div class="debut-song">
+                🎵 SHEESH
+                <br>
+                Debut Album: BABYMONS7ER
+            </div>
+
+        </div>
+
+
+        <!-- ENHYPEN -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🖤</div>
+
+            <h2>ENHYPEN</h2>
+
+            <div class="debut-date">
+                📅 November 30, 2020
+            </div>
+
+            <div class="debut-info">
+                6-member boy group
+                <br>
+                BELIFT LAB
+            </div>
+
+            <div class="debut-song">
+                🎵 Given-Taken
+                <br>
+                Debut EP: BORDER : DAY ONE
+            </div>
+
+        </div>
+
+
+        <!-- LE SSERAFIM -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🌸</div>
+
+            <h2>LE SSERAFIM</h2>
+
+            <div class="debut-date">
+                📅 May 2, 2022
+            </div>
+
+            <div class="debut-info">
+                5-member girl group
+                <br>
+                SOURCE MUSIC
+            </div>
+
+            <div class="debut-song">
+                🎵 FEARLESS
+                <br>
+                Debut Album: FEARLESS
+            </div>
+
+        </div>
+
+
+        <!-- IVE -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">💎</div>
+
+            <h2>IVE</h2>
+
+            <div class="debut-date">
+                📅 December 1, 2021
+            </div>
+
+            <div class="debut-info">
+                6-member girl group
+                <br>
+                Starship Entertainment
+            </div>
+
+            <div class="debut-song">
+                🎵 ELEVEN
+                <br>
+                Debut Single Album: ELEVEN
+            </div>
+
+        </div>
+
+
+        <!-- ATEEZ -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🏴‍☠️</div>
+
+            <h2>ATEEZ</h2>
+
+            <div class="debut-date">
+                📅 October 24, 2018
+            </div>
+
+            <div class="debut-info">
+                8-member boy group
+                <br>
+                KQ Entertainment
+            </div>
+
+            <div class="debut-song">
+                🎵 Pirate King
+                <br>
+                Debut EP: TREASURE EP.1
+            </div>
+
+        </div>
+
+
+        <!-- EXO -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🌟</div>
+
+            <h2>EXO</h2>
+
+            <div class="debut-date">
+                📅 April 8, 2012
+            </div>
+
+            <div class="debut-info">
+                Boy group
+                <br>
+                SM Entertainment
+            </div>
+
+            <div class="debut-song">
+                🎵 MAMA
+                <br>
+                Debut EP: MAMA
+            </div>
+
+        </div>
+
+
+        <!-- STRAY KIDS -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">⚡</div>
+
+            <h2>STRAY KIDS</h2>
+
+            <div class="debut-date">
+                📅 March 25, 2018
+            </div>
+
+            <div class="debut-info">
+                8-member boy group
+                <br>
+                JYP Entertainment
+            </div>
+
+            <div class="debut-song">
+                🎵 District 9
+                <br>
+                Debut Mini Album: I am NOT
+            </div>
+
+        </div>
+
+
+        <!-- BLACKPINK -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🖤</div>
+
+            <h2>BLACKPINK</h2>
+
+            <div class="debut-date">
+                📅 August 8, 2016
+            </div>
+
+            <div class="debut-info">
+                4-member girl group
+                <br>
+                YG Entertainment
+            </div>
+
+            <div class="debut-song">
+                🎵 BOOMBAYAH & WHISTLE
+                <br>
+                Debut Single Album: SQUARE ONE
+            </div>
+
+        </div>
+
+
+        <!-- ILLIT -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🎀</div>
+
+            <h2>ILLIT</h2>
+
+            <div class="debut-date">
+                📅 March 25, 2024
+            </div>
+
+            <div class="debut-info">
+                5-member girl group
+                <br>
+                BELIFT LAB
+            </div>
+
+            <div class="debut-song">
+                🎵 Magnetic
+                <br>
+                Debut EP: SUPER REAL ME
+            </div>
+
+        </div>
+
+
+        <!-- CORTIS -->
+
+        <div class="debut-card">
+
+            <div class="debut-number">🎨</div>
+
+            <h2>CORTIS</h2>
+
+            <div class="debut-date">
+                📅 September 8, 2025
+            </div>
+
+            <div class="debut-info">
+                5-member boy group
+                <br>
+                BIGHIT MUSIC
+            </div>
+
+            <div class="debut-song">
+                🎵 What You Want
+                <br>
+                Debut EP: COLOR OUTSIDE THE LINES
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="divider">
+        ♡ ✦ 🎀 📅 ✦ ♫ ✦ 📅 🎀 ✦ ♡
+    </div>
+
+
+    <!-- =========================
+         NOTE
+         ========================= -->
+
+    <div class="note">
+
+        <strong>
+            🎀 About Debut Dates 🎀
+        </strong>
+
+        <br><br>
+
+        “Debut date” refers to the group's official debut in the music industry.
+        Some groups released pre-debut songs or promotional material before their official debut.
+
+        <br><br>
+
+        ♡ Dates and group information are checked against official artist
+        or agency sources where available. ♡
+
+    </div>
+
+
+    <div class="top-decoration">
+        ☆ ♡ 🎀 ✦ 📅 ✦ 🎀 ♡ ☆
+    </div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <p>
+        ♡ K-POP LYRICS ♡
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```
+s

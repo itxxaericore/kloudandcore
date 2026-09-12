@@ -1,0 +1,805 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Pop Releases ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 8% 12%, #eadfff 0 13px, transparent 14px),
+                radial-gradient(circle at 92% 15%, #ddf3ff 0 12px, transparent 13px),
+                radial-gradient(circle at 7% 82%, #f3e4ff 0 11px, transparent 12px),
+                radial-gradient(circle at 93% 86%, #e2f5ff 0 13px, transparent 14px),
+                linear-gradient(135deg, #f8f3ff, #eff9ff, #fdf7ff);
+
+            color: #4d4267;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            position: relative;
+            z-index: 10;
+
+            background: linear-gradient(90deg, #8060bd, #79a8d7);
+
+            padding: 24px 18px;
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 16px;
+
+            font-size: 34px;
+
+            letter-spacing: 4px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+
+            padding: 9px 17px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.16);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #7054a0;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .container {
+            width: 91%;
+            max-width: 1100px;
+
+            margin: 50px auto;
+        }
+
+
+        /* =========================
+           TITLE
+           ========================= */
+
+        .page-title {
+            text-align: center;
+
+            color: #674c9d;
+
+            font-size: 47px;
+
+            margin-bottom: 10px;
+
+            text-shadow: 2px 3px 0 #e3d7ff;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #83798f;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .decoration {
+            text-align: center;
+
+            margin: 20px 0 45px;
+
+            color: #9a7aca;
+
+            font-size: 24px;
+
+            letter-spacing: 9px;
+        }
+
+
+        /* =========================
+           SECTION TITLES
+           ========================= */
+
+        .section-title {
+            text-align: center;
+
+            color: #70559e;
+
+            font-size: 31px;
+
+            margin: 55px 0 28px;
+        }
+
+        .section-title::before {
+            content: "🎀 ✦ ";
+        }
+
+        .section-title::after {
+            content: " ✦ ♡";
+        }
+
+
+        /* =========================
+           RELEASE GRID
+           ========================= */
+
+        .release-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 24px;
+        }
+
+
+        /* =========================
+           RELEASE CARD
+           ========================= */
+
+        .release-card {
+            position: relative;
+
+            background: rgba(255,255,255,0.96);
+
+            padding: 26px;
+
+            border-radius: 25px;
+
+            border: 2px solid #e7ddf8;
+
+            box-shadow:
+                0 8px 22px rgba(90,70,140,0.10);
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        .release-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #ccb9ee;
+
+            box-shadow:
+                0 15px 30px rgba(90,70,140,0.16);
+        }
+
+        .release-card::before {
+            content: "✦ ♡";
+
+            position: absolute;
+
+            top: 10px;
+            right: 13px;
+
+            color: #b299da;
+
+            font-size: 18px;
+        }
+
+        .release-card::after {
+            content: "🎀";
+
+            position: absolute;
+
+            bottom: 10px;
+            left: 13px;
+
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           RELEASE ICON
+           ========================= */
+
+        .release-icon {
+            text-align: center;
+
+            font-size: 48px;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           RELEASE INFO
+           ========================= */
+
+        .release-card h2 {
+            text-align: center;
+
+            color: #604988;
+
+            font-size: 23px;
+
+            margin: 8px 0;
+        }
+
+        .artist {
+            text-align: center;
+
+            color: #8062ae;
+
+            font-weight: bold;
+
+            font-size: 16px;
+        }
+
+        .date {
+            margin-top: 17px;
+
+            padding: 10px;
+
+            border-radius: 16px;
+
+            background: #f2ecff;
+
+            color: #7155a0;
+
+            text-align: center;
+
+            font-weight: bold;
+        }
+
+        .type {
+            text-align: center;
+
+            color: #777;
+
+            margin-top: 12px;
+
+            line-height: 1.5;
+        }
+
+        .status {
+            display: block;
+
+            width: fit-content;
+
+            margin: 15px auto 0;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background: #e0f4ff;
+
+            color: #5e83aa;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           DIVIDER
+           ========================= */
+
+        .divider {
+            text-align: center;
+
+            color: #a184d0;
+
+            font-size: 22px;
+
+            letter-spacing: 8px;
+
+            margin: 50px 0;
+        }
+
+
+        /* =========================
+           NOTE
+           ========================= */
+
+        .note {
+            margin-top: 50px;
+
+            padding: 24px;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            background: linear-gradient(
+                135deg,
+                #faf7ff,
+                #effaff
+            );
+
+            border: 2px dashed #d8c8f4;
+
+            color: #75678e;
+
+            line-height: 1.7;
+        }
+
+        .note strong {
+            color: #6d549c;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            text-align: center;
+
+            background: linear-gradient(
+                90deg,
+                #6d559d,
+                #7399c5
+            );
+
+            color: white;
+
+            padding: 30px;
+
+            margin-top: 70px;
+        }
+
+        footer::before {
+            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
+
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .page-title {
+                font-size: 35px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .release-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+    <h1>K-POP LYRICS ♡</h1>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="songs.html">Songs</a>
+        <a href="members.html">Members</a>
+        <a href="soloists.html">Soloists</a>
+        <a href="releases.html">Releases</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="news.html">News</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="container">
+
+
+    <h1 class="page-title">
+        🎵 K-Pop Releases 🎵
+    </h1>
+
+    <p class="subtitle">
+        ♡ New albums, singles and comebacks ♡
+    </p>
+
+    <div class="decoration">
+        ✦ ♡ 🎀 ♫ ☆ ♡ 🎀 ✦
+    </div>
+
+
+    <!-- =========================
+         SEPTEMBER RELEASES
+         ========================= -->
+
+    <h2 class="section-title">
+        September 2026 Releases
+    </h2>
+
+
+    <div class="release-grid">
+
+
+        <!-- CHUNG HA -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                🌸
+            </div>
+
+            <h2>Mexico</h2>
+
+            <p class="artist">
+                CHUNG HA
+            </p>
+
+            <div class="date">
+                📅 September 1, 2026
+            </div>
+
+            <p class="type">
+                Digital Single
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- MONSTA X -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                🔥
+            </div>
+
+            <h2>The Phase</h2>
+
+            <p class="artist">
+                MONSTA X
+            </p>
+
+            <div class="date">
+                📅 September 4, 2026
+            </div>
+
+            <p class="type">
+                EP
+                <br>
+                Title Track: MAGIC
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- TEN -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                ⭐
+            </div>
+
+            <h2>OUTWEST</h2>
+
+            <p class="artist">
+                TEN
+            </p>
+
+            <div class="date">
+                📅 September 4, 2026
+            </div>
+
+            <p class="type">
+                Single Album
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- MINHO -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                💙
+            </div>
+
+            <h2>Make it hot</h2>
+
+            <p class="artist">
+                MINHO
+            </p>
+
+            <div class="date">
+                📅 September 7, 2026
+            </div>
+
+            <p class="type">
+                2nd Mini Album
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- EVAN -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                ✨
+            </div>
+
+            <h2>DEATH OF ME</h2>
+
+            <p class="artist">
+                EVAN
+            </p>
+
+            <div class="date">
+                📅 September 7, 2026
+            </div>
+
+            <p class="type">
+                1st Mini Album
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- VERIVERY -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                🎀
+            </div>
+
+            <h2>CONFETTI</h2>
+
+            <p class="artist">
+                VERIVERY
+            </p>
+
+            <div class="date">
+                📅 September 7, 2026
+            </div>
+
+            <p class="type">
+                8th Mini Album
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- &TEAM -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                🐺
+            </div>
+
+            <h2>Mark on Me</h2>
+
+            <p class="artist">
+                &TEAM
+            </p>
+
+            <div class="date">
+                📅 September 8, 2026
+            </div>
+
+            <p class="type">
+                2nd Mini Album
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- DOH KYUNG SOO -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                💫
+            </div>
+
+            <h2>DOPAMINE</h2>
+
+            <p class="artist">
+                DOH KYUNG SOO
+            </p>
+
+            <div class="date">
+                📅 September 8, 2026
+            </div>
+
+            <p class="type">
+                4th Mini Album
+            </p>
+
+            <span class="status">
+                ✓ RELEASED
+            </span>
+
+        </div>
+
+
+        <!-- BOYNEXTDOOR -->
+
+        <div class="release-card">
+
+            <div class="release-icon">
+                🏠
+            </div>
+
+            <h2>HOME</h2>
+
+            <p class="artist">
+                BOYNEXTDOOR
+            </p>
+
+            <div class="date">
+                📅 September 28, 2026
+            </div>
+
+            <p class="type">
+                Repackage Album
+            </p>
+
+            <span class="status">
+                ★ UPCOMING
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="divider">
+        ♡ ✦ 🎀 ♫ ✧ 🎀 ✦ ♡
+    </div>
+
+
+    <!-- =========================
+         INFO
+         ========================= -->
+
+    <div class="note">
+
+        <strong>
+            🎀 Release Calendar ♡
+        </strong>
+
+        <br><br>
+
+        This page tracks selected K-Pop releases and comeback dates.
+
+        <br>
+
+        Release schedules can change, so dates are checked against
+        current published schedules.
+
+    </div>
+
+
+    <div class="decoration">
+        ☆ ♡ 🎀 ✦ ♫ ✦ 🎀 ♡ ☆
+    </div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <p>
+        ♡ K-POP LYRICS ♡
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>
+```

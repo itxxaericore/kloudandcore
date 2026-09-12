@@ -1,0 +1,438 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Pop Groups ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #f1eaff, #e9f7ff, #f8efff);
+            font-family: Arial, sans-serif;
+            color: #483b69;
+        }
+
+        header {
+            background: linear-gradient(90deg, #8566c5, #79a8d8);
+            padding: 23px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 6px 20px rgba(90, 70, 140, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 15px;
+            font-size: 33px;
+            letter-spacing: 3px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255,255,255,0.18);
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+            color: #7354aa;
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .groups-page {
+            padding: 55px 8%;
+            position: relative;
+        }
+
+        .groups-title {
+            text-align: center;
+            color: #6548a0;
+            font-size: 45px;
+            margin-bottom: 12px;
+            text-shadow: 2px 3px 0 #e0d4ff;
+        }
+
+        .groups-subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        .top-decoration {
+            text-align: center;
+            color: #9677cf;
+            font-size: 25px;
+            letter-spacing: 9px;
+            margin-bottom: 35px;
+        }
+
+        .groups-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .group-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 28px;
+            border-radius: 24px;
+            text-align: center;
+            border: 2px solid #e4d9ff;
+            box-shadow: 0 8px 22px rgba(80, 65, 130, 0.11);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .group-box::before {
+            content: "✦ ♡";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #b296e8;
+            font-size: 18px;
+        }
+
+        .group-box::after {
+            content: "🎀";
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            font-size: 20px;
+        }
+
+        .group-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(80, 65, 130, 0.17);
+            border-color: #cbb9f5;
+        }
+
+        .group-box h2 {
+            color: #634b99;
+            margin: 8px 0 12px;
+            font-size: 24px;
+        }
+
+        .group-box p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .group-box a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #b39add, #91b8df);
+            color: white;
+            text-decoration: none;
+            border-radius: 22px;
+            transition: 0.3s;
+        }
+
+        .group-box a:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #967bc7, #719dcc);
+        }
+
+        .divider {
+            text-align: center;
+            color: #ad93d7;
+            font-size: 22px;
+            letter-spacing: 8px;
+            margin: 45px 0;
+        }
+
+        footer {
+            text-align: center;
+            background: linear-gradient(90deg, #685197, #718fbe);
+            color: white;
+            padding: 28px;
+            margin-top: 40px;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 600px) {
+            .groups-page {
+                padding: 40px 5%;
+            }
+
+            .groups-title {
+                font-size: 34px;
+            }
+
+            .groups-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>K-POP LYRICS ♡</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="songs.html">Songs</a>
+        <a href="members.html">Members</a>
+        <a href="soloists.html">Soloists</a>
+        <a href="releases.html">Releases</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="news.html">News</a>
+    </nav>
+
+</header>
+
+
+<main class="groups-page">
+
+    <h2 class="groups-title">🎀 K-POP GROUPS 🎀</h2>
+
+    <p class="groups-subtitle">
+        ♡ Explore your favorite K-Pop groups ♡
+    </p>
+
+    <div class="top-decoration">
+        ✦ ♡ 🎀 ♫ ✧ ☆ ♡ 🎀 ✦
+    </div>
+
+
+    <div class="groups-grid">
+
+
+        <!-- BABYMONSTER -->
+
+        <div class="group-box">
+
+            <h2>BABYMONSTER</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- LE SSERAFIM -->
+
+        <div class="group-box">
+
+            <h2>LE SSERAFIM</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- IVE -->
+
+        <div class="group-box">
+
+            <h2>IVE</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- TUIDE -->
+
+        <div class="group-box">
+
+            <h2>TUIDE</h2>
+
+            <p>
+                Explore members and more.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- ENHYPEN -->
+
+        <div class="group-box">
+
+            <h2>ENHYPEN</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- ATEEZ -->
+
+        <div class="group-box">
+
+            <h2>ATEEZ</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- EXO -->
+
+        <div class="group-box">
+
+            <h2>EXO</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- STRAY KIDS -->
+
+        <div class="group-box">
+
+            <h2>STRAY KIDS</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- BLACKPINK -->
+
+        <div class="group-box">
+
+            <h2>BLACKPINK</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- ILLIT -->
+
+        <div class="group-box">
+
+            <h2>ILLIT</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+        <!-- CORTIS -->
+
+        <div class="group-box">
+
+            <h2>CORTIS</h2>
+
+            <p>
+                Explore members, songs and lyrics.
+            </p>
+
+            <a href="members.html">
+                View Members
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="divider">
+        ♡ ✦ 🎀 ✦ ♡
+    </div>
+
+    <div class="top-decoration">
+        ☆ ♫ ♡ ✧ 🎀 ✧ ♡ ♫ ☆
+    </div>
+
+</main>
+
+
+<footer>
+    🎀 ♡ ✦ K-POP LYRICS ✦ ♡ 🎀
+</footer>
+
+
+</body>
+</html>
+```

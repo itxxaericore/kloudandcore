@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Pop News ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 8% 12%, #eadfff 0 13px, transparent 14px),
+                radial-gradient(circle at 92% 15%, #ddf3ff 0 12px, transparent 13px),
+                radial-gradient(circle at 7% 82%, #f3e4ff 0 11px, transparent 12px),
+                radial-gradient(circle at 93% 86%, #e2f5ff 0 13px, transparent 14px),
+                linear-gradient(135deg, #f8f3ff, #eff9ff, #fdf7ff);
+
+            color: #4d4267;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            position: relative;
+            z-index: 10;
+
+            background: linear-gradient(90deg, #8060bd, #79a8d7);
+
+            padding: 24px 18px;
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 16px;
+
+            font-size: 34px;
+
+            letter-spacing: 4px;
+
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+
+            color: white;
+
+            padding: 9px 17px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,0.16);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: white;
+
+            color: #7054a0;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        .news-container {
+            width: 91%;
+            max-width: 1100px;
+
+            margin: 50px auto;
+        }
+
+
+        /* =========================
+           TITLE
+           ========================= */
+
+        .page-title {
+            text-align: center;
+
+            color: #674c9d;
+
+            font-size: 47px;
+
+            margin-bottom: 10px;
+
+            text-shadow: 2px 3px 0 #e3d7ff;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #83798f;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin-bottom: 22px;
+        }
+
+        .top-decoration {
+            text-align: center;
+
+            margin: 22px 0 45px;
+
+            color: #9a7aca;
+
+            font-size: 24px;
+
+            letter-spacing: 9px;
+        }
+
+
+        /* =========================
+           NEWS FEATURE
+           ========================= */
+
+        .featured-news {
+            position: relative;
+
+            padding: 38px;
+
+            border-radius: 30px;
+
+            background: linear-gradient(
+                135deg,
+                rgba(255,255,255,0.97),
+                #f4eeff,
+                #eefaff
+            );
+
+            border: 2px solid #dfd3f8;
+
+            box-shadow:
+                0 10px 30px rgba(90,70,140,0.12);
+
+            overflow: hidden;
+
+            margin-bottom: 50px;
+        }
+
+        .featured-news::before {
+            content: "🎀 ✦ ♡ ✦ 🎀";
+
+            display: block;
+
+            text-align: center;
+
+            color: #a184d0;
+
+            font-size: 21px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .featured-news::after {
+            content: "✧ ♡ ✧";
+
+            display: block;
+
+            text-align: center;
+
+            color: #b49bda;
+
+            font-size: 20px;
+
+            margin-top: 20px;
+        }
+
+        .featured-label {
+            text-align: center;
+
+            color: #8465b3;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+        }
+
+        .featured-news h2 {
+            text-align: center;
+
+            color: #604988;
+
+            font-size: 31px;
+
+            line-height: 1.3;
+
+            margin: 13px 0;
+        }
+
+        .featured-news p {
+            color: #6f6879;
+
+            text-align: center;
+
+            line-height: 1.8;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .date {
+            text-align: center;
+
+            color: #9a83b8;
+
+            font-size: 13px;
+
+            margin-top: 15px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+           ========================= */
+
+        .section-title {
+            text-align: center;
+
+            color: #70559e;
+
+            font-size: 31px;
+
+            margin: 55px 0 28px;
+        }
+
+        .section-title::before {
+            content: "🎀 ✦ ";
+        }
+
+        .section-title::after {
+            content: " ✦ ♡";
+        }
+
+
+        /* =========================
+           NEWS GRID
+           ========================= */
+
+        .news-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
+        }
+
+
+        /* =========================
+           NEWS CARD
+           ========================= */
+
+        .news-card {
+            position: relative;
+
+            background: rgba(255,255,255,0.96);
+
+            padding: 26px;
+
+            border-radius: 25px;
+
+            border: 2px solid #e7ddf8;
+
+            box-shadow:
+                0 8px 22px rgba(90,70,140,0.10);
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+        .news-card:hover {
+            transform: translateY(-7px);
+
+            border-color: #ccb9ee;
+
+            box-shadow:
+                0 15px 30px rgba(90,70,140,0.16);
+        }
+
+        .news-card::before {
+            content: "✦";
+
+            position: absolute;
+
+            top: 10px;
+
+            right: 13px;
+
+            color: #b299da;
+
+            font-size: 18px;
+        }
+
+        .news-icon {
+            text-align: center;
+
+            font-size: 45px;
+
+            margin-bottom: 8px;
+        }
+
+        .news-card h3 {
+            color: #604988;
+
+            font-size: 22px;
+
+            line-height: 1.4;
+
+            margin: 10px 0;
+
+            text-align: center;
+        }
+
+        .news-date {
+            text-align: center;
+
+            color: #9276b8;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            margin-bottom: 14px;
+        }
+
+        .news-card p {
+            color: #706a78;
+
+            line-height: 1.75;
+
+            font-size: 15px;
+        }
+
+        .news-tag {
+            display: block;
+
+            width: fit-content;
+
+            margin: 18px auto 0;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background: #f2ecff;
+
+            color: #7d62aa;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           UPDATE BOX
+           ========================= */
+
+        .update-box {
+            margin-top: 50px;
+
+            padding: 28px;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #faf7ff,
+                #effaff
+            );
+
+            border: 2px dashed #d8c8f4;
+
+            border-radius: 24px;
+
+            color: #75678e;
+
+            line-height: 1.8;
+        }
+
+        .update-box strong {
+            color: #6d549c;
+
+            font-size: 19px;
+        }
+
+
+        /* =========================
+           DIVIDER
+           ========================= */
+
+        .divider {
+            text-align: center;
+
+            color: #a184d0;
+
+            font-size: 22px;
+
+            letter-spacing: 8px;
+
+            margin: 50px 0;
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            text-align: center;
+
+            background: linear-gradient(
+                90deg,
+                #6d559d,
+                #7399c5
+            );
+
+            color: white;
+
+            padding: 30px;
+
+            margin-top: 70px;
+        }
+
+        footer::before {
+            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
+
+            display: block;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .page-title {
+                font-size: 35px;
+            }
+
+            .news-container {
+                width: 94%;
+            }
+
+            .featured-news {
+                padding: 25px;
+            }
+
+            .featured-news h2 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+     ========================= -->
+
+<header>
+
+    <h1>K-POP LYRICS ♡</h1>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="groups.html">Groups</a>
+        <a href="songs.html">Songs</a>
+        <a href="members.html">Members</a>
+        <a href="soloists.html">Soloists</a>
+        <a href="releases.html">Releases</a>
+        <a href="rankings.html">Rankings</a>
+        <a href="news.html">News</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+     ========================= -->
+
+<main class="news-container">
+
+
+    <h1 class="page-title">
+        📰 K-Pop News 📰
+    </h1>
+
+
+    <p class="subtitle">
+        ♡ The latest K-Pop updates, performances and announcements ♡
+    </p>
+
+
+    <div class="top-decoration">
+        ✦ ♡ 🎀 📰 ♫ 📰 🎀 ♡ ✦
+    </div>
+
+
+    <!-- =========================
+         FEATURED NEWS
+         ========================= -->
+
+    <section class="featured-news">
+
+        <div class="featured-label">
+            ✦ FEATURED NEWS ✦
+        </div>
+
+        <h2>
+            K-Pop Takes Over Rock in Rio
+        </h2>
+
+        <p>
+            September 11, 2026 marked a major K-Pop night at Rock in Rio,
+            with NEXZ, Hwasa and Stray Kids performing on the festival's
+            main stage. Stray Kids closed the K-Pop-focused day with a
+            large and energetic performance.
+        </p>
+
+        <div class="date">
+            📅 September 11, 2026
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LATEST NEWS
+         ========================= -->
+
+    <h2 class="section-title">
+        Latest News
+    </h2>
+
+
+    <div class="news-grid">
+
+
+        <!-- STRAY KIDS -->
+
+        <article class="news-card">
+
+            <div class="news-icon">
+                🖤
+            </div>
+
+            <h3>
+                Stray Kids Headline Rock in Rio's K-Pop Day
+            </h3>
+
+            <div class="news-date">
+                September 12, 2026
+            </div>
+
+            <p>
+                Stray Kids closed the first K-Pop-focused day at Rock in Rio.
+                Reports described a packed audience and a high-energy festival
+                performance featuring songs from across their career.
+            </p>
+
+            <span class="news-tag">
+                🎤 PERFORMANCE
+            </span>
+
+        </article>
+
+
+        <!-- HWASA + NEXZ -->
+
+        <article class="news-card">
+
+            <div class="news-icon">
+                🌸
+            </div>
+
+            <h3>
+                Hwasa and NEXZ Join Rock in Rio's K-Pop Lineup
+            </h3>
+
+            <div class="news-date">
+                September 11, 2026
+            </div>
+
+            <p>
+                Hwasa and NEXZ also performed during Rock in Rio's first
+                dedicated K-Pop day, bringing both solo and group performances
+                to the festival's main stage.
+            </p>
+
+            <span class="news-tag">
+                🌟 FESTIVAL
+            </span>
+
+        </article>
+
+
+        <!-- BIGBANG -->
+
+        <article class="news-card">
+
+            <div class="news-icon">
+                👑
+            </div>
+
+            <h3>
+                BIGBANG Continues Its 2026 World Tour
+            </h3>
+
+            <div class="news-date">
+                September 2026
+            </div>
+
+            <p>
+                BIGBANG's 2026 world tour continues internationally.
+                YG's official tour schedule lists sold-out Oakland shows
+                from September 4–5, followed by additional dates in the
+                United States and Europe.
+            </p>
+
+            <span class="news-tag">
+                🌎 WORLD TOUR
+            </span>
+
+        </article>
+
+
+        <!-- SEPTEMBER COMEBACKS -->
+
+        <article class="news-card">
+
+            <div class="news-icon">
+                🎵
+            </div>
+
+            <h3>
+                September Brings a Busy K-Pop Comeback Season
+            </h3>
+
+            <div class="news-date">
+                September 2026
+            </div>
+
+            <p>
+                September's schedule includes releases from CHUNG HA,
+                MONSTA X, TEN, MINHO, EVAN, VERIVERY, &TEAM and
+                BOYNEXTDOOR, making the month particularly busy for K-Pop fans.
+            </p>
+
+            <span class="news-tag">
+                💿 COMEBACKS
+            </span>
+
+        </article>
+
+
+        <!-- KPOPWORLD -->
+
+        <article class="news-card">
+
+            <div class="news-icon">
+                🎀
+            </div>
+
+            <h3>
+                KPOPWORLD Festival Announces Major Texas Lineup
+            </h3>
+
+            <div class="news-date">
+                October 28–31, 2026
+            </div>
+
+            <p>
+                KPOPWORLD Festival will take place at the Alamodome in
+                San Antonio from October 28–31. The concert lineup includes
+                artists such as DAYOUNG, JESSI, The Rose, CRAVITY, WONHO
+                and others.
+            </p>
+
+            <span class="news-tag">
+                📍 UPCOMING EVENT
+            </span>
+
+        </article>
+
+
+        <!-- DAYOUNG -->
+
+        <article class="news-card">
+
+            <div class="news-icon">
+                ⭐
+            </div>
+
+            <h3>
+                DAYOUNG Set for KPOPWORLD Festival
+            </h3>
+
+            <div class="news-date">
+                October 30, 2026
+            </div>
+
+            <p>
+                DAYOUNG is part of the confirmed Friday lineup for
+                KPOPWORLD Festival in San Antonio, marking another major
+                international appearance for the solo artist.
+            </p>
+
+            <span class="news-tag">
+                🎤 SOLOIST
+            </span>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="divider">
+        ♡ ✦ 🎀 📰 ✦ ♫ ✦ 📰 🎀 ✦ ♡
+    </div>
+
+
+    <!-- =========================
+         UPDATE BOX
+         ========================= -->
+
+    <div class="update-box">
+
+        <strong>
+            🎀 K-POP LYRICS NEWS DESK 🎀
+        </strong>
+
+        <br><br>
+
+        News on this page is based on current published reports
+        and official event schedules.
+
+        <br>
+
+        Because K-Pop schedules can change, announcements should be
+        rechecked before treating a date as final.
+
+        <br><br>
+
+        ♡ Updated for September 2026 ♡
+
+    </div>
+
+
+    <div class="top-decoration">
+        ☆ ♡ 🎀 ✦ 📰 ✦ 🎀 ♡ ☆
+    </div>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <p>
+        ♡ K-POP LYRICS ♡
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

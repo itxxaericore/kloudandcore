@@ -1,0 +1,737 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Pop Songs ♫</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #f1eaff, #e9f7ff, #f8efff);
+            font-family: Arial, sans-serif;
+            color: #483b69;
+            overflow-x: hidden;
+        }
+
+        .decor {
+            position: fixed;
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+            font-size: 23px;
+        }
+
+        .decor1 { top: 120px; left: 15px; animation: float1 4s ease-in-out infinite; }
+        .decor2 { top: 180px; left: 45px; animation: float2 3s ease-in-out infinite; }
+        .decor3 { top: 125px; right: 20px; animation: float1 3.5s ease-in-out infinite; }
+        .decor4 { top: 185px; right: 50px; animation: float2 4s ease-in-out infinite; }
+        .decor5 { top: 330px; left: 20px; animation: float2 3.2s ease-in-out infinite; }
+        .decor6 { top: 350px; right: 20px; animation: float1 4.2s ease-in-out infinite; }
+        .decor7 { bottom: 220px; left: 20px; animation: float1 3.8s ease-in-out infinite; }
+        .decor8 { bottom: 200px; right: 25px; animation: float2 4s ease-in-out infinite; }
+
+        @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(7deg);
+            }
+        }
+
+        @keyframes float2 {
+            0%, 100% {
+                transform: translateY(0) rotate(5deg);
+            }
+            50% {
+                transform: translateY(10px) rotate(-7deg);
+            }
+        }
+
+        .corner {
+            position: fixed;
+            z-index: 2;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .top-left {
+            top: 80px;
+            left: 10px;
+        }
+
+        .top-right {
+            top: 80px;
+            right: 10px;
+            text-align: right;
+        }
+
+        .bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .bottom-right {
+            bottom: 10px;
+            right: 10px;
+            text-align: right;
+        }
+
+        .corner span {
+            display: block;
+            margin: 7px;
+            font-size: 25px;
+            animation: floatCute 3s ease-in-out infinite;
+        }
+
+        .corner span:nth-child(2) { animation-delay: .5s; }
+        .corner span:nth-child(3) { animation-delay: 1s; }
+        .corner span:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes floatCute {
+            0%, 100% {
+                transform: translateY(0) rotate(-4deg);
+            }
+            50% {
+                transform: translateY(-8px) rotate(4deg);
+            }
+        }
+
+        .bubble {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bubble1 {
+            width: 12px;
+            height: 12px;
+            top: 260px;
+            left: 35px;
+            background: #d8c8ff;
+            box-shadow: 0 0 15px #d8c8ff;
+        }
+
+        .bubble2 {
+            width: 9px;
+            height: 9px;
+            top: 420px;
+            right: 40px;
+            background: #c7e8ff;
+            box-shadow: 0 0 12px #c7e8ff;
+        }
+
+        .bubble3 {
+            width: 14px;
+            height: 14px;
+            bottom: 350px;
+            left: 40px;
+            background: #ead8ff;
+            box-shadow: 0 0 15px #ead8ff;
+        }
+
+        .bubble4 {
+            width: 10px;
+            height: 10px;
+            bottom: 300px;
+            right: 35px;
+            background: #d6f1ff;
+            box-shadow: 0 0 12px #d6f1ff;
+        }
+
+        header {
+            position: relative;
+            z-index: 5;
+            background: linear-gradient(90deg, #8566c5, #79a8d8);
+            padding: 23px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 6px 20px rgba(90, 70, 140, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 15px;
+            font-size: 33px;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 9px 18px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.18);
+            transition: .3s;
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+
+        nav a:hover {
+            background: white;
+            color: #7354aa;
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .songs-container {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 48px;
+            color: #6548a0;
+            margin-bottom: 8px;
+            text-shadow: 2px 3px 0 #e0d4ff;
+        }
+
+        .page-subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .top-decoration {
+            text-align: center;
+            margin: 15px 0 30px;
+            font-size: 25px;
+            letter-spacing: 10px;
+            color: #9677cf;
+            animation: sparkle 2.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0.75;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        .cute-divider {
+            text-align: center;
+            color: #9a79d0;
+            font-size: 21px;
+            letter-spacing: 7px;
+            margin: 25px 0;
+        }
+
+        .group-section {
+            margin-bottom: 65px;
+            position: relative;
+        }
+
+        .group-section::before {
+            content: "✧";
+            position: absolute;
+            left: -15px;
+            top: 55px;
+            color: #b69be8;
+            font-size: 25px;
+        }
+
+        .group-section::after {
+            content: "♡";
+            position: absolute;
+            right: -15px;
+            top: 55px;
+            color: #b69be8;
+            font-size: 25px;
+        }
+
+        .group-title {
+            display: inline-block;
+            font-size: 28px;
+            color: #634b99;
+            margin-bottom: 25px;
+            padding: 13px 28px;
+            border-radius: 28px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #ddd0ff;
+            box-shadow: 0 5px 15px rgba(100, 80, 150, 0.1);
+        }
+
+        .group-title::before {
+            content: "🎀 ";
+        }
+
+        .group-title::after {
+            content: " ♡ ✦";
+        }
+
+        .song-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 29px;
+            margin: 23px 0;
+            border-radius: 26px;
+            border: 2px solid #e7ddff;
+            box-shadow: 0 8px 22px rgba(80, 65, 130, 0.11);
+            transition: .3s;
+            overflow: hidden;
+        }
+
+        .song-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(80, 65, 130, 0.17);
+            border-color: #cbb9f5;
+        }
+
+        .song-card::before {
+            content: "✦  ♡";
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 20px;
+            color: #b296e8;
+        }
+
+        .song-card::after {
+            content: "♫  ✧";
+            position: absolute;
+            bottom: 8px;
+            right: 18px;
+            font-size: 19px;
+            color: #b49bdc;
+        }
+
+        .song-card h3 {
+            color: #503b7c;
+            margin: 0 0 7px;
+            font-size: 25px;
+        }
+
+        .song-card h3::before {
+            content: "♫ ";
+            color: #8b6ac5;
+        }
+
+        .group-name {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .lyrics-label {
+            font-weight: bold;
+            color: #7557a9;
+            margin-bottom: 9px;
+        }
+
+        .lyrics {
+            background: linear-gradient(135deg, #faf8ff, #f1faff);
+            border: 2px dashed #d8caf8;
+            border-radius: 18px;
+            padding: 22px;
+            min-height: 135px;
+            color: #999;
+            line-height: 1.8;
+            box-shadow: inset 0 0 18px rgba(160, 130, 220, 0.04);
+            white-space: pre-line;
+        }
+
+        .lyrics span {
+            font-style: italic;
+        }
+
+        .mini-decor {
+            text-align: center;
+            margin-top: 17px;
+            color: #b293dc;
+            letter-spacing: 7px;
+            font-size: 18px;
+        }
+
+        footer {
+            position: relative;
+            z-index: 5;
+            text-align: center;
+            background: linear-gradient(90deg, #685197, #718fbe);
+            color: white;
+            padding: 28px;
+            margin-top: 70px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            box-shadow: 0 -5px 18px rgba(80, 65, 130, 0.12);
+        }
+
+        @media (max-width: 600px) {
+            .page-title {
+                font-size: 35px;
+            }
+
+            .group-title {
+                font-size: 22px;
+            }
+
+            .song-card h3 {
+                font-size: 21px;
+            }
+
+            .corner,
+            .decor {
+                display: none;
+            }
+
+            .group-section::before,
+            .group-section::after {
+                display: none;
+            }
+
+            .songs-container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CUTE CORNERS -->
+
+    <div class="corner top-left">
+        <span>🎀</span>
+        <span>♡</span>
+        <span>✦</span>
+        <span>♫</span>
+    </div>
+
+    <div class="corner top-right">
+        <span>☆</span>
+        <span>♫</span>
+        <span>♡</span>
+        <span>✧</span>
+    </div>
+
+    <div class="corner bottom-left">
+        <span>✧</span>
+        <span>♡</span>
+        <span>🎀</span>
+        <span>☆</span>
+    </div>
+
+    <div class="corner bottom-right">
+        <span>♡</span>
+        <span>✦</span>
+        <span>♫</span>
+        <span>🎀</span>
+    </div>
+
+    <!-- FLOATING DECOR -->
+
+    <div class="decor decor1">♡</div>
+    <div class="decor decor2">✦</div>
+    <div class="decor decor3">🎀</div>
+    <div class="decor decor4">♫</div>
+    <div class="decor decor5">☆</div>
+    <div class="decor decor6">✧</div>
+    <div class="decor decor7">♡</div>
+    <div class="decor decor8">✦</div>
+
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+
+    <!-- HEADER -->
+
+    <header>
+        <h1>K-POP LYRICS ♡</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="groups.html">Groups</a>
+            <a href="songs.html">Songs</a>
+            <a href="members.html">Members</a>
+            <a href="soloists.html">Soloists</a>
+            <a href="releases.html">Releases</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="news.html">News</a>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+
+    <main class="songs-container">
+
+        <h1 class="page-title">🎀 K-Pop Songs 🎀</h1>
+
+        <p class="page-subtitle">
+            ♡ Your little corner for K-Pop songs & lyrics ♡
+        </p>
+
+        <div class="top-decoration">
+            ✦ ♡ 🎀 ♫ ✧ ☆ ♡ 🎀 ♫ ✦
+        </div>
+
+        <div class="cute-divider">
+            ✦ ♡ ♪ ♡ ✦
+        </div>
+
+        <!-- BABYMONSTER -->
+
+        <section class="group-section">
+            <h2 class="group-title">BABYMONSTER</h2>
+
+            <div class="song-card">
+                <h3>DRIP</h3>
+                <p class="group-name">BABYMONSTER</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your DRIP lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♡ ✦ ♫ ✦ ♡</div>
+            </div>
+
+            <div class="song-card">
+                <h3>MOON</h3>
+                <p class="group-name">BABYMONSTER</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your MOON lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">✧ ♡ 🎀 ♡ ✧</div>
+            </div>
+
+            <div class="song-card">
+                <h3>CHOOM</h3>
+                <p class="group-name">BABYMONSTER</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your CHOOM lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♫ ✦ ♡ ✦ ♫</div>
+            </div>
+        </section>
+
+        <!-- ENHYPEN -->
+
+        <section class="group-section">
+            <h2 class="group-title">ENHYPEN</h2>
+
+            <div class="song-card">
+                <h3>BLOODY PARADISE</h3>
+                <p class="group-name">ENHYPEN</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your BLOODY PARADISE lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">☆ ♡ ✦ ♡ ☆</div>
+            </div>
+
+            <div class="song-card">
+                <h3>DRUNK-DAZED</h3>
+                <p class="group-name">ENHYPEN</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your DRUNK-DAZED lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♫ ♡ 🎀 ♡ ♫</div>
+            </div>
+
+            <div class="song-card">
+                <h3>CHECKMATE</h3>
+                <p class="group-name">ENHYPEN</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your CHECKMATE lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">✦ ✧ ♡ ✧ ✦</div>
+            </div>
+        </section>
+
+        <!-- LE SSERAFIM -->
+
+        <section class="group-section">
+            <h2 class="group-title">LE SSERAFIM</h2>
+
+            <div class="song-card">
+                <h3>AEIOU</h3>
+                <p class="group-name">LE SSERAFIM</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your AEIOU lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♡ 🎀 ♫ 🎀 ♡</div>
+            </div>
+
+            <div class="song-card">
+                <h3>MADE MY NIGHT</h3>
+                <p class="group-name">LE SSERAFIM</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your MADE MY NIGHT lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">✧ ♡ ✦ ♡ ✧</div>
+            </div>
+
+            <div class="song-card">
+                <h3>BOOMPALA</h3>
+                <p class="group-name">LE SSERAFIM</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your BOOMPALA lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♫ ✦ 🎀 ✦ ♫</div>
+            </div>
+        </section>
+
+        <!-- EXO -->
+
+        <section class="group-section">
+            <h2 class="group-title">EXO</h2>
+
+            <div class="song-card">
+                <h3>LOVE SHOT</h3>
+                <p class="group-name">EXO</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your LOVE SHOT lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♡ ✦ ☆ ✦ ♡</div>
+            </div>
+        </section>
+
+        <!-- BLACKPINK -->
+
+        <section class="group-section">
+            <h2 class="group-title">BLACKPINK</h2>
+
+            <div class="song-card">
+                <h3>GO</h3>
+                <p class="group-name">BLACKPINK</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your GO lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">🎀 ♡ ♫ ♡ 🎀</div>
+            </div>
+        </section>
+
+        <!-- ILLIT -->
+
+        <section class="group-section">
+            <h2 class="group-title">ILLIT</h2>
+
+            <div class="song-card">
+                <h3>IT'S ME</h3>
+                <p class="group-name">ILLIT</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your IT'S ME lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">✦ ♡ 🎀 ♡ ✦</div>
+            </div>
+
+            <div class="song-card">
+                <h3>I GOT UR BACK</h3>
+                <p class="group-name">ILLIT</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your I GOT UR BACK lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">♡ ♫ ✧ ♫ ♡</div>
+            </div>
+        </section>
+
+        <!-- CORTIS -->
+
+        <section class="group-section">
+            <h2 class="group-title">CORTIS</h2>
+
+            <div class="song-card">
+                <h3>REDRED</h3>
+                <p class="group-name">CORTIS</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your REDRED lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">☆ ✦ ♡ ✦ ☆</div>
+            </div>
+        </section>
+
+        <!-- TUIDE -->
+
+        <section class="group-section">
+            <h2 class="group-title">TUIDE</h2>
+
+            <div class="song-card">
+                <h3>SUN KISS</h3>
+                <p class="group-name">TUIDE</p>
+                <p class="lyrics-label">♡ Lyrics</p>
+
+                <div class="lyrics">
+                    <span>Paste your SUN KISS lyrics here...</span>
+                </div>
+
+                <div class="mini-decor">☆ ♡ ✦ ♡ ☆</div>
+            </div>
+        </section>
+
+        <div class="top-decoration">
+            ☆ ♡ 🎀 ✦ ♫ ✦ 🎀 ♡ ☆
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        🎀 ♡ ✦ K-POP LYRICS ✦ ♡ 🎀
+    </footer>
+
+</body>
+</html>
+```

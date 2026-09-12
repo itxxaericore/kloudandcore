@@ -1,0 +1,1799 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>K-Pop Members ♡</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at 10% 15%, #eadfff 0 4%, transparent 5%),
+                radial-gradient(circle at 90% 20%, #dff4ff 0 4%, transparent 5%),
+                radial-gradient(circle at 15% 80%, #f4e5ff 0 4%, transparent 5%),
+                radial-gradient(circle at 85% 85%, #e2f5ff 0 4%, transparent 5%),
+                linear-gradient(135deg, #f7f2ff, #eef9ff, #fbf5ff);
+
+            color: #4d4566;
+            overflow-x: hidden;
+        }
+
+
+        /* ==================================================
+           ✦ FLOATING DECORATIONS
+           ================================================== */
+
+        .floating {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            user-select: none;
+            font-size: 25px;
+            opacity: 0.8;
+        }
+
+        .f1 {
+            top: 120px;
+            left: 15px;
+            animation: floatA 4s ease-in-out infinite;
+        }
+
+        .f2 {
+            top: 200px;
+            left: 35px;
+            animation: floatB 3s ease-in-out infinite;
+        }
+
+        .f3 {
+            top: 320px;
+            left: 18px;
+            animation: floatA 4.5s ease-in-out infinite;
+        }
+
+        .f4 {
+            top: 130px;
+            right: 15px;
+            animation: floatB 4s ease-in-out infinite;
+        }
+
+        .f5 {
+            top: 215px;
+            right: 35px;
+            animation: floatA 3.5s ease-in-out infinite;
+        }
+
+        .f6 {
+            top: 340px;
+            right: 15px;
+            animation: floatB 4.5s ease-in-out infinite;
+        }
+
+        .f7 {
+            bottom: 250px;
+            left: 18px;
+            animation: floatB 3.5s ease-in-out infinite;
+        }
+
+        .f8 {
+            bottom: 200px;
+            right: 18px;
+            animation: floatA 4s ease-in-out infinite;
+        }
+
+        @keyframes floatA {
+
+            0%, 100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(6deg);
+            }
+
+        }
+
+        @keyframes floatB {
+
+            0%, 100% {
+                transform: translateY(0) rotate(5deg);
+            }
+
+            50% {
+                transform: translateY(10px) rotate(-6deg);
+            }
+
+        }
+
+
+        /* ==================================================
+           ✦ HEADER
+           ================================================== */
+
+        header {
+            position: relative;
+            z-index: 10;
+
+            background: linear-gradient(90deg, #8060bd, #79a8d7);
+
+            padding: 25px 15px;
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 7px 22px rgba(94, 73, 145, 0.2);
+        }
+
+        header h1 {
+            margin: 0 0 17px;
+
+            font-size: 34px;
+
+            letter-spacing: 4px;
+
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+
+            color: white;
+
+            background: rgba(255,255,255,0.16);
+
+            border: 1px solid rgba(255,255,255,0.25);
+
+            padding: 9px 15px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        nav a::before {
+            content: "♡ ";
+        }
+
+        nav a:hover {
+            background: white;
+
+            color: #7053a1;
+
+            transform: translateY(-3px) scale(1.03);
+        }
+
+
+        /* ==================================================
+           ✦ TITLE
+           ================================================== */
+
+        .page-title {
+            text-align: center;
+
+            margin: 48px auto 10px;
+
+            font-size: 46px;
+
+            color: #674c9d;
+
+            text-shadow: 2px 3px 0 #e0d5ff;
+        }
+
+        .subtitle {
+            text-align: center;
+
+            color: #8b849a;
+
+            font-size: 17px;
+
+            margin-bottom: 15px;
+        }
+
+        .top-decor {
+            text-align: center;
+
+            font-size: 25px;
+
+            letter-spacing: 9px;
+
+            color: #9c7dce;
+
+            margin: 18px 0 40px;
+
+            animation: sparkle 2.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+
+            0%, 100% {
+                opacity: 0.7;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.06);
+            }
+
+        }
+
+
+        /* ==================================================
+           ✦ GROUP SECTIONS
+           ================================================== */
+
+        .group-section {
+            position: relative;
+
+            width: 92%;
+
+            max-width: 1100px;
+
+            margin: 0 auto 65px;
+        }
+
+        .group-title {
+            text-align: center;
+
+            color: #6e5798;
+
+            font-size: 29px;
+
+            margin-bottom: 25px;
+
+            padding: 14px 26px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.82);
+
+            border: 2px solid #e1d5fa;
+
+            box-shadow: 0 6px 18px rgba(97,78,144,0.10);
+
+            display: block;
+        }
+
+        .group-title::before {
+            content: "🎀 ✦ ";
+        }
+
+        .group-title::after {
+            content: " ✦ ♡";
+        }
+
+
+        /* ==================================================
+           ✦ MEMBER GRID
+           ================================================== */
+
+        .members {
+            position: relative;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 19px;
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+        }
+
+
+        /* ==================================================
+           ✦ MEMBER CARD
+           ================================================== */
+
+        .member-card {
+            position: relative;
+
+            width: 145px;
+
+            background: rgba(255,255,255,0.94);
+
+            padding: 13px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            box-shadow: 0 7px 20px rgba(100,80,140,0.11);
+
+            border: 2px solid #eadfff;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+            overflow: hidden;
+        }
+
+        .member-card::before {
+            content: "✦";
+
+            position: absolute;
+
+            top: 7px;
+
+            left: 9px;
+
+            color: #ad91dc;
+
+            font-size: 15px;
+        }
+
+        .member-card::after {
+            content: "♡";
+
+            position: absolute;
+
+            right: 9px;
+
+            bottom: 7px;
+
+            color: #ad91dc;
+
+            font-size: 16px;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px) rotate(-1deg);
+
+            box-shadow: 0 14px 28px rgba(96,76,140,0.17);
+
+            border-color: #cdb8f2;
+        }
+
+        .member-card img {
+            width: 112px;
+
+            height: 112px;
+
+            object-fit: cover;
+
+            border-radius: 17px;
+
+            border: 3px solid #eee6ff;
+
+            box-shadow: 0 4px 12px rgba(100,80,150,0.12);
+        }
+
+        .member-card p {
+            margin: 11px 0 3px;
+
+            font-weight: bold;
+
+            color: #66558d;
+
+            font-size: 15px;
+        }
+
+        .member-card p::before {
+            content: "♫ ";
+
+            color: #9a7aca;
+        }
+
+
+        /* ==================================================
+           ✦ SECTION MINI DECORATIONS
+           ================================================== */
+
+        .members::before {
+            content: "✧  ♡  ✦";
+
+            position: absolute;
+
+            top: -15px;
+
+            left: -5px;
+
+            color: #b39adb;
+
+            font-size: 18px;
+        }
+
+        .members::after {
+            content: "✦  ♡  ✧";
+
+            position: absolute;
+
+            top: -15px;
+
+            right: -5px;
+
+            color: #b39adb;
+
+            font-size: 18px;
+        }
+
+
+        /* ==================================================
+           ✦ INFO BOX
+           ================================================== */
+
+        .info-box {
+            position: relative;
+
+            display: none;
+
+            width: 450px;
+
+            max-width: 90%;
+
+            margin: 50px auto;
+
+            padding: 30px;
+
+            background: rgba(255,255,255,0.96);
+
+            border-radius: 24px;
+
+            text-align: center;
+
+            border: 2px solid #dfd0fa;
+
+            border-top: 7px solid #b99cdd;
+
+            box-shadow: 0 12px 30px rgba(91,71,137,0.16);
+        }
+
+        .info-box::before {
+            content: "🎀 ✦ ♡ ♫ ♡ ✦ 🎀";
+
+            display: block;
+
+            color: #a084d0;
+
+            font-size: 19px;
+
+            margin-bottom: 15px;
+
+            letter-spacing: 3px;
+        }
+
+        .info-box::after {
+            content: "✧ ♡ ✧";
+
+            display: block;
+
+            color: #baa1df;
+
+            margin-top: 18px;
+
+            font-size: 18px;
+        }
+
+        .info-box h2 {
+            color: #70569e;
+
+            font-size: 28px;
+
+            margin: 4px 0 18px;
+        }
+
+        .info-box h2::before,
+        .info-box h2::after {
+            content: "";
+        }
+
+        .info-box p {
+            color: #5d586b;
+
+            font-size: 15px;
+
+            margin: 11px 0;
+        }
+
+        .info-box b {
+            color: #7359a0;
+        }
+
+
+        /* ==================================================
+           ✦ CLOSE BUTTON
+           ================================================== */
+
+        .close-btn {
+            margin-top: 18px;
+
+            padding: 10px 22px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            background: linear-gradient(
+                90deg,
+                #b99fdf,
+                #9abddd
+            );
+
+            color: white;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            transform: scale(1.06);
+
+            box-shadow: 0 5px 15px rgba(105,82,150,0.2);
+        }
+
+
+        /* ==================================================
+           ✦ BOTTOM DECORATION
+           ================================================== */
+
+        .bottom-decor {
+            text-align: center;
+
+            font-size: 25px;
+
+            letter-spacing: 8px;
+
+            color: #9b7cca;
+
+            margin: 35px 0;
+        }
+
+
+        /* ==================================================
+           ✦ FOOTER
+           ================================================== */
+
+        footer {
+            position: relative;
+
+            z-index: 5;
+
+            margin-top: 60px;
+
+            padding: 35px 20px;
+
+            background: linear-gradient(
+                90deg,
+                #6d559d,
+                #7399c4
+            );
+
+            text-align: center;
+
+            color: white;
+
+            box-shadow: 0 -6px 20px rgba(90,70,130,0.15);
+        }
+
+        footer::before {
+            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
+
+            display: block;
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+        footer h1 {
+            margin: 0;
+
+            letter-spacing: 3px;
+
+            font-size: 25px;
+        }
+
+        footer p {
+            margin-top: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* ==================================================
+           ✦ MOBILE
+           ================================================== */
+
+        @media (max-width: 650px) {
+
+            .page-title {
+                font-size: 34px;
+            }
+
+            .group-title {
+                font-size: 23px;
+            }
+
+            .member-card {
+                width: 130px;
+            }
+
+            .member-card img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .floating {
+                font-size: 18px;
+            }
+
+            .f1, .f2, .f3,
+            .f4, .f5, .f6,
+            .f7, .f8 {
+                display: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     ✦ FLOATING DECORATIONS
+     ================================================== -->
+
+<div class="floating f1">🎀</div>
+<div class="floating f2">♡</div>
+<div class="floating f3">✦</div>
+
+<div class="floating f4">☆</div>
+<div class="floating f5">♫</div>
+<div class="floating f6">♡</div>
+
+<div class="floating f7">✧</div>
+<div class="floating f8">🎀</div>
+
+
+<!-- ==================================================
+     ✦ HEADER
+     ================================================== -->
+
+<header>
+
+    <h1>🎀 K-POP LYRICS ♡</h1>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="groups.html">Groups</a>
+
+        <a href="songs.html">Songs</a>
+
+        <a href="members.html">Members</a>
+
+        <a href="soloists.html">Soloists</a>
+
+        <a href="releases.html">Releases</a>
+
+        <a href="rankings.html">Rankings</a>
+
+        <a href="news.html">News</a>
+
+    </nav>
+
+</header>
+
+
+<!-- ==================================================
+     ✦ MAIN TITLE
+     ================================================== -->
+
+<h1 class="page-title">
+    ✨ K-Pop Members ✨
+</h1>
+
+<p class="subtitle">
+    ♡ Meet the members of your favorite groups ♡
+</p>
+
+<div class="top-decor">
+    ✦ ♡ 🎀 ♫ ✧ ☆ ♡ 🎀 ♫ ✦
+</div>
+
+
+<!-- ==================================================
+     ✦ BABYMONSTER
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        BABYMONSTER
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('RUKA')">
+            <img src="images/ruka.png" alt="RUKA">
+            <p>RUKA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('PHARITA')">
+            <img src="images/pharita.png" alt="PHARITA">
+            <p>PHARITA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('ASA')">
+            <img src="images/asa.png" alt="ASA">
+            <p>ASA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('AHYEON')">
+            <img src="images/ahyeon.png" alt="AHYEON">
+            <p>AHYEON</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('RAMI')">
+            <img src="images/rami.png" alt="RAMI">
+            <p>RAMI</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('RORA')">
+            <img src="images/rora.png" alt="RORA">
+            <p>RORA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('CHIQUITA')">
+            <img src="images/chiquita.png" alt="CHIQUITA">
+            <p>CHIQUITA</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ IVE
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        IVE
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('GAEUL')">
+            <img src="images/gaeul.png" alt="GAEUL">
+            <p>GAEUL</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('YUJIN')">
+            <img src="images/yujin.png" alt="YUJIN">
+            <p>YUJIN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('REI')">
+            <img src="images/rei.png" alt="REI">
+            <p>REI</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('WONYOUNG')">
+            <img src="images/wonyoung.png" alt="WONYOUNG">
+            <p>WONYOUNG</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('LIZ')">
+            <img src="images/liz.png" alt="LIZ">
+            <p>LIZ</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('LEESEO')">
+            <img src="images/leeseo.png" alt="LEESEO">
+            <p>LEESEO</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ TUIDE
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        TUIDE
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('SEOHEE')">
+            <img src="images/seohee.png" alt="SEOHEE">
+            <p>SEOHEE</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SEOYEON')">
+            <img src="images/seoyeon.png" alt="SEOYEON">
+            <p>SEOYEON</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('ELENA')">
+            <img src="images/elena.png" alt="ELENA">
+            <p>ELENA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SEAH')">
+            <img src="images/seah.png" alt="SEAH">
+            <p>SEAH</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SAKI')">
+            <img src="images/saki.png" alt="SAKI">
+            <p>SAKI</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('YI HANI')">
+            <img src="images/yihani.png" alt="YI HANI">
+            <p>YI HANI</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JIA')">
+            <img src="images/jia.png" alt="JIA">
+            <p>JIA</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ ENHYPEN
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        ENHYPEN
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('JUNGWON')">
+            <img src="images/enhypen.img.png" alt="JUNGWON">
+            <p>JUNGWON</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JAY')">
+            <img src="images/jay.png" alt="JAY">
+            <p>JAY</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JAKE')">
+            <img src="images/jake.png" alt="JAKE">
+            <p>JAKE</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SUNGHOON')">
+            <img src="images/sunghoon.png" alt="SUNGHOON">
+            <p>SUNGHOON</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SUNOO')">
+            <img src="images/sunoo.png" alt="SUNOO">
+            <p>SUNOO</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('NI-KI')">
+            <img src="images/niki.png" alt="NI-KI">
+            <p>NI-KI</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ ATEEZ
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        ATEEZ
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('HONGJOONG')">
+            <img src="images/hongjoong.png" alt="HONGJOONG">
+            <p>HONGJOONG</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SEONGHWA')">
+            <img src="images/seonghwa.png" alt="SEONGHWA">
+            <p>SEONGHWA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('YUNHO')">
+            <img src="images/yunho.png" alt="YUNHO">
+            <p>YUNHO</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('YEOSANG')">
+            <img src="images/yeosang.png" alt="YEOSANG">
+            <p>YEOSANG</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SAN')">
+            <img src="images/san.png" alt="SAN">
+            <p>SAN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('MINGI')">
+            <img src="images/mingi.png" alt="MINGI">
+            <p>MINGI</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('WOOYOUNG')">
+            <img src="images/wooyoung.png" alt="WOOYOUNG">
+            <p>WOOYOUNG</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JONGHO')">
+            <img src="images/jongho.png" alt="JONGHO">
+            <p>JONGHO</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ EXO
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        EXO
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('SUHO')">
+            <img src="images/suho.png" alt="SUHO">
+            <p>SUHO</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('XIUMIN')">
+            <img src="images/xiumin.png" alt="XIUMIN">
+            <p>XIUMIN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('LAY')">
+            <img src="images/lay.png" alt="LAY">
+            <p>LAY</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('BAEKHYUN')">
+            <img src="images/baekhyun.png" alt="BAEKHYUN">
+            <p>BAEKHYUN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('CHEN')">
+            <img src="images/chen.png" alt="CHEN">
+            <p>CHEN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('CHANYEOL')">
+            <img src="images/chanyeol.png" alt="CHANYEOL">
+            <p>CHANYEOL</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('D.O.')">
+            <img src="images/D.O.png" alt="D.O.">
+            <p>D.O.</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('KAI')">
+            <img src="images/kai.png" alt="KAI">
+            <p>KAI</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SEHUN')">
+            <img src="images/sehun.png" alt="SEHUN">
+            <p>SEHUN</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ STRAY KIDS
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        STRAY KIDS
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('BANG CHAN')">
+            <img src="images/bangchan.png" alt="BANG CHAN">
+            <p>BANG CHAN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('LEE KNOW')">
+            <img src="images/lee know.png" alt="LEE KNOW">
+            <p>LEE KNOW</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('CHANGBIN')">
+            <img src="images/changbin.png" alt="CHANGBIN">
+            <p>CHANGBIN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('HYUNJIN')">
+            <img src="images/hyunjin.png" alt="HYUNJIN">
+            <p>HYUNJIN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('HAN')">
+            <img src="images/han.png" alt="HAN">
+            <p>HAN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('FELIX')">
+            <img src="images/felix.png" alt="FELIX">
+            <p>FELIX</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SEUNGMIN')">
+            <img src="images/seungmin.png" alt="SEUNGMIN">
+            <p>SEUNGMIN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('I.N')">
+            <img src="images/I.N.png" alt="I.N">
+            <p>I.N</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ BLACKPINK
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        BLACKPINK
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('JISOO')">
+            <img src="images/jisoo.png" alt="JISOO">
+            <p>JISOO</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JENNIE')">
+            <img src="images/jennie.png" alt="JENNIE">
+            <p>JENNIE</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('ROSÉ')">
+            <img src="images/rose.png" alt="ROSÉ">
+            <p>ROSÉ</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('LISA')">
+            <img src="images/lisa.png" alt="LISA">
+            <p>LISA</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ ILLIT
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        ILLIT
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('YUNAH')">
+            <img src="images/yunah.png" alt="YUNAH">
+            <p>YUNAH</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('MINJU')">
+            <img src="images/minju.png" alt="MINJU">
+            <p>MINJU</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('MOKA')">
+            <img src="images/moka.png" alt="MOKA">
+            <p>MOKA</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('WONHEE')">
+            <img src="images/wonhee.png" alt="WONHEE">
+            <p>WONHEE</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('IROHA')">
+            <img src="images/iroha.png" alt="IROHA">
+            <p>IROHA</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     ✦ CORTIS
+     ================================================== -->
+
+<section class="group-section">
+
+    <h2 class="group-title">
+        CORTIS
+    </h2>
+
+    <div class="members">
+
+        <div class="member-card" onclick="showInfo('MARTIN')">
+            <img src="images/martin.png" alt="MARTIN">
+            <p>MARTIN</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JAMES')">
+            <img src="images/james.png" alt="JAMES">
+            <p>JAMES</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('JUHOON')">
+            <img src="images/juhoon.png" alt="JUHOON">
+            <p>JUHOON</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('SEONGHYEON')">
+            <img src="images/seonghyeon.png" alt="SEONGHYEON">
+            <p>SEONGHYEON</p>
+        </div>
+
+        <div class="member-card" onclick="showInfo('KEONHO')">
+            <img src="images/keonho.png" alt="KEONHO">
+            <p>KEONHO</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="bottom-decor">
+    ♡ ✦ 🎀 ♫ ✧ ☆ ✧ ♫ 🎀 ✦ ♡
+</div>
+
+
+<!-- ==================================================
+     ✦ INFO BOX
+     ================================================== -->
+
+<div id="infoBox" class="info-box"></div>
+
+
+<!-- ==================================================
+     ✦ FOOTER
+     ================================================== -->
+
+<footer>
+
+    <h1>K-POP LYRICS</h1>
+
+    <p>♡ K-POP MEMBERS ♡</p>
+
+</footer>
+
+
+<script>
+
+const members = {
+
+    /* BABYMONSTER */
+
+    "RUKA": {
+        group: "BABYMONSTER",
+        birthday: "March 20, 2002",
+        position: "Rapper • Dancer",
+        debut: "2024"
+    },
+
+    "PHARITA": {
+        group: "BABYMONSTER",
+        birthday: "August 26, 2005",
+        position: "Vocalist",
+        debut: "2024"
+    },
+
+    "ASA": {
+        group: "BABYMONSTER",
+        birthday: "April 17, 2006",
+        position: "Rapper • Dancer",
+        debut: "2024"
+    },
+
+    "AHYEON": {
+        group: "BABYMONSTER",
+        birthday: "April 11, 2007",
+        position: "Vocalist • Rapper • Dancer",
+        debut: "2024"
+    },
+
+    "RAMI": {
+        group: "BABYMONSTER",
+        birthday: "October 17, 2007",
+        position: "Vocalist",
+        debut: "2024"
+    },
+
+    "RORA": {
+        group: "BABYMONSTER",
+        birthday: "August 14, 2008",
+        position: "Vocalist",
+        debut: "2024"
+    },
+
+    "CHIQUITA": {
+        group: "BABYMONSTER",
+        birthday: "February 17, 2009",
+        position: "Vocalist • Dancer",
+        debut: "2024"
+    },
+
+
+    /* IVE */
+
+    "GAEUL": {
+        group: "IVE",
+        birthday: "September 24, 2002",
+        position: "Dancer • Rapper",
+        debut: "2021"
+    },
+
+    "YUJIN": {
+        group: "IVE",
+        birthday: "September 1, 2003",
+        position: "Leader • Vocalist",
+        debut: "2021"
+    },
+
+    "REI": {
+        group: "IVE",
+        birthday: "February 3, 2004",
+        position: "Rapper • Vocalist",
+        debut: "2021"
+    },
+
+    "WONYOUNG": {
+        group: "IVE",
+        birthday: "August 31, 2004",
+        position: "Vocalist",
+        debut: "2021"
+    },
+
+    "LIZ": {
+        group: "IVE",
+        birthday: "November 21, 2004",
+        position: "Vocalist",
+        debut: "2021"
+    },
+
+    "LEESEO": {
+        group: "IVE",
+        birthday: "February 21, 2007",
+        position: "Vocalist",
+        debut: "2021"
+    },
+
+
+    /* TUIDE */
+
+    "SEOHEE": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+    "SEOYEON": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+    "ELENA": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+    "SEAH": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+    "SAKI": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+    "YI HANI": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+    "JIA": {
+        group: "TUIDE",
+        birthday: "Not added yet",
+        position: "Vocalist • Dancer",
+        debut: "Not added yet"
+    },
+
+
+    /* ENHYPEN */
+
+    "JUNGWON": {
+        group: "ENHYPEN",
+        birthday: "February 9, 2004",
+        position: "Leader • Vocalist",
+        debut: "2020"
+    },
+
+    "JAY": {
+        group: "ENHYPEN",
+        birthday: "April 20, 2002",
+        position: "Rapper • Vocalist",
+        debut: "2020"
+    },
+
+    "JAKE": {
+        group: "ENHYPEN",
+        birthday: "November 15, 2002",
+        position: "Vocalist • Dancer",
+        debut: "2020"
+    },
+
+    "SUNGHOON": {
+        group: "ENHYPEN",
+        birthday: "December 8, 2002",
+        position: "Vocalist • Dancer",
+        debut: "2020"
+    },
+
+    "SUNOO": {
+        group: "ENHYPEN",
+        birthday: "June 24, 2003",
+        position: "Vocalist",
+        debut: "2020"
+    },
+
+    "NI-KI": {
+        group: "ENHYPEN",
+        birthday: "December 9, 2005",
+        position: "Dancer • Vocalist",
+        debut: "2020"
+    },
+
+
+    /* ATEEZ */
+
+    "HONGJOONG": {
+        group: "ATEEZ",
+        birthday: "November 7, 1998",
+        position: "Leader • Rapper",
+        debut: "2018"
+    },
+
+    "SEONGHWA": {
+        group: "ATEEZ",
+        birthday: "April 3, 1998",
+        position: "Vocalist • Performer",
+        debut: "2018"
+    },
+
+    "YUNHO": {
+        group: "ATEEZ",
+        birthday: "March 23, 1999",
+        position: "Dancer • Vocalist",
+        debut: "2018"
+    },
+
+    "YEOSANG": {
+        group: "ATEEZ",
+        birthday: "June 15, 1999",
+        position: "Vocalist • Dancer",
+        debut: "2018"
+    },
+
+    "SAN": {
+        group: "ATEEZ",
+        birthday: "July 10, 1999",
+        position: "Vocalist • Performer",
+        debut: "2018"
+    },
+
+    "MINGI": {
+        group: "ATEEZ",
+        birthday: "August 9, 1999",
+        position: "Rapper • Dancer",
+        debut: "2018"
+    },
+
+    "WOOYOUNG": {
+        group: "ATEEZ",
+        birthday: "November 26, 1999",
+        position: "Dancer • Vocalist",
+        debut: "2018"
+    },
+
+    "JONGHO": {
+        group: "ATEEZ",
+        birthday: "October 12, 2000",
+        position: "Main Vocalist",
+        debut: "2018"
+    },
+
+
+    /* EXO */
+
+    "SUHO": {
+        group: "EXO",
+        birthday: "May 22, 1991",
+        position: "Leader • Vocalist",
+        debut: "2012"
+    },
+
+    "XIUMIN": {
+        group: "EXO",
+        birthday: "March 26, 1990",
+        position: "Vocalist • Dancer",
+        debut: "2012"
+    },
+
+    "LAY": {
+        group: "EXO",
+        birthday: "October 7, 1991",
+        position: "Vocalist • Dancer",
+        debut: "2012"
+    },
+
+    "BAEKHYUN": {
+        group: "EXO",
+        birthday: "May 6, 1992",
+        position: "Main Vocalist",
+        debut: "2012"
+    },
+
+    "CHEN": {
+        group: "EXO",
+        birthday: "September 21, 1992",
+        position: "Main Vocalist",
+        debut: "2012"
+    },
+
+    "CHANYEOL": {
+        group: "EXO",
+        birthday: "November 27, 1992",
+        position: "Rapper • Vocalist",
+        debut: "2012"
+    },
+
+    "D.O.": {
+        group: "EXO",
+        birthday: "January 12, 1993",
+        position: "Main Vocalist",
+        debut: "2012"
+    },
+
+    "KAI": {
+        group: "EXO",
+        birthday: "January 14, 1994",
+        position: "Main Dancer • Vocalist",
+        debut: "2012"
+    },
+
+    "SEHUN": {
+        group: "EXO",
+        birthday: "April 12, 1994",
+        position: "Dancer • Rapper",
+        debut: "2012"
+    },
+
+
+    /* STRAY KIDS */
+
+    "BANG CHAN": {
+        group: "Stray Kids",
+        birthday: "October 3, 1997",
+        position: "Leader • Vocalist • Rapper",
+        debut: "2018"
+    },
+
+    "LEE KNOW": {
+        group: "Stray Kids",
+        birthday: "October 25, 1998",
+        position: "Dancer • Vocalist",
+        debut: "2018"
+    },
+
+    "CHANGBIN": {
+        group: "Stray Kids",
+        birthday: "August 11, 1999",
+        position: "Rapper • Producer",
+        debut: "2018"
+    },
+
+    "HYUNJIN": {
+        group: "Stray Kids",
+        birthday: "March 20, 2000",
+        position: "Dancer • Rapper • Vocalist",
+        debut: "2018"
+    },
+
+    "HAN": {
+        group: "Stray Kids",
+        birthday: "September 14, 2000",
+        position: "Rapper • Vocalist",
+        debut: "2018"
+    },
+
+    "FELIX": {
+        group: "Stray Kids",
+        birthday: "September 15, 2000",
+        position: "Dancer • Rapper",
+        debut: "2018"
+    },
+
+    "SEUNGMIN": {
+        group: "Stray Kids",
+        birthday: "September 22, 2000",
+        position: "Main Vocalist",
+        debut: "2018"
+    },
+
+    "I.N": {
+        group: "Stray Kids",
+        birthday: "February 8, 2001",
+        position: "Vocalist",
+        debut: "2018"
+    },
+
+
+    /* BLACKPINK */
+
+    "JISOO": {
+        group: "BLACKPINK",
+        birthday: "January 3, 1995",
+        position: "Vocalist",
+        debut: "2016"
+    },
+
+    "JENNIE": {
+        group: "BLACKPINK",
+        birthday: "January 16, 1996",
+        position: "Rapper • Vocalist",
+        debut: "2016"
+    },
+
+    "ROSÉ": {
+        group: "BLACKPINK",
+        birthday: "February 11, 1997",
+        position: "Main Vocalist • Dancer",
+        debut: "2016"
+    },
+
+    "LISA": {
+        group: "BLACKPINK",
+        birthday: "March 27, 1997",
+        position: "Main Dancer • Rapper",
+        debut: "2016"
+    },
+
+
+    /* ILLIT */
+
+    "YUNAH": {
+        group: "ILLIT",
+        birthday: "January 15, 2004",
+        position: "Vocalist • Dancer",
+        debut: "2024"
+    },
+
+    "MINJU": {
+        group: "ILLIT",
+        birthday: "May 11, 2004",
+        position: "Vocalist",
+        debut: "2024"
+    },
+
+    "MOKA": {
+        group: "ILLIT",
+        birthday: "October 8, 2004",
+        position: "Dancer • Vocalist",
+        debut: "2024"
+    },
+
+    "WONHEE": {
+        group: "ILLIT",
+        birthday: "June 26, 2007",
+        position: "Vocalist",
+        debut: "2024"
+    },
+
+    "IROHA": {
+        group: "ILLIT",
+        birthday: "February 4, 2008",
+        position: "Dancer • Vocalist",
+        debut: "2024"
+    },
+
+
+    /* CORTIS */
+
+    "MARTIN": {
+        group: "CORTIS",
+        birthday: "Not added yet",
+        position: "Member • Songwriter",
+        debut: "2025"
+    },
+
+    "JAMES": {
+        group: "CORTIS",
+        birthday: "Not added yet",
+        position: "Member • Songwriter",
+        debut: "2025"
+    },
+
+    "JUHOON": {
+        group: "CORTIS",
+        birthday: "Not added yet",
+        position: "Member • Songwriter",
+        debut: "2025"
+    },
+
+    "SEONGHYEON": {
+        group: "CORTIS",
+        birthday: "Not added yet",
+        position: "Member • Songwriter",
+        debut: "2025"
+    },
+
+    "KEONHO": {
+        group: "CORTIS",
+        birthday: "Not added yet",
+        position: "Member • Songwriter",
+        debut: "2025"
+    }
+
+};
+
+
+function showInfo(name) {
+
+    const member = members[name];
+
+    const box = document.getElementById("infoBox");
+
+    box.innerHTML = `
+
+        <h2>♡ ${name} ♡</h2>
+
+        <p>
+            <b>Group:</b>
+            ${member.group}
+        </p>
+
+        <p>
+            <b>Birthday:</b>
+            ${member.birthday}
+        </p>
+
+        <p>
+            <b>Position:</b>
+            ${member.position}
+        </p>
+
+        <p>
+            <b>Debut:</b>
+            ${member.debut}
+        </p>
+
+        <button
+            class="close-btn"
+            onclick="closeInfo()">
+            ♡ Close ♡
+        </button>
+
+    `;
+
+    box.style.display = "block";
+
+    box.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+function closeInfo() {
+
+    document.getElementById("infoBox").style.display = "none";
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
