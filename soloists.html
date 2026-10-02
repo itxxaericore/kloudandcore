@@ -1,750 +1,715 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-Pop Soloists ♡</title>
 
-    <title>K-Pop Soloists ♡</title>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+<style>
 
-    <style>
+/* ==============================
+   RESET
+================================ */
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
+body {
+    margin: 0;
+    color: #4d4755;
+    font-family: "Trebuchet MS", Arial, sans-serif;
 
-            background:
-                radial-gradient(circle at 8% 12%, #eadfff 0 13px, transparent 14px),
-                radial-gradient(circle at 92% 15%, #ddf3ff 0 12px, transparent 13px),
-                radial-gradient(circle at 7% 82%, #f3e4ff 0 11px, transparent 12px),
-                radial-gradient(circle at 93% 86%, #e2f5ff 0 13px, transparent 14px),
-                linear-gradient(135deg, #f8f3ff, #eff9ff, #fdf7ff);
+    background:
+        linear-gradient(rgba(255,255,255,.45), rgba(255,255,255,.45)),
+        repeating-linear-gradient(
+            0deg,
+            #fffafd 0px,
+            #fffafd 28px,
+            #f7eef7 29px,
+            #fffafd 30px
+        );
 
-            color: #4d4267;
-            overflow-x: hidden;
-        }
+    overflow-x: hidden;
+}
 
 
-        /* ==================================================
-           FLOATING DECORATIONS
-           ================================================== */
+/* ==============================
+   HEADER
+================================ */
 
-        .floating {
-            position: fixed;
-            z-index: 1;
-            pointer-events: none;
-            user-select: none;
-            font-size: 24px;
-            opacity: 0.75;
-        }
+header {
+    background: #f7d9e8;
+    border-bottom: 3px solid #e6bfd3;
+    padding: 25px 20px 20px;
+    text-align: center;
 
-        .float1 {
-            top: 125px;
-            left: 15px;
-            animation: floatOne 4s ease-in-out infinite;
-        }
+    box-shadow:
+        0 6px 0 #f0d0df,
+        0 10px 20px rgba(120,90,110,.08);
+}
 
-        .float2 {
-            top: 255px;
-            left: 24px;
-            animation: floatTwo 4.5s ease-in-out infinite;
-        }
+header h1 {
+    margin: 0 0 18px;
 
-        .float3 {
-            top: 390px;
-            left: 14px;
-            animation: floatOne 5s ease-in-out infinite;
-        }
+    color: #79556d;
+    font-family: Georgia, serif;
+    font-size: 35px;
+    letter-spacing: 4px;
 
-        .float4 {
-            top: 130px;
-            right: 15px;
-            animation: floatTwo 4s ease-in-out infinite;
-        }
+    text-shadow: 2px 2px #fff;
+}
 
-        .float5 {
-            top: 260px;
-            right: 23px;
-            animation: floatOne 4.5s ease-in-out infinite;
-        }
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
 
-        .float6 {
-            top: 400px;
-            right: 14px;
-            animation: floatTwo 5s ease-in-out infinite;
-        }
+nav a {
+    text-decoration: none;
+    color: #72596b;
 
-        @keyframes floatOne {
+    background: #fffafc;
 
-            0%, 100% {
-                transform: translateY(0) rotate(-5deg);
-            }
+    border: 2px solid #e6cbd8;
+    border-radius: 8px;
 
-            50% {
-                transform: translateY(-10px) rotate(5deg);
-            }
+    padding: 8px 13px;
 
-        }
+    font-size: 14px;
+    font-weight: bold;
 
-        @keyframes floatTwo {
+    box-shadow: 2px 3px 0 #e4ccd8;
 
-            0%, 100% {
-                transform: translateY(0) rotate(5deg);
-            }
+    transition: .2s;
+}
 
-            50% {
-                transform: translateY(10px) rotate(-5deg);
-            }
+nav a:hover {
+    transform: rotate(-2deg) translateY(-3px);
+    background: #fff;
+}
 
-        }
 
+/* ==============================
+   MAIN
+================================ */
 
-        /* ==================================================
-           HEADER
-           ================================================== */
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
 
-        header {
-            position: relative;
-            z-index: 10;
 
-            background: linear-gradient(90deg, #8060bd, #79a8d7);
+/* ==============================
+   PAGE TITLE
+================================ */
 
-            padding: 24px 18px;
+.title-paper {
+    position: relative;
 
-            text-align: center;
+    width: fit-content;
+    max-width: 95%;
 
-            color: white;
+    margin: 0 auto 18px;
+    padding: 18px 35px;
 
-            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
-        }
+    background: #fffdf5;
 
-        header h1 {
-            margin: 0 0 16px;
+    border: 2px solid #e8dcca;
 
-            font-size: 34px;
+    box-shadow:
+        4px 5px 0 #eadfd4,
+        0 10px 20px rgba(100,80,80,.08);
 
-            letter-spacing: 4px;
+    transform: rotate(-1deg);
+}
 
-            text-shadow: 2px 2px 0 rgba(255,255,255,0.15);
-        }
+.title-paper::before {
+    content: "✦";
+    position: absolute;
+    left: -13px;
+    top: -15px;
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    color: #d99bb7;
+    font-size: 27px;
+}
 
-        nav a {
-            text-decoration: none;
+.title-paper::after {
+    content: "♡";
+    position: absolute;
+    right: -14px;
+    bottom: -14px;
 
-            color: white;
+    color: #9cb7d8;
+    font-size: 28px;
+}
 
-            padding: 9px 17px;
+.title-paper h1 {
+    margin: 0;
 
-            border-radius: 25px;
+    color: #76586b;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    text-align: center;
+}
 
-            background: rgba(255,255,255,0.16);
+.subtitle {
+    text-align: center;
+    color: #897b84;
+    margin: 22px auto 8px;
+    font-size: 15px;
+}
 
-            border: 1px solid rgba(255,255,255,0.25);
+.doodle-line {
+    text-align: center;
+    color: #c58aa8;
+    letter-spacing: 8px;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
 
-            font-weight: bold;
 
-            transition: 0.3s;
-        }
+/* ==============================
+   FEATURED PAPER
+================================ */
 
-        nav a::before {
-            content: "♡ ";
-        }
+.featured-paper {
+    position: relative;
 
-        nav a:hover {
-            background: white;
+    background: #eaf4ff;
 
-            color: #7054a0;
+    border: 2px solid #c9ddeb;
 
-            transform: translateY(-3px);
-        }
+    padding: 22px 25px;
+    margin: 0 auto 45px;
 
+    max-width: 720px;
 
-        /* ==================================================
-           MAIN
-           ================================================== */
+    box-shadow:
+        5px 6px 0 #d7e7f2,
+        0 12px 20px rgba(80,100,120,.08);
 
-        .container {
-            position: relative;
-            z-index: 3;
+    transform: rotate(.7deg);
+}
 
-            width: 91%;
+.tape {
+    position: absolute;
 
-            max-width: 1100px;
+    width: 75px;
+    height: 22px;
 
-            margin: 50px auto;
-        }
+    background: #f4d8df;
+    opacity: .85;
 
+    top: -11px;
+    left: 50%;
 
-        /* ==================================================
-           PAGE TITLE
-           ================================================== */
+    transform: translateX(-50%) rotate(-2deg);
 
-        .page-title {
-            text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
 
-            color: #674c9d;
+.featured-paper h2 {
+    text-align: center;
+    margin: 5px 0 8px;
 
-            font-size: 47px;
+    color: #6f5c78;
+    font-family: Georgia, serif;
+}
 
-            margin-bottom: 10px;
+.featured-paper p {
+    text-align: center;
+    margin: 0;
 
-            text-shadow: 2px 3px 0 #e3d7ff;
-        }
+    color: #817782;
+    font-size: 14px;
+}
 
-        .subtitle {
-            text-align: center;
+.featured-name {
+    color: #b76d93;
+    font-size: 20px;
+    font-weight: bold;
+}
 
-            color: #83798f;
 
-            font-size: 17px;
+/* ==============================
+   SECTION PAPER
+================================ */
 
-            line-height: 1.7;
-        }
+.section-paper {
+    position: relative;
 
-        .top-decoration {
-            text-align: center;
+    margin: 42px 0 48px;
 
-            margin: 22px 0 45px;
+    padding: 30px 22px 25px;
 
-            color: #9a7aca;
+    background: #fffdf8;
 
-            font-size: 24px;
+    border: 2px solid #eadfce;
 
-            letter-spacing: 9px;
-        }
+    box-shadow:
+        5px 6px 0 #eee4d7,
+        0 10px 20px rgba(90,75,65,.07);
+}
 
+.section-paper:nth-of-type(odd) {
+    transform: rotate(.25deg);
+}
 
-        /* ==================================================
-           FEATURED
-           ================================================== */
+.section-paper:nth-of-type(even) {
+    transform: rotate(-.25deg);
+}
 
-        .featured {
-            position: relative;
+.section-label {
+    position: absolute;
 
-            padding: 35px;
+    top: -22px;
+    left: 22px;
 
-            text-align: center;
+    padding: 9px 22px;
 
-            background: linear-gradient(
-                135deg,
-                rgba(255,255,255,0.97),
-                #f4eeff,
-                #eefaff
-            );
+    background: #f6d8e5;
 
-            border: 2px solid #dfd3f8;
+    border: 2px solid #e5bfd0;
 
-            border-radius: 30px;
+    color: #79576b;
 
-            box-shadow: 0 10px 30px rgba(90,70,140,0.12);
+    font-family: Georgia, serif;
+    font-size: 21px;
 
-            overflow: hidden;
-        }
+    box-shadow: 3px 4px 0 #e7d1db;
 
-        .featured::before {
-            content: "🎀 ✦ ♡ ✦ 🎀";
+    transform: rotate(-2deg);
+}
 
-            display: block;
+.section-label.blue {
+    background: #dcecf8;
+    border-color: #bfd8e8;
+    box-shadow: 3px 4px 0 #d0e1ec;
+}
 
-            margin-bottom: 14px;
 
-            color: #a184d0;
+/* ==============================
+   SOLOIST GRID
+================================ */
 
-            font-size: 21px;
+.soloist-grid {
+    display: grid;
 
-            letter-spacing: 4px;
-        }
+    grid-template-columns: repeat(6, 1fr);
 
-        .featured::after {
-            content: "✧ ♡ ✧";
+    gap: 13px;
+}
 
-            display: block;
 
-            margin-top: 20px;
+/* ==============================
+   SMALL SOLOIST CARD
+================================ */
 
-            color: #b49bda;
+.soloist-card {
+    position: relative;
 
-            font-size: 20px;
-        }
+    min-height: 170px;
 
-        .featured-icon {
-            font-size: 60px;
-        }
+    padding: 14px 9px 12px;
 
-        .featured h2 {
-            color: #6d529b;
+    background: #fff;
 
-            font-size: 30px;
+    border: 2px solid #e6dce4;
 
-            margin: 10px 0;
-        }
+    text-align: center;
 
-        .featured h3 {
-            color: #8062ae;
+    cursor: pointer;
 
-            font-size: 26px;
+    box-shadow: 3px 4px 0 #e9e1e6;
 
-            margin: 10px;
-        }
+    transition: .2s;
 
-        .featured p {
-            color: #777;
+    overflow: visible;
+}
 
-            line-height: 1.8;
-        }
+.soloist-card:nth-child(3n+1) {
+    background: #fffaf1;
+}
 
+.soloist-card:nth-child(3n+2) {
+    background: #f8f3ff;
+}
 
-        /* ==================================================
-           SECTION TITLES
-           ================================================== */
+.soloist-card:nth-child(3n) {
+    background: #f0f9ff;
+}
 
-        .section-title {
-            text-align: center;
+.soloist-card:hover {
+    transform: translateY(-6px) rotate(-1deg);
 
-            color: #70559e;
+    box-shadow:
+        5px 8px 0 #ddd3da,
+        0 10px 18px rgba(90,70,90,.10);
+}
 
-            font-size: 30px;
+.soloist-card::before {
+    content: "✦";
 
-            margin: 60px 0 27px;
-        }
+    position: absolute;
+    top: 5px;
+    left: 7px;
 
-        .section-title::before {
-            content: "🎀 ✦ ";
-        }
+    color: #d39ab4;
+    font-size: 13px;
+}
 
-        .section-title::after {
-            content: " ✦ ♡";
-        }
+.soloist-card::after {
+    content: "♡";
 
+    position: absolute;
+    bottom: 5px;
+    right: 7px;
 
-        /* ==================================================
-           SOLOIST GRID
-           ================================================== */
+    color: #9db5d0;
+    font-size: 14px;
+}
 
-        .soloist-grid {
-            display: grid;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(190px, 1fr));
+/* ==============================
+   PHOTO
+================================ */
 
-            gap: 22px;
-        }
+.soloist-photo {
+    width: 76px;
+    height: 76px;
 
+    object-fit: cover;
 
-        /* ==================================================
-           SOLOIST CARD
-           ================================================== */
+    border: 3px solid white;
 
-        .soloist-card {
-            position: relative;
+    box-shadow:
+        2px 3px 0 #d9cbd3,
+        0 2px 7px rgba(0,0,0,.08);
 
-            background: rgba(255,255,255,0.96);
+    margin-bottom: 8px;
 
-            padding: 22px;
+    transform: rotate(-2deg);
+}
 
-            text-align: center;
 
-            border-radius: 23px;
+/* ==============================
+   CARD TEXT
+================================ */
 
-            border: 2px solid #e7ddf8;
+.soloist-card h3 {
+    margin: 4px 0 5px;
 
-            box-shadow: 0 7px 20px rgba(90,70,140,0.10);
+    color: #674f61;
 
-            overflow: hidden;
+    font-family: Georgia, serif;
 
-            cursor: pointer;
+    font-size: 16px;
+}
 
-            transition: 0.3s;
-        }
+.soloist-card p {
+    margin: 0;
 
-        .soloist-card:hover {
-            transform: translateY(-7px);
+    color: #887b83;
 
-            border-color: #ccb9ee;
+    font-size: 11px;
+    line-height: 1.35;
+}
 
-            box-shadow: 0 14px 28px rgba(90,70,140,0.16);
-        }
+.tag {
+    display: inline-block;
 
-        .soloist-card::before {
-            content: "✦";
+    margin-top: 8px;
 
-            position: absolute;
+    padding: 4px 7px;
 
-            top: 8px;
+    background: #f8e3ec;
 
-            left: 11px;
+    border: 1px solid #e8cad7;
 
-            color: #b299da;
+    border-radius: 5px;
 
-            font-size: 16px;
-        }
+    color: #8b6276;
 
-        .soloist-card::after {
-            content: "♡";
+    font-size: 9px;
+    font-weight: bold;
+}
 
-            position: absolute;
 
-            bottom: 7px;
+/* ==============================
+   POPUP PROFILE
+================================ */
 
-            right: 11px;
+.info-box {
+    display: none;
 
-            color: #b299da;
+    position: relative;
 
-            font-size: 17px;
-        }
+    width: 760px;
+    max-width: 94%;
 
-        .soloist-icon {
-            font-size: 52px;
+    margin: 35px auto;
 
-            margin-bottom: 7px;
-        }
+    padding: 30px;
 
-        .soloist-card h3 {
-            color: #604988;
+    background: #fffdf8;
 
-            font-size: 22px;
+    border: 2px solid #dfd3c7;
 
-            margin: 8px 0;
-        }
+    box-shadow:
+        6px 7px 0 #e8ddd3,
+        0 15px 30px rgba(80,70,65,.12);
 
-        .soloist-card p {
-            color: #7b7585;
+    animation: popup .25s ease;
+}
 
-            font-size: 14px;
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(.95) rotate(-1deg);
+    }
 
-            line-height: 1.6;
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
 
-            margin: 0;
-        }
+.info-box::before {
+    content: "♡ ✦ PROFILE ✦ ♡";
 
-        .tag {
-            display: inline-block;
+    display: block;
 
-            margin-top: 12px;
+    text-align: center;
 
-            padding: 6px 12px;
+    color: #c183a1;
 
-            border-radius: 18px;
+    font-family: Georgia, serif;
 
-            background: #f2ecff;
+    letter-spacing: 4px;
 
-            color: #7d62aa;
+    margin-bottom: 15px;
+}
 
-            font-size: 12px;
+.info-box h2 {
+    text-align: center;
 
-            font-weight: bold;
-        }
+    color: #73556a;
 
+    font-family: Georgia, serif;
 
-        /* ==================================================
-           INFO BOX
-           ================================================== */
+    font-size: 30px;
 
-        .info-box {
-            display: none;
+    margin: 5px 0 25px;
+}
 
-            position: relative;
+.info-row {
+    display: block;
 
-            margin: 50px auto;
+    background: #f9f4f6;
 
-            width: 720px;
+    border: 1px dashed #dbcbd3;
 
-            max-width: 94%;
+    padding: 10px 13px;
 
-            padding: 36px;
+    margin: 8px 0;
 
-            background: linear-gradient(
-                135deg,
-                #ffffff,
-                #f5efff,
-                #eefaff
-            );
+    font-size: 13px;
 
-            border: 2px solid #ddcff7;
+    color: #6f6570;
+}
 
-            border-radius: 30px;
+.info-row strong {
+    color: #875d73;
+}
 
-            text-align: left;
+.bio {
+    margin-top: 18px;
 
-            box-shadow:
-                0 14px 40px rgba(85,65,135,0.18);
+    padding: 17px;
 
-            animation: popIn 0.3s ease;
-        }
+    background: #eef7fc;
 
-        @keyframes popIn {
+    border: 2px solid #d4e5ef;
 
-            from {
-                opacity: 0;
-                transform: scale(0.94);
-            }
+    color: #6e6870;
 
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+    line-height: 1.65;
 
-        }
+    font-size: 13px;
+}
 
-        .info-box::before {
-            content: "🎀 ✦ ♡ ♫ ♡ ✦ 🎀";
+.bio-title {
+    color: #6d8295;
 
-            display: block;
+    font-family: Georgia, serif;
 
-            text-align: center;
+    font-size: 17px;
 
-            color: #9e83cf;
+    font-weight: bold;
 
-            font-size: 20px;
+    margin-bottom: 7px;
+}
 
-            letter-spacing: 4px;
+.close-btn {
+    display: block;
 
-            margin-bottom: 18px;
-        }
+    margin: 22px auto 0;
 
-        .info-box h2 {
-            text-align: center;
+    padding: 9px 20px;
 
-            color: #694d9a;
+    background: #f3d8e4;
 
-            font-size: 34px;
+    border: 2px solid #e2bdcf;
 
-            margin: 5px 0 25px;
-        }
+    color: #77586a;
 
-        .info-row {
-            background: rgba(255,255,255,0.75);
+    font-weight: bold;
 
-            padding: 13px 17px;
+    cursor: pointer;
 
-            margin: 9px 0;
+    box-shadow: 3px 3px 0 #e5d2da;
 
-            border-radius: 14px;
+    transition: .2s;
+}
 
-            border: 1px solid #e5dbf8;
+.close-btn:hover {
+    transform: translateY(-2px);
+}
 
-            color: #676173;
 
-            line-height: 1.6;
-        }
+/* ==============================
+   BOTTOM NOTE
+================================ */
 
-        .info-row strong {
-            color: #7155a0;
-        }
+.ending-note {
+    position: relative;
 
-        .bio {
-            margin-top: 22px;
+    max-width: 650px;
 
-            padding: 20px;
+    margin: 50px auto;
 
-            border-radius: 18px;
+    padding: 20px;
 
-            background: #faf8ff;
+    background: #fff3b8;
 
-            border-left: 5px solid #b89ddd;
+    border: 2px solid #eadb98;
 
-            color: #625b70;
+    color: #756c53;
 
-            line-height: 1.8;
-        }
+    text-align: center;
 
-        .bio-title {
-            color: #7155a0;
+    box-shadow: 4px 5px 0 #e9dfb8;
 
-            font-weight: bold;
+    transform: rotate(1deg);
+}
 
-            margin-bottom: 7px;
-        }
+.ending-note::before {
+    content: "📌";
 
-        .close-btn {
-            display: block;
+    position: absolute;
 
-            margin: 25px auto 0;
+    top: -16px;
+    left: 50%;
 
-            padding: 11px 27px;
+    transform: translateX(-50%);
+}
 
-            border: none;
 
-            border-radius: 23px;
+/* ==============================
+   FOOTER
+================================ */
 
-            background: linear-gradient(
-                90deg,
-                #b79bdd,
-                #91b9dc
-            );
+footer {
+    margin-top: 70px;
 
-            color: white;
+    padding: 28px;
 
-            font-weight: bold;
+    text-align: center;
 
-            cursor: pointer;
+    background: #eadcf4;
 
-            transition: 0.3s;
-        }
+    border-top: 3px solid #d8c6e4;
 
-        .close-btn:hover {
-            transform: scale(1.06);
+    color: #705f78;
 
-            box-shadow:
-                0 6px 15px rgba(100,80,150,0.2);
-        }
+    font-family: Georgia, serif;
+}
 
 
-        /* ==================================================
-           DIVIDERS
-           ================================================== */
+/* ==============================
+   RESPONSIVE
+================================ */
 
-        .divider {
-            text-align: center;
+@media (max-width: 1000px) {
 
-            color: #a184d0;
+    .soloist-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
-            font-size: 22px;
+}
 
-            letter-spacing: 8px;
+@media (max-width: 700px) {
 
-            margin: 48px 0;
-        }
+    .soloist-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+    .title-paper h1 {
+        font-size: 31px;
+    }
 
-        /* ==================================================
-           ENDING
-           ================================================== */
+    .section-paper {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
 
-        .ending {
-            text-align: center;
+}
 
-            margin-top: 60px;
+@media (max-width: 500px) {
 
-            padding: 28px;
+    .soloist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-            border-radius: 24px;
+    nav a {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
 
-            background: linear-gradient(
-                135deg,
-                #faf7ff,
-                #effaff
-            );
+    .soloist-card {
+        min-height: 160px;
+    }
 
-            border: 2px dashed #d8c8f4;
+    .soloist-photo {
+        width: 68px;
+        height: 68px;
+    }
 
-            color: #75678e;
+    .info-box {
+        padding: 20px;
+    }
 
-            line-height: 1.8;
-        }
+}
 
-        .ending strong {
-            color: #6d549c;
-
-            font-size: 19px;
-        }
-
-
-        /* ==================================================
-           FOOTER
-           ================================================== */
-
-        footer {
-            position: relative;
-
-            z-index: 5;
-
-            text-align: center;
-
-            background: linear-gradient(
-                90deg,
-                #6d559d,
-                #7399c5
-            );
-
-            color: white;
-
-            padding: 30px;
-
-            margin-top: 70px;
-        }
-
-        footer::before {
-            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
-
-            display: block;
-
-            font-size: 20px;
-
-            margin-bottom: 10px;
-        }
-
-
-        /* ==================================================
-           MOBILE
-           ================================================== */
-
-        @media (max-width: 650px) {
-
-            .page-title {
-                font-size: 35px;
-            }
-
-            .soloist-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .floating {
-                display: none;
-            }
-
-            .info-box {
-                padding: 23px;
-            }
-
-        }
-
-    </style>
-
+</style>
 </head>
 
 
 <body>
 
 
-<!-- ==================================================
-     FLOATING DECORATIONS
-     ================================================== -->
-
-<div class="floating float1">🎀</div>
-<div class="floating float2">✦</div>
-<div class="floating float3">♡</div>
-
-<div class="floating float4">♫</div>
-<div class="floating float5">☆</div>
-<div class="floating float6">✧</div>
-
-
-<!-- ==================================================
-     HEADER
-     ================================================== -->
-
 <header>
 
-    <h1>K-POP LYRICS</h1>
+    <h1>K-POP LYRICS ♡</h1>
 
     <nav>
-
         <a href="index.html">Home</a>
         <a href="groups.html">Groups</a>
         <a href="songs.html">Songs</a>
@@ -753,334 +718,272 @@
         <a href="releases.html">Releases</a>
         <a href="rankings.html">Rankings</a>
         <a href="news.html">News</a>
-
     </nav>
 
 </header>
 
-
-<!-- ==================================================
-     MAIN
-     ================================================== -->
 
 <main class="container">
 
 
     <!-- TITLE -->
 
-    <h1 class="page-title">
-        🎤 Soloist Spotlight 🎤
-    </h1>
+    <div class="title-paper">
+
+        <h1>🎤 Soloists ♡</h1>
+
+    </div>
 
     <p class="subtitle">
-        ♡ Discover amazing K-Pop artists who shine on their own ♡
+        little scrapbook profiles of artists who shine on their own ✦
     </p>
 
-    <div class="top-decoration">
-        ✦ ♡ 🎀 ♫ ☆ ♡ 🎀 ✦
+    <div class="doodle-line">
+        ♡ ✦ 🎀 ♫ ✦ ♡
     </div>
 
 
     <!-- FEATURED -->
 
-    <section class="featured">
+    <section class="featured-paper">
 
-        <div class="featured-icon">
-            🌟
-        </div>
+        <div class="tape"></div>
 
-        <h2>SOLOIST OF THE DAY</h2>
-
-        <h3>✨ EVAN ✨</h3>
+        <h2>⭐ SOLOIST SPOTLIGHT ⭐</h2>
 
         <p>
-            Click an artist below to explore their detailed profile!
+            Featured artist:
+            <span class="featured-name">EVAN</span>
+        </p>
+
+        <p style="margin-top:8px;">
+            Click any little card below to open their profile ♡
         </p>
 
     </section>
 
 
-    <!-- ==================================================
-         FEMALE SOLOISTS
-         ================================================== -->
+    <!-- FEMALE -->
 
-    <h2 class="section-title">
-        Female Soloists
-    </h2>
+    <section class="section-paper">
+
+        <div class="section-label">
+            🎀 Female Soloists
+        </div>
+
+        <div class="soloist-grid">
 
 
-    <div class="soloist-grid">
+            <div class="soloist-card" onclick="showInfo('JESSI')">
+                <img class="soloist-photo"
+                     src="images/jessi.png"
+                     alt="Jessi">
+
+                <h3>JESSI</h3>
+                <p>Singer • Rapper</p>
+                <span class="tag">SOLO ARTIST</span>
+            </div>
 
 
-        <div class="soloist-card"
-             onclick="showInfo('JESSI')">
+            <div class="soloist-card" onclick="showInfo('YENA')">
+                <img class="soloist-photo"
+                     src="images/yena.png"
+                     alt="Yena">
 
-            <div class="soloist-icon">💜</div>
+                <h3>YENA</h3>
+                <p>Singer • Actress</p>
+                <span class="tag">ARTIST</span>
+            </div>
 
-            <h3>JESSI</h3>
 
-            <p>Soloist • Rapper • Singer</p>
+            <div class="soloist-card" onclick="showInfo('IU')">
+                <img class="soloist-photo"
+                     src="images/iu.png"
+                     alt="IU">
 
-            <span class="tag">🎤 Solo Artist</span>
+                <h3>IU</h3>
+                <p>Singer • Actress</p>
+                <span class="tag">VOCALIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('TAEYEON')">
+                <img class="soloist-photo"
+                     src="images/taeyeon.png"
+                     alt="Taeyeon">
+
+                <h3>TAEYEON</h3>
+                <p>Singer • Vocalist</p>
+                <span class="tag">VOCALIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('CHUNGHA')">
+                <img class="soloist-photo"
+                     src="images/chungha.png"
+                     alt="Chung Ha">
+
+                <h3>CHUNG HA</h3>
+                <p>Singer • Dancer</p>
+                <span class="tag">PERFORMER</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('SUNMI')">
+                <img class="soloist-photo"
+                     src="images/sunmi.png"
+                     alt="Sunmi">
+
+                <h3>SUNMI</h3>
+                <p>Singer • Dancer</p>
+                <span class="tag">ARTIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('JISOO')">
+                <img class="soloist-photo"
+                     src="images/jisoo.png"
+                     alt="Jisoo">
+
+                <h3>JISOO</h3>
+                <p>BLACKPINK • Solo</p>
+                <span class="tag">ARTIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('JENNIE')">
+                <img class="soloist-photo"
+                     src="images/jennie.png"
+                     alt="Jennie">
+
+                <h3>JENNIE</h3>
+                <p>BLACKPINK • Solo</p>
+                <span class="tag">RAPPER</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('ROSE')">
+                <img class="soloist-photo"
+                     src="images/rose.png"
+                     alt="Rosé">
+
+                <h3>ROSÉ</h3>
+                <p>BLACKPINK • Solo</p>
+                <span class="tag">VOCALIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('LISA')">
+                <img class="soloist-photo"
+                     src="images/lisa.png"
+                     alt="Lisa">
+
+                <h3>LISA</h3>
+                <p>BLACKPINK • Solo</p>
+                <span class="tag">DANCER</span>
+            </div>
+
 
         </div>
 
+    </section>
 
-        <div class="soloist-card"
-             onclick="showInfo('YENA')">
 
-            <div class="soloist-icon">🌼</div>
+    <!-- MALE -->
 
-            <h3>YENA</h3>
+    <section class="section-paper">
 
-            <p>Soloist • Singer • Actress</p>
+        <div class="section-label blue">
+            💙 Male Soloists
+        </div>
 
-            <span class="tag">♡ Artist</span>
+        <div class="soloist-grid">
+
+
+            <div class="soloist-card" onclick="showInfo('EVAN')">
+                <img class="soloist-photo"
+                     src="images/evan.png"
+                     alt="Evan">
+
+                <h3>EVAN</h3>
+                <p>Singer • Songwriter</p>
+                <span class="tag">SOLO ARTIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('GDRAGON')">
+                <img class="soloist-photo"
+                     src="images/g-dragon.png"
+                     alt="G-Dragon">
+
+                <h3>G-DRAGON</h3>
+                <p>Rapper • Producer</p>
+                <span class="tag">ARTIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('TAEYANG')">
+                <img class="soloist-photo"
+                     src="images/taeyang.png"
+                     alt="Taeyang">
+
+                <h3>TAEYANG</h3>
+                <p>Singer • Songwriter</p>
+                <span class="tag">ARTIST</span>
+            </div>
+
+
+            <div class="soloist-card" onclick="showInfo('ZICO')">
+                <img class="soloist-photo"
+                     src="images/zico.png"
+                     alt="Zico">
+
+                <h3>ZICO</h3>
+                <p>Rapper • Producer</p>
+                <span class="tag">ARTIST</span>
+            </div>
+
 
         </div>
 
+    </section>
 
-        <div class="soloist-card"
-             onclick="showInfo('IU')">
 
-            <div class="soloist-icon">🌷</div>
-
-            <h3>IU</h3>
-
-            <p>Soloist • Singer • Songwriter</p>
-
-            <span class="tag">✦ Vocalist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('TAEYEON')">
-
-            <div class="soloist-icon">🌸</div>
-
-            <h3>TAEYEON</h3>
-
-            <p>Soloist • Singer</p>
-
-            <span class="tag">♡ Vocalist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('CHUNGHA')">
-
-            <div class="soloist-icon">🎀</div>
-
-            <h3>CHUNG HA</h3>
-
-            <p>Soloist • Singer • Dancer</p>
-
-            <span class="tag">✦ Performer</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('SUNMI')">
-
-            <div class="soloist-icon">🌙</div>
-
-            <h3>SUNMI</h3>
-
-            <p>Soloist • Singer • Dancer</p>
-
-            <span class="tag">♡ Artist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('JISOO')">
-
-            <div class="soloist-icon">🌹</div>
-
-            <h3>JISOO</h3>
-
-            <p>BLACKPINK • Soloist • Actress</p>
-
-            <span class="tag">✦ Artist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('JENNIE')">
-
-            <div class="soloist-icon">🖤</div>
-
-            <h3>JENNIE</h3>
-
-            <p>BLACKPINK • Soloist • Rapper</p>
-
-            <span class="tag">♡ Artist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('ROSE')">
-
-            <div class="soloist-icon">🌹</div>
-
-            <h3>ROSÉ</h3>
-
-            <p>BLACKPINK • Soloist • Singer</p>
-
-            <span class="tag">✦ Vocalist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('LISA')">
-
-            <div class="soloist-icon">⭐</div>
-
-            <h3>LISA</h3>
-
-            <p>BLACKPINK • Soloist • Dancer</p>
-
-            <span class="tag">🎤 Performer</span>
-
-        </div>
-
-    </div>
-
-
-    <div class="divider">
-        ♡ ✦ 🎀 ♫ ✧ 🎀 ✦ ♡
-    </div>
-
-
-    <!-- ==================================================
-         MALE SOLOISTS
-         ================================================== -->
-
-    <h2 class="section-title">
-        Male Soloists
-    </h2>
-
-
-    <div class="soloist-grid">
-
-
-        <div class="soloist-card"
-             onclick="showInfo('EVAN')">
-
-            <div class="soloist-icon">⭐</div>
-
-            <h3>EVAN</h3>
-
-            <p>Soloist • Singer • Songwriter</p>
-
-            <span class="tag">♡ Solo Artist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('GDRAGON')">
-
-            <div class="soloist-icon">👑</div>
-
-            <h3>G-DRAGON</h3>
-
-            <p>Soloist • Rapper • Producer</p>
-
-            <span class="tag">✦ Artist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('TAEYANG')">
-
-            <div class="soloist-icon">☀️</div>
-
-            <h3>TAEYANG</h3>
-
-            <p>Soloist • Singer • Songwriter</p>
-
-            <span class="tag">♡ Artist</span>
-
-        </div>
-
-
-        <div class="soloist-card"
-             onclick="showInfo('ZICO')">
-
-            <div class="soloist-icon">🎵</div>
-
-            <h3>ZICO</h3>
-
-            <p>Soloist • Rapper • Producer</p>
-
-            <span class="tag">✦ Artist</span>
-
-        </div>
-
-    </div>
-
-
-    <!-- INFO BOX -->
+    <!-- PROFILE -->
 
     <div id="infoBox" class="info-box"></div>
 
 
-    <!-- ENDING -->
+    <!-- END NOTE -->
 
-    <div class="ending">
+    <div class="ending-note">
 
-        <strong>
-            🎀 ♡ More Soloists Coming Soon! ♡ 🎀
-        </strong>
+        🎀 ♡ <strong>More soloists coming soon!</strong> ♡ 🎀
 
         <br><br>
 
-        ✦ Click any artist card to explore their profile ✦
+        ✦ click a card to explore an artist ✦
 
-        <br>
-
-        ♫ Made for K-Pop fans ♫
-
-    </div>
-
-
-    <div class="divider">
-        ♡ ✦ 🎤 🎀 ♫ 🎀 🎤 ✦ ♡
     </div>
 
 
 </main>
 
 
-<!-- FOOTER -->
-
 <footer>
 
-    <p>
-        ♡ K-POP LYRICS ♡
-    </p>
+    ♡ K-POP LYRICS ♡
+    <br>
+    made with 🎀 + music
 
 </footer>
 
-
-<!-- ==================================================
-     SOLOIST DATA + POPUPS
-     ================================================== -->
 
 <script>
 
 const soloists = {
 
-    "JESSI": {
+    JESSI: {
         name: "JESSI",
         age: "37",
         birthday: "December 17, 1988",
@@ -1089,28 +992,26 @@ const soloists = {
         profession: "Singer • Rapper • Songwriter",
         soloDebut: "2005",
         group: "Soloist",
-        agency: "Current management may vary",
-        songs: "Solo releases and collaborations",
-        bio:
-        "Jessi is a Korean-American singer and rapper known for her confident personality, powerful rap style and strong stage presence. She has worked across hip-hop, K-Pop and pop music and has built a career as both a recording artist and entertainer."
+        agency: "Varies by activity",
+        songs: "NUNU NANA • What Type of X • Zoom",
+        bio: "Jessi is a Korean-American singer and rapper known for her distinctive voice, rap style and energetic performances."
     },
 
-    "YENA": {
+    YENA: {
         name: "YENA",
         age: "26",
         birthday: "September 29, 1999",
         nationality: "South Korean",
         birthplace: "Seoul, South Korea",
         profession: "Singer • Actress",
-        soloDebut: "January 17, 2022",
+        soloDebut: "2022",
         group: "Former IZ*ONE member",
         agency: "YH Entertainment",
-        songs: "SMILEY and other solo releases",
-        bio:
-        "Yena is a South Korean singer and actress. She became known as a member of IZ*ONE after competing on Produce 48, then began her solo career in January 2022 with her first EP, SMiLEY. She is known for her bright musical style and energetic performances."
+        songs: "SMILEY • Smartphone • Hate Rodrigo",
+        bio: "Yena is a South Korean singer and actress who became known through IZ*ONE before beginning her solo career."
     },
 
-    "IU": {
+    IU: {
         name: "IU",
         age: "33",
         birthday: "May 16, 1993",
@@ -1120,12 +1021,11 @@ const soloists = {
         soloDebut: "2008",
         group: "Soloist",
         agency: "EDAM Entertainment",
-        songs: "Good Day • Palette • Blueming • and many more",
-        bio:
-        "IU, whose birth name is Lee Ji-eun, is a South Korean singer-songwriter and actress. She made her debut in 2008 and became one of Korea's most recognized solo performers. Her music often combines pop with acoustic, R&B and other styles, and she is also known for her acting career."
+        songs: "Good Day • Palette • Blueming",
+        bio: "IU is a South Korean singer-songwriter and actress known for her vocals, songwriting and long-running solo career."
     },
 
-    "TAEYEON": {
+    TAEYEON: {
         name: "TAEYEON",
         age: "37",
         birthday: "March 9, 1989",
@@ -1135,12 +1035,11 @@ const soloists = {
         soloDebut: "2015",
         group: "Girls' Generation",
         agency: "SM Entertainment",
-        songs: "I • Fine • Four Seasons • INVU",
-        bio:
-        "Taeyeon is a South Korean singer and the leader of Girls' Generation. She is widely recognized for her strong and expressive vocals. She began her solo career in 2015 and has released several successful albums and singles while continuing activities with Girls' Generation."
+        songs: "I • Four Seasons • INVU",
+        bio: "Taeyeon is a member of Girls' Generation and a successful solo vocalist known for her expressive singing."
     },
 
-    "CHUNGHA": {
+    CHUNGHA: {
         name: "CHUNG HA",
         age: "30",
         birthday: "February 9, 1996",
@@ -1150,27 +1049,25 @@ const soloists = {
         soloDebut: "2017",
         group: "Former I.O.I member",
         agency: "MORE VISION",
-        songs: "Roller Coaster • Gotta Go • Snapping",
-        bio:
-        "Chung Ha is a South Korean singer, dancer and choreographer. She first became widely known through the survival show Produce 101 and debuted as a member of I.O.I. After the group ended its activities, she developed a successful solo career and became known for combining strong vocals with detailed dance performances."
+        songs: "Gotta Go • Snapping • Roller Coaster",
+        bio: "Chung Ha is a South Korean singer and dancer who became known through Produce 101 and I.O.I before establishing her solo career."
     },
 
-    "SUNMI": {
+    SUNMI: {
         name: "SUNMI",
         age: "34",
         birthday: "May 2, 1992",
         nationality: "South Korean",
         birthplace: "Iksan, South Korea",
-        profession: "Singer • Dancer • Songwriter • Producer",
+        profession: "Singer • Dancer • Songwriter",
         soloDebut: "2013",
         group: "Former Wonder Girls member",
         agency: "Abyss Company",
-        songs: "24 Hours • Gashina • Siren • Heart Burn",
-        bio:
-        "Sunmi is a South Korean singer, dancer, songwriter and record producer. She originally debuted as a member of Wonder Girls in 2007. After taking time away from group activities, she returned as a soloist and became known for her distinctive concepts, choreography and musical style."
+        songs: "Gashina • Siren • Heart Burn",
+        bio: "Sunmi is a South Korean singer and songwriter who first debuted with Wonder Girls before developing her own solo sound."
     },
 
-    "JISOO": {
+    JISOO: {
         name: "JISOO",
         age: "31",
         birthday: "January 3, 1995",
@@ -1181,26 +1078,24 @@ const soloists = {
         group: "BLACKPINK",
         agency: "BLISSOO",
         songs: "FLOWER • All Eyes on Me",
-        bio:
-        "Jisoo is a South Korean singer, songwriter and actress. She is a member of BLACKPINK and began her solo career in March 2023 with the single album ME. She also works in acting and other entertainment fields through her individual activities."
+        bio: "Jisoo is a member of BLACKPINK who began her solo music career in 2023 and also works as an actress."
     },
 
-    "JENNIE": {
+    JENNIE: {
         name: "JENNIE",
         age: "30",
         birthday: "January 16, 1996",
         nationality: "South Korean",
         birthplace: "Seongnam, South Korea",
-        profession: "Singer • Rapper • Songwriter • Actress",
+        profession: "Singer • Rapper • Songwriter",
         soloDebut: "2018",
         group: "BLACKPINK",
-        agency: "ODDATELIER / OA",
-        songs: "SOLO • You & Me • and other solo releases",
-        bio:
-        "Jennie is a South Korean singer, rapper, songwriter and actress. She is a member of BLACKPINK and became the first BLACKPINK member to release an official solo single with SOLO in 2018. She is known for combining singing and rap with a distinctive performance style."
+        agency: "ODDATELIER",
+        songs: "SOLO • You & Me • Mantra",
+        bio: "Jennie is a member of BLACKPINK who made her solo debut in 2018 and is known for combining singing and rap."
     },
 
-    "ROSE": {
+    ROSE: {
         name: "ROSÉ",
         age: "29",
         birthday: "February 11, 1997",
@@ -1211,41 +1106,38 @@ const soloists = {
         group: "BLACKPINK",
         agency: "THE BLACK LABEL",
         songs: "On The Ground • Gone • APT.",
-        bio:
-        "Rosé is a singer and songwriter and a member of BLACKPINK. Born in Auckland and raised in Australia, she became known for her distinctive vocal tone. She began her solo career in 2021 with her first single album R and continued developing her individual sound through later releases."
+        bio: "Rosé is a BLACKPINK member known for her distinctive vocal tone and songwriting."
     },
 
-    "LISA": {
+    LISA: {
         name: "LISA",
         age: "29",
         birthday: "March 27, 1997",
         nationality: "Thai",
         birthplace: "Buriram, Thailand",
-        profession: "Singer • Rapper • Dancer • Actress",
+        profession: "Singer • Rapper • Dancer",
         soloDebut: "2021",
         group: "BLACKPINK",
         agency: "LLOUD",
         songs: "LALISA • MONEY • ROCKSTAR",
-        bio:
-        "Lisa is a Thai singer, rapper and dancer and a member of BLACKPINK. She began her solo career in 2021 with LALISA and MONEY. She is known for her dance ability, rap performances and international influence in music and fashion. LLOUD currently represents her individual activities."
+        bio: "Lisa is a Thai member of BLACKPINK known for her dancing, rap performances and solo music."
     },
 
-    "EVAN": {
+    EVAN: {
         name: "EVAN",
         age: "24",
         birthday: "October 15, 2001",
         nationality: "South Korean",
         birthplace: "South Korea",
-        profession: "Singer • Vocalist • Songwriter • Producer",
-        soloDebut: "June 22, 2026",
+        profession: "Singer • Songwriter • Producer",
+        soloDebut: "2026",
         group: "Former ENHYPEN member",
         agency: "BELIFT LAB",
         songs: "RIDE OR DIE • DEATH OF ME",
-        bio:
-        "EVAN is the solo artist name of Heeseung. BELIFT LAB currently presents him as a versatile vocalist whose work also includes songwriting and producing. He officially began his solo career on June 22, 2026, with the digital single RIDE OR DIE, followed by his first mini album DEATH OF ME."
+        bio: "EVAN is presented here as a solo artist with a focus on vocals, songwriting and producing."
     },
 
-    "GDRAGON": {
+    GDRAGON: {
         name: "G-DRAGON",
         age: "38",
         birthday: "August 18, 1988",
@@ -1256,11 +1148,10 @@ const soloists = {
         group: "BIGBANG",
         agency: "Galaxy Corporation",
         songs: "Heartbreaker • Crooked • Untitled, 2014",
-        bio:
-        "G-Dragon, whose birth name is Kwon Ji-yong, is a South Korean rapper, singer, songwriter and producer. He is the leader of BIGBANG and is also known for his individual music, creative work and influence in fashion and popular culture."
+        bio: "G-Dragon is the leader of BIGBANG and a rapper, songwriter and producer with a major solo career."
     },
 
-    "TAEYANG": {
+    TAEYANG: {
         name: "TAEYANG",
         age: "38",
         birthday: "May 18, 1988",
@@ -1269,13 +1160,12 @@ const soloists = {
         profession: "Singer • Songwriter • Dancer",
         soloDebut: "2008",
         group: "BIGBANG",
-        agency: "The Black Label",
+        agency: "THE BLACK LABEL",
         songs: "Wedding Dress • Eyes, Nose, Lips • VIBE",
-        bio:
-        "Taeyang is a South Korean singer, songwriter and dancer and a member of BIGBANG. He developed a solo career alongside his group activities and became particularly known for his vocal performances, R&B-influenced music and dance."
+        bio: "Taeyang is a BIGBANG member who developed a successful solo career with a strong R&B and vocal style."
     },
 
-    "ZICO": {
+    ZICO: {
         name: "ZICO",
         age: "33",
         birthday: "September 14, 1992",
@@ -1286,8 +1176,7 @@ const soloists = {
         group: "Former Block B member",
         agency: "KOZ Entertainment",
         songs: "Any Song • Artist • New Thing",
-        bio:
-        "Zico is a South Korean rapper, singer, songwriter and producer. He became widely known as the leader of Block B and later built a successful solo career. He is particularly recognized for producing and writing music as well as performing as a rapper and singer."
+        bio: "Zico is a South Korean rapper, singer, songwriter and producer known for both his solo work and his work with Block B."
     }
 
 };
@@ -1301,51 +1190,42 @@ function showInfo(id) {
 
     box.innerHTML = `
 
-        <h2>🎤 ${artist.name} 🎤</h2>
+        <h2>🎤 ${artist.name} ♡</h2>
 
         <div class="info-row">
-            <strong>🎂 Age:</strong>
-            ${artist.age}
+            <strong>🎂 Age:</strong> ${artist.age}
         </div>
 
         <div class="info-row">
-            <strong>📅 Birthday:</strong>
-            ${artist.birthday}
+            <strong>📅 Birthday:</strong> ${artist.birthday}
         </div>
 
         <div class="info-row">
-            <strong>🌎 Nationality:</strong>
-            ${artist.nationality}
+            <strong>🌎 Nationality:</strong> ${artist.nationality}
         </div>
 
         <div class="info-row">
-            <strong>📍 Birthplace:</strong>
-            ${artist.birthplace}
+            <strong>📍 Birthplace:</strong> ${artist.birthplace}
         </div>
 
         <div class="info-row">
-            <strong>🎤 Profession:</strong>
-            ${artist.profession}
+            <strong>🎤 Profession:</strong> ${artist.profession}
         </div>
 
         <div class="info-row">
-            <strong>✨ Solo Debut:</strong>
-            ${artist.soloDebut}
+            <strong>✨ Solo Debut:</strong> ${artist.soloDebut}
         </div>
 
         <div class="info-row">
-            <strong>👥 Group:</strong>
-            ${artist.group}
+            <strong>👥 Group:</strong> ${artist.group}
         </div>
 
         <div class="info-row">
-            <strong>🏷️ Agency / Label:</strong>
-            ${artist.agency}
+            <strong>🏷️ Agency / Label:</strong> ${artist.agency}
         </div>
 
         <div class="info-row">
-            <strong>🎵 Notable Music:</strong>
-            ${artist.songs}
+            <strong>🎵 Notable Music:</strong> ${artist.songs}
         </div>
 
         <div class="bio">
@@ -1358,13 +1238,7 @@ function showInfo(id) {
 
         </div>
 
-        <div class="divider">
-            ♡ ✦ 🎀 ✦ ♡
-        </div>
-
-        <button
-            class="close-btn"
-            onclick="closeInfo()">
+        <button class="close-btn" onclick="closeInfo()">
             ♡ Close Profile ♡
         </button>
 
@@ -1388,8 +1262,5 @@ function closeInfo() {
 
 </script>
 
-
 </body>
-
 </html>
-```
