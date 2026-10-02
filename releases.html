@@ -1,444 +1,435 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>K-Pop Releases ♡</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-
-            background:
-                radial-gradient(circle at 8% 12%, #eadfff 0 13px, transparent 14px),
-                radial-gradient(circle at 92% 15%, #ddf3ff 0 12px, transparent 13px),
-                radial-gradient(circle at 7% 82%, #f3e4ff 0 11px, transparent 12px),
-                radial-gradient(circle at 93% 86%, #e2f5ff 0 13px, transparent 14px),
-                linear-gradient(135deg, #f8f3ff, #eff9ff, #fdf7ff);
-
-            color: #4d4267;
-            overflow-x: hidden;
-        }
-
-
-        /* =========================
-           HEADER
-           ========================= */
-
-        header {
-            position: relative;
-            z-index: 10;
-
-            background: linear-gradient(90deg, #8060bd, #79a8d7);
-
-            padding: 24px 18px;
-
-            text-align: center;
-
-            color: white;
-
-            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
-        }
-
-        header h1 {
-            margin: 0 0 16px;
-
-            font-size: 34px;
-
-            letter-spacing: 4px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-
-            padding: 9px 17px;
-
-            border-radius: 25px;
-
-            background: rgba(255,255,255,0.16);
-
-            border: 1px solid rgba(255,255,255,0.25);
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            background: white;
-            color: #7054a0;
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           MAIN
-           ========================= */
-
-        .container {
-            width: 91%;
-            max-width: 1100px;
-
-            margin: 50px auto;
-        }
-
-
-        /* =========================
-           TITLE
-           ========================= */
-
-        .page-title {
-            text-align: center;
-
-            color: #674c9d;
-
-            font-size: 47px;
-
-            margin-bottom: 10px;
-
-            text-shadow: 2px 3px 0 #e3d7ff;
-        }
-
-        .subtitle {
-            text-align: center;
-
-            color: #83798f;
-
-            font-size: 17px;
-
-            line-height: 1.7;
-
-            margin-bottom: 20px;
-        }
-
-        .decoration {
-            text-align: center;
-
-            margin: 20px 0 45px;
-
-            color: #9a7aca;
-
-            font-size: 24px;
-
-            letter-spacing: 9px;
-        }
-
-
-        /* =========================
-           SECTION TITLES
-           ========================= */
-
-        .section-title {
-            text-align: center;
-
-            color: #70559e;
-
-            font-size: 31px;
-
-            margin: 55px 0 28px;
-        }
-
-        .section-title::before {
-            content: "🎀 ✦ ";
-        }
-
-        .section-title::after {
-            content: " ✦ ♡";
-        }
-
-
-        /* =========================
-           RELEASE GRID
-           ========================= */
-
-        .release-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 24px;
-        }
-
-
-        /* =========================
-           RELEASE CARD
-           ========================= */
-
-        .release-card {
-            position: relative;
-
-            background: rgba(255,255,255,0.96);
-
-            padding: 26px;
-
-            border-radius: 25px;
-
-            border: 2px solid #e7ddf8;
-
-            box-shadow:
-                0 8px 22px rgba(90,70,140,0.10);
-
-            transition: 0.3s;
-
-            overflow: hidden;
-        }
-
-        .release-card:hover {
-            transform: translateY(-7px);
-
-            border-color: #ccb9ee;
-
-            box-shadow:
-                0 15px 30px rgba(90,70,140,0.16);
-        }
-
-        .release-card::before {
-            content: "✦ ♡";
-
-            position: absolute;
-
-            top: 10px;
-            right: 13px;
-
-            color: #b299da;
-
-            font-size: 18px;
-        }
-
-        .release-card::after {
-            content: "🎀";
-
-            position: absolute;
-
-            bottom: 10px;
-            left: 13px;
-
-            font-size: 18px;
-        }
-
-
-        /* =========================
-           RELEASE ICON
-           ========================= */
-
-        .release-icon {
-            text-align: center;
-
-            font-size: 48px;
-
-            margin-bottom: 8px;
-        }
-
-
-        /* =========================
-           RELEASE INFO
-           ========================= */
-
-        .release-card h2 {
-            text-align: center;
-
-            color: #604988;
-
-            font-size: 23px;
-
-            margin: 8px 0;
-        }
-
-        .artist {
-            text-align: center;
-
-            color: #8062ae;
-
-            font-weight: bold;
-
-            font-size: 16px;
-        }
-
-        .date {
-            margin-top: 17px;
-
-            padding: 10px;
-
-            border-radius: 16px;
-
-            background: #f2ecff;
-
-            color: #7155a0;
-
-            text-align: center;
-
-            font-weight: bold;
-        }
-
-        .type {
-            text-align: center;
-
-            color: #777;
-
-            margin-top: 12px;
-
-            line-height: 1.5;
-        }
-
-        .status {
-            display: block;
-
-            width: fit-content;
-
-            margin: 15px auto 0;
-
-            padding: 7px 14px;
-
-            border-radius: 20px;
-
-            background: #e0f4ff;
-
-            color: #5e83aa;
-
-            font-size: 12px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           DIVIDER
-           ========================= */
-
-        .divider {
-            text-align: center;
-
-            color: #a184d0;
-
-            font-size: 22px;
-
-            letter-spacing: 8px;
-
-            margin: 50px 0;
-        }
-
-
-        /* =========================
-           NOTE
-           ========================= */
-
-        .note {
-            margin-top: 50px;
-
-            padding: 24px;
-
-            text-align: center;
-
-            border-radius: 22px;
-
-            background: linear-gradient(
-                135deg,
-                #faf7ff,
-                #effaff
-            );
-
-            border: 2px dashed #d8c8f4;
-
-            color: #75678e;
-
-            line-height: 1.7;
-        }
-
-        .note strong {
-            color: #6d549c;
-        }
-
-
-        /* =========================
-           FOOTER
-           ========================= */
-
-        footer {
-            text-align: center;
-
-            background: linear-gradient(
-                90deg,
-                #6d559d,
-                #7399c5
-            );
-
-            color: white;
-
-            padding: 30px;
-
-            margin-top: 70px;
-        }
-
-        footer::before {
-            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
-
-            display: block;
-
-            margin-bottom: 10px;
-
-            font-size: 20px;
-        }
-
-
-        /* =========================
-           MOBILE
-           ========================= */
-
-        @media (max-width: 600px) {
-
-            .page-title {
-                font-size: 35px;
-            }
-
-            .container {
-                width: 94%;
-            }
-
-            .release-grid {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>K-Pop Releases ♡</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #5d5360;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #fffafd 0px,
+            #fffafd 29px,
+            #f4eaf1 30px
+        );
+}
+
+/* HEADER */
+
+header {
+    background: #f5d8e6;
+    border-bottom: 3px solid #dfbdce;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 5px 0 #efd2df;
+}
+
+header h1 {
+    margin: 0 0 18px;
+    font-family: Georgia, serif;
+    color: #76566a;
+    letter-spacing: 3px;
+    font-size: 34px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #71596a;
+    background: #fffafd;
+    border: 2px solid #e4cbd7;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 2px 3px 0 #dfcbd5;
+}
+
+nav a:hover {
+    transform: translateY(-2px);
+}
+
+/* MAIN */
+
+.container {
+    width: 94%;
+    max-width: 1150px;
+    margin: 45px auto;
+}
+
+/* TITLE */
+
+.title-paper {
+    width: fit-content;
+    margin: auto;
+    padding: 18px 35px;
+    background: #fffdf5;
+    border: 2px solid #e6dbce;
+    box-shadow: 5px 6px 0 #e8ddd3;
+    transform: rotate(-1deg);
+    position: relative;
+}
+
+.title-paper h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    color: #76566a;
+    font-size: 38px;
+}
+
+.subtitle {
+    text-align: center;
+    margin: 25px 0 10px;
+    color: #8a7c86;
+}
+
+/* MONTH */
+
+.month-note {
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 20px;
+    text-align: center;
+    background: #dff0fa;
+    border: 2px solid #c4dce9;
+    box-shadow: 5px 6px 0 #d2e3ec;
+    position: relative;
+}
+
+.tape {
+    width: 75px;
+    height: 20px;
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    background: #f0d1dc;
+}
+
+.month-note h3 {
+    margin: 5px;
+    font-family: Georgia, serif;
+    color: #61758b;
+    font-size: 28px;
+}
+
+.month-note p {
+    margin: 7px 0 0;
+    font-size: 13px;
+}
+
+/* CALENDAR */
+
+.calendar-paper {
+    background: #fffdf9;
+    border: 2px solid #e4d9cf;
+    box-shadow: 5px 6px 0 #e9e0d9;
+    padding: 22px;
+}
+
+.calendar-title {
+    text-align: center;
+    font-family: Georgia, serif;
+    color: #795b6e;
+    margin: 0 0 20px;
+}
+
+/* WEEKDAYS */
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+    margin-bottom: 7px;
+}
+
+.weekday {
+    text-align: center;
+    padding: 9px 3px;
+    background: #f6dce7;
+    border: 1px solid #e5c6d3;
+    color: #74576a;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* DAYS */
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 7px;
+}
+
+.day {
+    min-height: 135px;
+    padding: 8px;
+    background: white;
+    border: 2px solid #e8dfe3;
+    box-shadow: 2px 3px 0 #eee6e9;
+    cursor: pointer;
+    transition: .18s;
+}
+
+.day:hover {
+    transform: translateY(-2px);
+}
+
+.day.empty {
+    background: #faf7f8;
+    cursor: default;
+    opacity: .45;
+}
+
+.day.today {
+    border: 3px solid #d59ab5;
+    background: #fff8fb;
+}
+
+.day-number {
+    display: inline-block;
+    padding: 4px 7px;
+    background: #fff1b9;
+    border: 1px solid #e6d894;
+    color: #71684e;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* RELEASE CARDS */
+
+.release {
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid #ddd1d8;
+    background: #eaf6ff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.release:hover {
+    transform: scale(1.03);
+}
+
+.release.came {
+    background: #fff0f5;
+    border-color: #e5c9d5;
+}
+
+.release.today {
+    background: #fff4c7;
+    border-color: #e2ce8c;
+}
+
+.release-name {
+    display: block;
+    font-size: 10px;
+    font-weight: bold;
+    color: #654e5e;
+}
+
+.release-title {
+    display: block;
+    margin-top: 3px;
+    font-size: 9px;
+    color: #887b84;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 7px;
+    font-weight: bold;
+}
+
+.status.coming {
+    background: #cce6f5;
+    color: #56748b;
+}
+
+.status.came {
+    background: #f2c8d7;
+    color: #754e61;
+}
+
+.status.today {
+    background: #e8d68f;
+    color: #6f6032;
+}
+
+/* LEGEND */
+
+.legend {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0 5px;
+}
+
+.legend span {
+    padding: 7px 12px;
+    background: white;
+    border: 1px solid #ddd1d8;
+    font-size: 10px;
+}
+
+/* INFO POPUP */
+
+.info-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(80,65,75,.35);
+    z-index: 1000;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-overlay.show {
+    display: flex;
+}
+
+.info-box {
+    width: min(500px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffdf5;
+    border: 3px solid #dfc8d4;
+    box-shadow: 7px 8px 0 #d8c5cf;
+    padding: 28px;
+    position: relative;
+    transform: rotate(-.5deg);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: 0;
+    background: #f3d5e1;
+    color: #704f62;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.info-box h2 {
+    margin: 0 40px 8px 0;
+    font-family: Georgia, serif;
+    color: #76566a;
+}
+
+.info-date {
+    color: #b37591;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.info-status {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 6px 10px;
+    background: #eaf6ff;
+    border: 1px solid #c9dfec;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.info-section {
+    margin-top: 15px;
+    padding: 13px;
+    background: #faf4f8;
+    border: 1px solid #ead8e1;
+}
+
+.info-section strong {
+    display: block;
+    color: #795b6d;
+    margin-bottom: 5px;
+}
+
+/* TODAY NOTE */
+
+.today-note {
+    max-width: 550px;
+    margin: 25px auto;
+    text-align: center;
+    padding: 13px;
+    background: #fff4bd;
+    border: 2px solid #e5d69b;
+    color: #70664d;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    text-align: center;
+    background: #eadcf3;
+    border-top: 3px solid #d6c2e1;
+    color: #705d77;
+    font-family: Georgia, serif;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .calendar-paper {
+        overflow-x: auto;
+    }
+
+    .weekdays,
+    .calendar-grid {
+        min-width: 680px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    .title-paper h2 {
+        font-size: 29px;
+    }
+}
+</style>
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     HEADER
-     ========================= -->
 
 <header>
 
     <h1>K-POP LYRICS ♡</h1>
 
     <nav>
-
         <a href="index.html">Home</a>
         <a href="groups.html">Groups</a>
         <a href="songs.html">Songs</a>
@@ -447,359 +438,946 @@
         <a href="releases.html">Releases</a>
         <a href="rankings.html">Rankings</a>
         <a href="news.html">News</a>
-
     </nav>
 
 </header>
 
 
-<!-- =========================
-     MAIN
-     ========================= -->
-
 <main class="container">
 
-
-    <h1 class="page-title">
-        🎵 K-Pop Releases 🎵
-    </h1>
+    <div class="title-paper">
+        <h2>💿 Releases ♡</h2>
+    </div>
 
     <p class="subtitle">
-        ♡ New albums, singles and comebacks ♡
+        Comebacks • Albums • Singles • Debuts
     </p>
 
-    <div class="decoration">
-        ✦ ♡ 🎀 ♫ ☆ ♡ 🎀 ✦
-    </div>
 
+    <div class="month-note">
 
-    <!-- =========================
-         SEPTEMBER RELEASES
-         ========================= -->
+        <div class="tape"></div>
 
-    <h2 class="section-title">
-        September 2026 Releases
-    </h2>
+        <h3>🗓 October 2026</h3>
 
-
-    <div class="release-grid">
-
-
-        <!-- CHUNG HA -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                🌸
-            </div>
-
-            <h2>Mexico</h2>
-
-            <p class="artist">
-                CHUNG HA
-            </p>
-
-            <div class="date">
-                📅 September 1, 2026
-            </div>
-
-            <p class="type">
-                Digital Single
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- MONSTA X -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                🔥
-            </div>
-
-            <h2>The Phase</h2>
-
-            <p class="artist">
-                MONSTA X
-            </p>
-
-            <div class="date">
-                📅 September 4, 2026
-            </div>
-
-            <p class="type">
-                EP
-                <br>
-                Title Track: MAGIC
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- TEN -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                ⭐
-            </div>
-
-            <h2>OUTWEST</h2>
-
-            <p class="artist">
-                TEN
-            </p>
-
-            <div class="date">
-                📅 September 4, 2026
-            </div>
-
-            <p class="type">
-                Single Album
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- MINHO -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                💙
-            </div>
-
-            <h2>Make it hot</h2>
-
-            <p class="artist">
-                MINHO
-            </p>
-
-            <div class="date">
-                📅 September 7, 2026
-            </div>
-
-            <p class="type">
-                2nd Mini Album
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- EVAN -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                ✨
-            </div>
-
-            <h2>DEATH OF ME</h2>
-
-            <p class="artist">
-                EVAN
-            </p>
-
-            <div class="date">
-                📅 September 7, 2026
-            </div>
-
-            <p class="type">
-                1st Mini Album
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- VERIVERY -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                🎀
-            </div>
-
-            <h2>CONFETTI</h2>
-
-            <p class="artist">
-                VERIVERY
-            </p>
-
-            <div class="date">
-                📅 September 7, 2026
-            </div>
-
-            <p class="type">
-                8th Mini Album
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- &TEAM -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                🐺
-            </div>
-
-            <h2>Mark on Me</h2>
-
-            <p class="artist">
-                &TEAM
-            </p>
-
-            <div class="date">
-                📅 September 8, 2026
-            </div>
-
-            <p class="type">
-                2nd Mini Album
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- DOH KYUNG SOO -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                💫
-            </div>
-
-            <h2>DOPAMINE</h2>
-
-            <p class="artist">
-                DOH KYUNG SOO
-            </p>
-
-            <div class="date">
-                📅 September 8, 2026
-            </div>
-
-            <p class="type">
-                4th Mini Album
-            </p>
-
-            <span class="status">
-                ✓ RELEASED
-            </span>
-
-        </div>
-
-
-        <!-- BOYNEXTDOOR -->
-
-        <div class="release-card">
-
-            <div class="release-icon">
-                🏠
-            </div>
-
-            <h2>HOME</h2>
-
-            <p class="artist">
-                BOYNEXTDOOR
-            </p>
-
-            <div class="date">
-                📅 September 28, 2026
-            </div>
-
-            <p class="type">
-                Repackage Album
-            </p>
-
-            <span class="status">
-                ★ UPCOMING
-            </span>
-
-        </div>
-
+        <p>
+            Click a release or date to see its information ♡
+        </p>
 
     </div>
 
 
-    <div class="divider">
-        ♡ ✦ 🎀 ♫ ✧ 🎀 ✦ ♡
-    </div>
+    <div class="today-note">
 
-
-    <!-- =========================
-         INFO
-         ========================= -->
-
-    <div class="note">
-
-        <strong>
-            🎀 Release Calendar ♡
-        </strong>
-
-        <br><br>
-
-        This page tracks selected K-Pop releases and comeback dates.
+        📅 Today:
+        <strong id="todayText">Loading...</strong>
 
         <br>
 
-        Release schedules can change, so dates are checked against
-        current published schedules.
+        <span id="todayMessage">
+            Updating releases...
+        </span>
 
     </div>
 
 
-    <div class="decoration">
-        ☆ ♡ 🎀 ✦ ♫ ✦ 🎀 ♡ ☆
-    </div>
+    <section class="calendar-paper">
 
+        <h2 class="calendar-title">
+            ♡ OCTOBER 2026 ♡
+        </h2>
+
+        <div class="weekdays">
+            <div class="weekday">SUN</div>
+            <div class="weekday">MON</div>
+            <div class="weekday">TUE</div>
+            <div class="weekday">WED</div>
+            <div class="weekday">THU</div>
+            <div class="weekday">FRI</div>
+            <div class="weekday">SAT</div>
+        </div>
+
+        <div class="calendar-grid" id="calendar"></div>
+
+
+        <div class="legend">
+
+            <span>💗 CAME OUT</span>
+            <span>💙 COMING</span>
+            <span>💛 TODAY</span>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-     ========================= -->
+<!-- INFO POPUP -->
+
+<div class="info-overlay" id="infoOverlay">
+
+    <div class="info-box">
+
+        <button class="close-btn" id="closeInfo">
+            ×
+        </button>
+
+        <h2 id="infoName">
+            Release
+        </h2>
+
+        <div class="info-date" id="infoDate"></div>
+
+        <div class="info-status" id="infoStatus"></div>
+
+        <div class="info-section">
+
+            <strong>🎵 Release</strong>
+
+            <span id="infoTitle"></span>
+
+        </div>
+
+        <div class="info-section">
+
+            <strong>👤 Artist</strong>
+
+            <span id="infoArtist"></span>
+
+        </div>
+
+        <div class="info-section">
+
+            <strong>💿 Type</strong>
+
+            <span id="infoType"></span>
+
+        </div>
+
+        <div class="info-section">
+
+            <strong>📝 About</strong>
+
+            <span id="infoAbout"></span>
+
+        </div>
+
+    </div>
+
+</div>
+
 
 <footer>
 
-    <p>
-        ♡ K-POP LYRICS ♡
-    </p>
+    ♡ K-POP LYRICS ♡
+    <br><br>
+    October 2026 Release Calendar 🎀
 
 </footer>
 
 
-</body>
+<script>
 
+/*
+========================================
+RELEASE DATA
+========================================
+
+Only put the release information here.
+The calendar itself is generated automatically.
+
+*/
+
+const releases = [
+
+    {
+        date: "2026-10-01",
+        artist: "TIOT",
+        title: "October Release",
+        type: "Single / Album",
+        about: "TIOT's scheduled October release."
+    },
+
+    {
+        date: "2026-10-06",
+        artist: "KICKFLIP",
+        title: "KICK OFF THE WALL Pt. 1",
+        type: "Album",
+        about: "KICKFLIP's scheduled October release."
+    },
+
+    {
+        date: "2026-10-06",
+        artist: "YESUNG",
+        title: "Where We Are",
+        type: "Solo Release",
+        about: "YESUNG's scheduled October release."
+    },
+
+    {
+        date: "2026-10-07",
+        artist: "KIM JAE HWAN",
+        title: "October Release",
+        type: "Solo Release",
+        about: "Kim Jae Hwan's scheduled October release."
+    },
+
+    {
+        date: "2026-10-12",
+        artist: "NCT WISH",
+        title: "I SPY",
+        type: "Release",
+        about: "NCT WISH's scheduled October release."
+    },
+
+    {
+        date: "2026-10-12",
+        artist: "Xdinary Heroes",
+        title: "IMPULSE",
+        type: "Release",
+        about: "Xdinary Heroes' scheduled October release."
+    },
+
+    {
+        date: "2026-10-19",
+        artist: "NMIXX",
+        title: "Strange Muse",
+        type: "Album",
+        about: "NMIXX's scheduled October release."
+    },
+
+    {
+        date: "2026-10-19",
+        artist: "JEONGHAN × JOSHUA",
+        title: "October Release",
+        type: "Unit Release",
+        about: "Jeonghan and Joshua's scheduled release."
+    },
+
+    {
+        date: "2026-10-23",
+        artist: "LISA",
+        title: "October Release",
+        type: "Solo Release",
+        about: "LISA's scheduled October release."
+    },
+
+    {
+        date: "2026-10-26",
+        artist: "ILLIT",
+        title: "October Release",
+        type: "Release",
+        about: "ILLIT's scheduled October release."
+    },
+
+    {
+        date: "2026-10-26",
+        artist: "RIIZE",
+        title: "October Release",
+        type: "Release",
+        about: "RIIZE's scheduled October release."
+    }
+
+];
+
+
+/*
+========================================
+DATE FUNCTIONS
+========================================
+*/
+
+function parseDate(dateString) {
+
+    const [year, month, day] =
+        dateString.split("-").map(Number);
+
+    return new Date(
+        year,
+        month - 1,
+        day
+    );
+}
+
+
+function dateKey(date) {
+
+    return (
+        date.getFullYear() +
+        "-" +
+        String(date.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(date.getDate()).padStart(2, "0")
+    );
+
+}
+
+
+/*
+========================================
+GET STATUS
+========================================
+*/
+
+function getStatus(releaseDate, today) {
+
+    const release =
+        parseDate(releaseDate);
+
+    const releaseKey =
+        dateKey(release);
+
+    const todayKey =
+        dateKey(today);
+
+
+    if (releaseKey === todayKey) {
+
+        return "today";
+
+    }
+
+
+    if (release < today) {
+
+        return "came";
+
+    }
+
+
+    return "coming";
+
+}
+
+
+/*
+========================================
+CREATE RELEASE CARD
+========================================
+*/
+
+function createReleaseCard(release) {
+
+    const card =
+        document.createElement("div");
+
+    card.className = "release";
+
+    card.dataset.date =
+        release.date;
+
+
+    const name =
+        document.createElement("span");
+
+    name.className =
+        "release-name";
+
+    name.textContent =
+        release.artist;
+
+
+    const title =
+        document.createElement("span");
+
+    title.className =
+        "release-title";
+
+    title.textContent =
+        release.title;
+
+
+    const status =
+        document.createElement("span");
+
+    status.className =
+        "status";
+
+
+    card.appendChild(name);
+    card.appendChild(title);
+    card.appendChild(status);
+
+
+    card.addEventListener(
+        "click",
+        function(event) {
+
+            event.stopPropagation();
+
+            openInfo(release);
+
+        }
+    );
+
+
+    return card;
+}
+
+
+/*
+========================================
+UPDATE STATUS
+========================================
+*/
+
+function updateStatuses() {
+
+    const now = new Date();
+
+    const today =
+        new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate()
+        );
+
+
+    document.querySelectorAll(".release")
+        .forEach(card => {
+
+            const releaseDate =
+                card.dataset.date;
+
+            const status =
+                getStatus(
+                    releaseDate,
+                    today
+                );
+
+
+            card.classList.remove(
+                "came",
+                "today"
+            );
+
+            const statusElement =
+                card.querySelector(".status");
+
+
+            if (status === "came") {
+
+                card.classList.add("came");
+
+                statusElement.className =
+                    "status came";
+
+                statusElement.textContent =
+                    "CAME OUT";
+
+            }
+
+            else if (status === "today") {
+
+                card.classList.add("today");
+
+                statusElement.className =
+                    "status today";
+
+                statusElement.textContent =
+                    "TODAY 🎀";
+
+            }
+
+            else {
+
+                statusElement.className =
+                    "status coming";
+
+                statusElement.textContent =
+                    "COMING";
+
+            }
+
+        });
+
+
+    document.getElementById("todayText")
+        .textContent =
+        now.toLocaleDateString(
+            "en-US",
+            {
+                weekday: "long",
+                month: "long",
+                day: "numeric",
+                year: "numeric"
+            }
+        );
+
+
+    const todaysReleases =
+        releases.filter(
+            release =>
+                release.date === dateKey(today)
+        );
+
+
+    const message =
+        document.getElementById(
+            "todayMessage"
+        );
+
+
+    if (todaysReleases.length > 0) {
+
+        message.textContent =
+            "🎀 " +
+            todaysReleases.length +
+            " release(s) today!";
+
+    }
+
+    else {
+
+        message.textContent =
+            "♡ Click a release to see its info.";
+
+    }
+
+}
+
+
+/*
+========================================
+BUILD CALENDAR
+========================================
+*/
+
+function buildCalendar() {
+
+    const calendar =
+        document.getElementById(
+            "calendar"
+        );
+
+    calendar.innerHTML = "";
+
+
+    const year = 2026;
+
+    const month = 9;
+    // 9 = October
+
+
+    /*
+       October 1, 2026 is Thursday.
+
+       JS:
+       Sunday = 0
+       Monday = 1
+       Tuesday = 2
+       Wednesday = 3
+       Thursday = 4
+       Friday = 5
+       Saturday = 6
+    */
+
+    const firstDay =
+        new Date(
+            year,
+            month,
+            1
+        ).getDay();
+
+
+    const daysInMonth =
+        new Date(
+            year,
+            month + 1,
+            0
+        ).getDate();
+
+
+    const now = new Date();
+
+    const today =
+        new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate()
+        );
+
+
+    /*
+       EMPTY DAYS BEFORE OCTOBER 1
+    */
+
+    for (
+        let i = 0;
+        i < firstDay;
+        i++
+    ) {
+
+        const empty =
+            document.createElement("div");
+
+        empty.className =
+            "day empty";
+
+        calendar.appendChild(empty);
+
+    }
+
+
+    /*
+       CREATE OCTOBER 1 → 31
+    */
+
+    for (
+        let dayNumber = 1;
+        dayNumber <= daysInMonth;
+        dayNumber++
+    ) {
+
+        const day =
+            document.createElement("div");
+
+        day.className =
+            "day";
+
+
+        const currentDate =
+            new Date(
+                year,
+                month,
+                dayNumber
+            );
+
+
+        const currentKey =
+            dateKey(currentDate);
+
+
+        day.dataset.date =
+            currentKey;
+
+
+        /*
+           TODAY HIGHLIGHT
+        */
+
+        if (
+            currentKey ===
+            dateKey(today)
+        ) {
+
+            day.classList.add("today");
+
+        }
+
+
+        /*
+           DAY NUMBER
+        */
+
+        const number =
+            document.createElement("span");
+
+        number.className =
+            "day-number";
+
+        number.textContent =
+            dayNumber;
+
+
+        day.appendChild(number);
+
+
+        /*
+           RELEASES ON THIS DAY
+        */
+
+        const dayReleases =
+            releases.filter(
+                release =>
+                    release.date ===
+                    currentKey
+            );
+
+
+        dayReleases.forEach(
+            release => {
+
+                const card =
+                    createReleaseCard(
+                        release
+                    );
+
+                day.appendChild(card);
+
+            }
+        );
+
+
+        /*
+           CLICKING THE DATE
+           SHOWS INFO FOR THAT DATE
+        */
+
+        day.addEventListener(
+            "click",
+            function() {
+
+                if (
+                    dayReleases.length === 1
+                ) {
+
+                    openInfo(
+                        dayReleases[0]
+                    );
+
+                }
+
+                else if (
+                    dayReleases.length > 1
+                ) {
+
+                    openDateInfo(
+                        currentDate,
+                        dayReleases
+                    );
+
+                }
+
+            }
+        );
+
+
+        calendar.appendChild(day);
+
+    }
+
+}
+
+
+/*
+========================================
+OPEN RELEASE INFO
+========================================
+*/
+
+function openInfo(release) {
+
+    document.getElementById(
+        "infoName"
+    ).textContent =
+        release.artist;
+
+
+    document.getElementById(
+        "infoDate"
+    ).textContent =
+        formatDate(release.date);
+
+
+    const status =
+        getStatus(
+            release.date,
+            new Date()
+        );
+
+
+    const statusBox =
+        document.getElementById(
+            "infoStatus"
+        );
+
+
+    if (status === "came") {
+
+        statusBox.textContent =
+            "💗 CAME OUT";
+
+    }
+
+    else if (status === "today") {
+
+        statusBox.textContent =
+            "💛 TODAY";
+
+    }
+
+    else {
+
+        statusBox.textContent =
+            "💙 COMING";
+
+    }
+
+
+    document.getElementById(
+        "infoTitle"
+    ).textContent =
+        release.title;
+
+
+    document.getElementById(
+        "infoArtist"
+    ).textContent =
+        release.artist;
+
+
+    document.getElementById(
+        "infoType"
+    ).textContent =
+        release.type;
+
+
+    document.getElementById(
+        "infoAbout"
+    ).textContent =
+        release.about;
+
+
+    document.getElementById(
+        "infoOverlay"
+    ).classList.add("show");
+
+}
+
+
+/*
+========================================
+MULTIPLE RELEASES ON ONE DATE
+========================================
+*/
+
+function openDateInfo(date, dayReleases) {
+
+    const names =
+        dayReleases
+            .map(
+                release =>
+                    release.artist
+            )
+            .join(" • ");
+
+
+    const fakeRelease = {
+
+        artist: names,
+
+        date: dateKey(date),
+
+        title:
+            dayReleases
+                .map(
+                    release =>
+                        release.title
+                )
+                .join(" • "),
+
+        type:
+            dayReleases
+                .map(
+                    release =>
+                        release.type
+                )
+                .join(" • "),
+
+        about:
+            "There are " +
+            dayReleases.length +
+            " releases scheduled for this date."
+
+    };
+
+
+    openInfo(fakeRelease);
+
+}
+
+
+/*
+========================================
+DATE FORMAT
+========================================
+*/
+
+function formatDate(dateString) {
+
+    const date =
+        parseDate(dateString);
+
+
+    return date.toLocaleDateString(
+        "en-US",
+        {
+            weekday: "long",
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/*
+========================================
+CLOSE POPUP
+========================================
+*/
+
+document.getElementById(
+    "closeInfo"
+).addEventListener(
+    "click",
+    function() {
+
+        document.getElementById(
+            "infoOverlay"
+        ).classList.remove("show");
+
+    }
+);
+
+
+document.getElementById(
+    "infoOverlay"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            this
+        ) {
+
+            this.classList.remove(
+                "show"
+            );
+
+        }
+
+    }
+);
+
+
+/*
+========================================
+START
+========================================
+*/
+
+buildCalendar();
+
+updateStatuses();
+
+
+/*
+   Re-check every minute.
+   You don't have to edit the page
+   when the date changes.
+*/
+
+setInterval(
+    updateStatuses,
+    60000
+);
+
+</script>
+
+</body>
 </html>
-```
