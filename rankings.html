@@ -1,476 +1,664 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rankings ♡ K-POP LYRICS</title>
 
-    <title>K-Pop Rankings ♡</title>
+<style>
 
-    <link rel="stylesheet" href="style.css">
+* {
+    box-sizing: border-box;
+}
 
-    <style>
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    color: #5d5260;
 
-        * {
-            box-sizing: border-box;
-        }
+    background:
+        linear-gradient(#fffafa, #fffafa);
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
 
-            background:
-                radial-gradient(circle at 8% 12%, #eadfff 0 13px, transparent 14px),
-                radial-gradient(circle at 92% 15%, #ddf3ff 0 12px, transparent 13px),
-                radial-gradient(circle at 7% 82%, #f3e4ff 0 11px, transparent 12px),
-                radial-gradient(circle at 93% 86%, #e2f5ff 0 13px, transparent 14px),
-                linear-gradient(135deg, #f8f3ff, #eff9ff, #fdf7ff);
+/* =========================
+   HEADER
+========================= */
 
-            color: #4d4267;
-            overflow-x: hidden;
-        }
+header {
+    background: #f3dce8;
+    border-bottom: 3px solid #dfc2d1;
+    padding: 25px 15px;
+    text-align: center;
+}
 
+header h1 {
+    margin: 0 0 18px;
+    font-family: Georgia, serif;
+    color: #75596b;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
 
-        /* =========================
-           HEADER
-           ========================= */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
 
-        header {
-            position: relative;
-            z-index: 10;
+nav a {
+    text-decoration: none;
+    color: #705869;
+    background: white;
 
-            background: linear-gradient(90deg, #8060bd, #79a8d7);
+    border: 2px solid #e2ccd7;
+    border-radius: 8px;
 
-            padding: 24px 18px;
+    padding: 8px 12px;
 
-            text-align: center;
+    font-size: 12px;
+    font-weight: bold;
 
-            color: white;
+    box-shadow: 2px 3px 0 #ddccd5;
 
-            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
-        }
+    transition: .2s;
+}
 
-        header h1 {
-            margin: 0 0 16px;
+nav a:hover {
+    transform: translateY(-3px) rotate(-1deg);
+}
 
-            font-size: 34px;
 
-            letter-spacing: 4px;
-        }
+/* =========================
+   MAIN
+========================= */
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+.container {
+    width: 92%;
+    max-width: 1050px;
+    margin: 45px auto;
+}
 
-        nav a {
-            text-decoration: none;
-            color: white;
 
-            padding: 9px 17px;
+/* =========================
+   TITLE
+========================= */
 
-            border-radius: 25px;
+.title {
+    text-align: center;
+    margin-bottom: 35px;
+}
 
-            background: rgba(255,255,255,0.16);
+.title h2 {
+    display: inline-block;
 
-            border: 1px solid rgba(255,255,255,0.25);
+    margin: 0;
 
-            font-weight: bold;
+    padding: 18px 30px;
 
-            transition: 0.3s;
-        }
+    background: #fff9d9;
 
-        nav a:hover {
-            background: white;
-            color: #7054a0;
-            transform: translateY(-3px);
-        }
+    border: 2px solid #e5d9a9;
 
+    font-family: Georgia, serif;
+    color: #756747;
 
-        /* =========================
-           MAIN
-           ========================= */
+    box-shadow: 5px 6px 0 #e9dfb9;
 
-        .container {
-            width: 91%;
-            max-width: 1100px;
+    transform: rotate(-1deg);
+}
 
-            margin: 50px auto;
-        }
+.title p {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #8b7d88;
+}
 
 
-        /* =========================
-           TITLE
-           ========================= */
+/* =========================
+   OFFICIAL CHART BOX
+========================= */
 
-        .page-title {
-            text-align: center;
+.official {
 
-            color: #674c9d;
+    background: #e7f4fa;
 
-            font-size: 47px;
+    border: 2px solid #c9dfe8;
 
-            margin-bottom: 10px;
+    padding: 20px;
 
-            text-shadow: 2px 3px 0 #e3d7ff;
-        }
+    box-shadow: 5px 6px 0 #d7e6ec;
 
-        .subtitle {
-            text-align: center;
+    margin-bottom: 35px;
 
-            color: #83798f;
+    position: relative;
+}
 
-            font-size: 17px;
+.official::before {
 
-            line-height: 1.7;
-        }
+    content: "OFFICIAL";
 
-        .top-decoration {
-            text-align: center;
+    position: absolute;
 
-            margin: 22px 0 45px;
+    top: -12px;
+    right: 20px;
 
-            color: #9a7aca;
+    background: #f1d1df;
 
-            font-size: 24px;
+    border: 2px solid #ddbaca;
 
-            letter-spacing: 9px;
-        }
+    padding: 5px 10px;
 
+    font-size: 9px;
+    font-weight: bold;
 
-        /* =========================
-           SECTION TITLES
-           ========================= */
+    transform: rotate(3deg);
+}
 
-        .section-title {
-            text-align: center;
+.official h3 {
 
-            color: #70559e;
+    margin: 0 0 8px;
 
-            font-size: 31px;
+    color: #607989;
 
-            margin: 55px 0 28px;
-        }
+    font-family: Georgia, serif;
+}
 
-        .section-title::before {
-            content: "🎀 ✦ ";
-        }
+.official p {
 
-        .section-title::after {
-            content: " ✦ ♡";
-        }
+    font-size: 12px;
 
+    line-height: 1.6;
 
-        /* =========================
-           RANKING GRID
-           ========================= */
+    margin: 0;
+}
 
-        .ranking-grid {
-            display: grid;
+.official a {
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
+    display: inline-block;
 
-            gap: 25px;
-        }
+    margin-top: 15px;
 
+    padding: 8px 13px;
 
-        /* =========================
-           RANKING CARD
-           ========================= */
+    background: white;
 
-        .ranking-card {
-            position: relative;
+    border: 2px solid #c8dce5;
 
-            background: rgba(255,255,255,0.96);
+    border-radius: 7px;
 
-            padding: 25px;
+    text-decoration: none;
 
-            border-radius: 25px;
+    color: #607989;
 
-            border: 2px solid #e7ddf8;
+    font-size: 11px;
 
-            box-shadow:
-                0 8px 22px rgba(90,70,140,0.10);
+    font-weight: bold;
+}
 
-            overflow: hidden;
 
-            transition: 0.3s;
-        }
+/* =========================
+   CHART TABS
+========================= */
 
-        .ranking-card:hover {
-            transform: translateY(-7px);
+.tabs {
 
-            border-color: #ccb9ee;
+    display: flex;
 
-            box-shadow:
-                0 15px 30px rgba(90,70,140,0.16);
-        }
+    justify-content: center;
 
-        .ranking-card::before {
-            content: "✦ ♡";
+    flex-wrap: wrap;
 
-            position: absolute;
+    gap: 8px;
 
-            top: 10px;
-            right: 13px;
+    margin-bottom: 25px;
+}
 
-            color: #b299da;
+.tab {
 
-            font-size: 18px;
-        }
+    cursor: pointer;
 
-        .rank-number {
-            text-align: center;
+    border: 2px solid #dfccd7;
 
-            font-size: 40px;
+    background: #fff;
 
-            margin-bottom: 5px;
-        }
+    color: #725d6c;
 
-        .ranking-card h3 {
-            text-align: center;
+    padding: 9px 13px;
 
-            color: #604988;
+    border-radius: 7px;
 
-            font-size: 24px;
+    font-family: inherit;
 
-            margin: 8px 0;
-        }
+    font-size: 11px;
 
-        .ranking-card p {
-            text-align: center;
+    font-weight: bold;
+}
 
-            color: #777;
+.tab:hover {
+    transform: translateY(-2px);
+}
 
-            line-height: 1.6;
-        }
+.tab.active {
 
-        .score {
-            text-align: center;
+    background: #eccddd;
 
-            margin-top: 15px;
+    border-color: #d9afc2;
+}
 
-            color: #8565b3;
 
-            font-size: 20px;
+/* =========================
+   RANKING PAPER
+========================= */
 
-            letter-spacing: 3px;
-        }
+.ranking-paper {
 
+    background: #fffdf8;
 
-        /* =========================
-           WEBSITE RATING
-           ========================= */
+    border: 2px solid #e4d9cf;
 
-        .website-rating {
-            margin-top: 65px;
+    box-shadow: 5px 6px 0 #e9dfd7;
 
-            padding: 38px 25px;
+    padding: 25px;
 
-            text-align: center;
+    margin-bottom: 50px;
+}
 
-            background: linear-gradient(
-                135deg,
-                rgba(255,255,255,0.97),
-                #f4eeff,
-                #eefaff
-            );
+.ranking-title {
 
-            border: 2px solid #dfd3f8;
+    display: flex;
 
-            border-radius: 30px;
+    justify-content: space-between;
 
-            box-shadow:
-                0 10px 30px rgba(90,70,140,0.12);
-        }
+    align-items: center;
 
-        .website-rating h2 {
-            color: #694d9a;
+    border-bottom: 2px dashed #dfd0d8;
 
-            font-size: 31px;
+    padding-bottom: 15px;
 
-            margin: 10px 0;
-        }
+    margin-bottom: 18px;
+}
 
-        .website-name {
-            color: #8062ae;
+.ranking-title h2 {
 
-            font-size: 18px;
+    margin: 0;
 
-            font-weight: bold;
+    font-family: Georgia, serif;
 
-            margin-bottom: 8px;
-        }
+    color: #76596c;
+}
 
-        .website-rating p {
-            color: #777;
+.week {
 
-            line-height: 1.7;
-        }
+    background: #fff0b7;
 
-        .stars {
-            display: flex;
+    padding: 6px 9px;
 
-            justify-content: center;
+    font-size: 9px;
 
-            gap: 8px;
+    border: 1px solid #e0d292;
+}
 
-            margin: 22px 0;
-        }
 
-        .star {
-            border: none;
+/* =========================
+   RANK CARDS
+========================= */
 
-            background: transparent;
+.rank {
 
-            font-size: 42px;
+    display: grid;
 
-            cursor: pointer;
+    grid-template-columns: 55px 1fr auto;
 
-            color: #d5cae8;
+    align-items: center;
 
-            transition: 0.2s;
+    gap: 15px;
 
-            padding: 2px;
-        }
+    padding: 13px;
 
-        .star:hover,
-        .star.active {
-            color: #9b79ca;
+    margin-bottom: 9px;
 
-            transform: scale(1.12);
-        }
+    background: white;
 
-        .rating-result {
-            font-size: 18px;
+    border: 2px solid #eee1e7;
 
-            color: #6f5798;
+    transition: .2s;
+}
 
-            font-weight: bold;
+.rank:hover {
 
-            margin-top: 10px;
-        }
+    transform: translateX(4px);
 
-        .rating-message {
-            margin-top: 10px;
+    border-color: #dfc2d1;
+}
 
-            color: #83798f;
+.number {
 
-            font-size: 14px;
-        }
+    font-family: Georgia, serif;
 
+    font-size: 27px;
 
-        /* =========================
-           NOTE
-           ========================= */
+    text-align: center;
 
-        .note {
-            margin-top: 45px;
+    color: #a27c91;
+}
 
-            padding: 22px;
+.rank:first-child .number {
+    color: #c18b47;
+}
 
-            text-align: center;
+.song strong {
 
-            background: #faf8ff;
+    display: block;
 
-            border: 2px dashed #d8c8f4;
+    font-size: 14px;
 
-            border-radius: 20px;
+    color: #62515d;
+}
 
-            color: #75678e;
+.song span {
 
-            line-height: 1.7;
-        }
+    display: block;
 
+    margin-top: 4px;
 
-        /* =========================
-           DIVIDER
-           ========================= */
+    font-size: 11px;
 
-        .divider {
-            text-align: center;
+    color: #91828c;
+}
 
-            color: #a184d0;
+.badge {
 
-            font-size: 22px;
+    background: #f3e6ed;
 
-            letter-spacing: 8px;
+    border-radius: 6px;
 
-            margin: 50px 0;
-        }
+    padding: 6px 8px;
 
+    font-size: 9px;
 
-        /* =========================
-           FOOTER
-           ========================= */
+    font-weight: bold;
 
-        footer {
-            text-align: center;
+    color: #806274;
+}
 
-            background: linear-gradient(
-                90deg,
-                #6d559d,
-                #7399c5
-            );
 
-            color: white;
+/* =========================
+   FEEDBACK
+========================= */
 
-            padding: 30px;
+.feedback {
 
-            margin-top: 70px;
-        }
+    background: #fdf0c9;
 
-        footer::before {
-            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
+    border: 2px solid #e5d69e;
 
-            display: block;
+    box-shadow: 6px 7px 0 #e8dfb9;
 
-            font-size: 20px;
+    padding: 30px;
 
-            margin-bottom: 10px;
-        }
+    margin-bottom: 50px;
 
+    position: relative;
+}
 
-        /* =========================
-           MOBILE
-           ========================= */
+.feedback::before {
 
-        @media (max-width: 600px) {
+    content: "♡ YOUR OPINION MATTERS ♡";
 
-            .page-title {
-                font-size: 35px;
-            }
+    position: absolute;
 
-            .container {
-                width: 94%;
-            }
+    top: -15px;
 
-            .ranking-grid {
-                grid-template-columns: 1fr;
-            }
+    left: 25px;
 
-            .star {
-                font-size: 35px;
-            }
+    background: #e7d3f1;
 
-        }
+    border: 2px solid #d3bcdc;
 
-    </style>
+    padding: 6px 12px;
 
+    font-size: 9px;
+
+    font-weight: bold;
+
+    transform: rotate(-2deg);
+}
+
+.feedback h2 {
+
+    margin: 8px 0 5px;
+
+    text-align: center;
+
+    font-family: Georgia, serif;
+
+    color: #706548;
+
+    font-size: 27px;
+}
+
+.feedback-intro {
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #82765c;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.question {
+
+    margin-bottom: 25px;
+}
+
+.question label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #685b50;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.question-number {
+
+    color: #ba7895;
+
+    margin-right: 5px;
+}
+
+
+/* =========================
+   ANSWER BOX
+========================= */
+
+textarea {
+
+    width: 100%;
+
+    min-height: 90px;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    background: #fffdf7;
+
+    border: 2px solid #ddcfaa;
+
+    border-radius: 5px;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #5d5260;
+
+    outline: none;
+
+    box-shadow: 2px 3px 0 #e9dfbd;
+}
+
+textarea:focus {
+
+    border-color: #c9a9ba;
+
+    background: white;
+}
+
+
+/* =========================
+   SMALL INPUT
+========================= */
+
+input {
+
+    width: 100%;
+
+    padding: 11px;
+
+    background: #fffdf7;
+
+    border: 2px solid #ddcfaa;
+
+    border-radius: 5px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #c9a9ba;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit {
+
+    display: block;
+
+    margin: 30px auto 5px;
+
+    padding: 12px 25px;
+
+    background: #e9c9d9;
+
+    border: 2px solid #d5adbf;
+
+    border-radius: 8px;
+
+    color: #694f60;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 3px 4px 0 #ddc2ce;
+}
+
+.submit:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================
+   THANK YOU
+========================= */
+
+#thankYou {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    background: #e4f2e4;
+
+    border: 2px solid #c8dec8;
+
+    color: #637a63;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #eadcf2;
+
+    border-top: 3px solid #d7c2e2;
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #705b78;
+
+    font-family: Georgia, serif;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .rank {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .badge {
+        grid-column: 2;
+        width: fit-content;
+    }
+
+    .ranking-title {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
+
+</style>
 </head>
 
 
 <body>
 
-
-<!-- =========================
-     HEADER
-     ========================= -->
 
 <header>
 
@@ -492,529 +680,488 @@
 </header>
 
 
-<!-- =========================
-     MAIN
-     ========================= -->
-
 <main class="container">
 
 
-    <h1 class="page-title">
-        🏆 K-Pop Rankings 🏆
-    </h1>
+<!-- TITLE -->
 
-    <p class="subtitle">
-        ♡ My personal K-Pop picks and rankings ♡
+<section class="title">
+
+    <h2>📊 K-POP RANKINGS ♡</h2>
+
+    <p>
+        Official chart categories + your personal website feedback!
     </p>
 
-    <div class="top-decoration">
-        ✦ ♡ 🎀 ⭐ ♫ ⭐ 🎀 ♡ ✦
-    </div>
+</section>
 
 
-    <!-- =========================
-         GROUP RANKINGS
-         ========================= -->
+<!-- OFFICIAL -->
 
-    <h2 class="section-title">
-        Group Rankings
-    </h2>
+<section class="official">
 
+    <h3>🏆 Official K-pop Charts</h3>
 
-    <div class="ranking-grid">
+    <p>
+        This page is connected to the idea of official CIRCLE CHART rankings.
+        CIRCLE CHART has different charts for Global K-pop, Digital, Streaming,
+        Download, Album, Retail Album and Social performance.
+    </p>
 
+    <a
+        href="https://circlechart.kr/"
+        target="_blank"
+        rel="noopener"
+    >
+        VIEW OFFICIAL CIRCLE CHART ↗
+    </a>
 
-        <div class="ranking-card">
+</section>
 
-            <div class="rank-number">🥇</div>
 
-            <h3>BABYMONSTER</h3>
+<!-- TABS -->
 
-            <p>
-                Powerful performances, amazing vocals and incredible energy.
-            </p>
+<div class="tabs">
 
-            <div class="score">
-                ★★★★★
-            </div>
+    <button class="tab active" data-chart="global">
+        🌎 Global
+    </button>
 
-        </div>
+    <button class="tab" data-chart="digital">
+        📱 Digital
+    </button>
 
+    <button class="tab" data-chart="album">
+        💿 Album
+    </button>
 
-        <div class="ranking-card">
+    <button class="tab" data-chart="download">
+        ⬇️ Download
+    </button>
 
-            <div class="rank-number">🥈</div>
+</div>
 
-            <h3>ENHYPEN</h3>
 
-            <p>
-                Strong concepts, performances and memorable music.
-            </p>
+<!-- RANKING -->
 
-            <div class="score">
-                ★★★★★
-            </div>
+<section class="ranking-paper">
 
-        </div>
+    <div class="ranking-title">
 
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥉</div>
-
-            <h3>BLACKPINK</h3>
-
-            <p>
-                Iconic songs, unique personalities and huge global impact.
-            </p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">4️⃣</div>
-
-            <h3>ATEEZ</h3>
-
-            <p>
-                Powerful stage presence and exciting performances.
-            </p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">5️⃣</div>
-
-            <h3>IVE</h3>
-
-            <p>
-                Elegant concepts and catchy songs.
-            </p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">6️⃣</div>
-
-            <h3>ILLIT</h3>
-
-            <p>
-                Fresh concepts and fun, memorable music.
-            </p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="divider">
-        ♡ ✦ 🎀 ♫ ✧ 🎀 ✦ ♡
-    </div>
-
-
-    <!-- =========================
-         SONG RANKINGS
-         ========================= -->
-
-    <h2 class="section-title">
-        Song Rankings
-    </h2>
-
-
-    <div class="ranking-grid">
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥇</div>
-
-            <h3>DRIP</h3>
-
-            <p>BABYMONSTER</p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥈</div>
-
-            <h3>DRUNK-DAZED</h3>
-
-            <p>ENHYPEN</p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥉</div>
-
-            <h3>LOVE SHOT</h3>
-
-            <p>EXO</p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">4️⃣</div>
-
-            <h3>GO</h3>
-
-            <p>BLACKPINK</p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">5️⃣</div>
-
-            <h3>MOON</h3>
-
-            <p>BABYMONSTER</p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">6️⃣</div>
-
-            <h3>REDRED</h3>
-
-            <p>CORTIS</p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="divider">
-        ✦ ♡ 🎀 ⭐ 🎀 ♡ ✦
-    </div>
-
-
-    <!-- =========================
-         SOLOIST RANKINGS
-         ========================= -->
-
-    <h2 class="section-title">
-        Soloist Rankings
-    </h2>
-
-
-    <div class="ranking-grid">
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥇</div>
-
-            <h3>IU</h3>
-
-            <p>
-                Incredible vocals, songwriting and artistry.
-            </p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥈</div>
-
-            <h3>JENNIE</h3>
-
-            <p>
-                Strong individual style and versatile performances.
-            </p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">🥉</div>
-
-            <h3>LISA</h3>
-
-            <p>
-                Powerful dancing, rap and stage presence.
-            </p>
-
-            <div class="score">
-                ★★★★★
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">4️⃣</div>
-
-            <h3>JISOO</h3>
-
-            <p>
-                Distinctive vocals and elegant performances.
-            </p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">5️⃣</div>
-
-            <h3>TAEYEON</h3>
-
-            <p>
-                Powerful and expressive vocals.
-            </p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-
-        <div class="ranking-card">
-
-            <div class="rank-number">6️⃣</div>
-
-            <h3>G-DRAGON</h3>
-
-            <p>
-                Creative music, rap and artistic influence.
-            </p>
-
-            <div class="score">
-                ★★★★☆
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="divider">
-        ♡ ✦ ♫ ✦ 🎀 ✦ ♫ ✦ ♡
-    </div>
-
-
-    <!-- =========================
-         WEBSITE RANKING
-         ========================= -->
-
-    <section class="website-rating">
-
-        <h2>
-            🌟 Kloud & Core Website Ranking 🌟
+        <h2 id="chartTitle">
+            🌎 Global K-pop
         </h2>
 
-        <div class="website-name">
-            K-POP LYRICS
-        </div>
+        <span class="week">
+            OFFICIAL CHART
+        </span>
 
-        <p>
-            How would you rate the K-POP LYRICS website?
-        </p>
+    </div>
 
+    <div id="rankingList"></div>
 
-        <div class="stars">
-
-            <button class="star" data-rating="1">★</button>
-            <button class="star" data-rating="2">★</button>
-            <button class="star" data-rating="3">★</button>
-            <button class="star" data-rating="4">★</button>
-            <button class="star" data-rating="5">★</button>
-
-        </div>
+</section>
 
 
-        <div class="rating-result" id="ratingResult">
-            No rating yet
-        </div>
+<!-- =========================
+     WEBSITE FEEDBACK
+========================= -->
 
-        <div class="rating-message" id="ratingMessage">
-            Click a star to rate this website ♡
-        </div>
+<section class="feedback">
 
-    </section>
+    <h2>💌 Tell Me About My Website!</h2>
+
+    <p class="feedback-intro">
+        You can actually type your answers below ♡
+    </p>
 
 
-    <!-- =========================
-         NOTE
-         ========================= -->
+    <!-- NAME -->
 
-    <div class="note">
+    <div class="question">
 
-        🎀 <strong>About these rankings</strong> 🎀
+        <label>
+            <span class="question-number">♡</span>
+            What should I call you? (optional)
+        </label>
 
+        <input
+            type="text"
+            id="name"
+            placeholder="Your name or nickname..."
+        >
+
+    </div>
+
+
+    <!-- QUESTION 1 -->
+
+    <div class="question">
+
+        <label>
+            <span class="question-number">01.</span>
+            What do you think about my website?
+        </label>
+
+        <textarea
+            id="answer1"
+            placeholder="Write your answer here..."
+        ></textarea>
+
+    </div>
+
+
+    <!-- QUESTION 2 -->
+
+    <div class="question">
+
+        <label>
+            <span class="question-number">02.</span>
+            Which page is your favorite?
+        </label>
+
+        <textarea
+            id="answer2"
+            placeholder="Home, Groups, Songs, Members, etc..."
+        ></textarea>
+
+    </div>
+
+
+    <!-- QUESTION 3 -->
+
+    <div class="question">
+
+        <label>
+            <span class="question-number">03.</span>
+            What should I add to the website?
+        </label>
+
+        <textarea
+            id="answer3"
+            placeholder="Tell me your ideas..."
+        ></textarea>
+
+    </div>
+
+
+    <!-- QUESTION 4 -->
+
+    <div class="question">
+
+        <label>
+            <span class="question-number">04.</span>
+            What should I improve?
+        </label>
+
+        <textarea
+            id="answer4"
+            placeholder="Be honest! What could be better?"
+        ></textarea>
+
+    </div>
+
+
+    <!-- QUESTION 5 -->
+
+    <div class="question">
+
+        <label>
+            <span class="question-number">05.</span>
+            What K-pop group should I add more content about?
+        </label>
+
+        <textarea
+            id="answer5"
+            placeholder="Your favorite group..."
+        ></textarea>
+
+    </div>
+
+
+    <!-- QUESTION 6 -->
+
+    <div class="question">
+
+        <label>
+            <span class="question-number">06.</span>
+            Rate the scrapbook style in your own words!
+        </label>
+
+        <textarea
+            id="answer6"
+            placeholder="Cute? Pretty? Needs something? Tell me!"
+        ></textarea>
+
+    </div>
+
+
+    <button
+        class="submit"
+        onclick="saveFeedback()"
+    >
+        💗 SAVE MY ANSWERS
+    </button>
+
+
+    <div id="thankYou">
+
+        ♡ Thank you for your feedback! ♡
         <br><br>
-
-        These are personal rankings created for K-POP LYRICS.
-        They are not official music industry rankings.
+        Your answers have been saved in this browser.
 
     </div>
 
-
-    <div class="top-decoration">
-        ☆ ♡ 🎀 ✦ ♫ ✦ 🎀 ♡ ☆
-    </div>
+</section>
 
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-     ========================= -->
-
 <footer>
 
-    <p>
-        ♡ K-POP LYRICS ♡
-    </p>
+    ♡ K-POP LYRICS ♡
+
+    <br><br>
+
+    Made with music, HTML & a little bit of chaos 🎀
 
 </footer>
 
 
-<!-- =========================
-     STAR RATING JAVASCRIPT
-     ========================= -->
-
 <script>
 
-    const stars = document.querySelectorAll(".star");
-    const ratingResult = document.getElementById("ratingResult");
-    const ratingMessage = document.getElementById("ratingMessage");
+
+/* =========================
+   RANKING DATA
+========================= */
+
+const charts = {
+
+    global: {
+
+        title: "🌎 Global K-pop",
+
+        songs: [
+
+            ["Golden", "HUNTR/X", "Global K-pop"],
+
+            ["REDRED", "CORTIS", "Global K-pop"],
+
+            ["LEMONADE", "aespa", "Global K-pop"],
+
+            ["LOVE ATTACK", "RESCENE", "Global K-pop"],
+
+            ["RUDE!", "Hearts2Hearts", "Global K-pop"]
+
+        ]
+
+    },
 
 
-    function updateStars(rating) {
+    digital: {
 
-        stars.forEach(function(star) {
+        title: "📱 Digital Chart",
 
-            const value = Number(star.dataset.rating);
+        songs: [
 
-            if (value <= rating) {
-                star.classList.add("active");
-            } else {
-                star.classList.remove("active");
-            }
+            ["REDRED", "CORTIS", "Digital"],
 
-        });
+            ["갑자기", "I.O.I", "Digital"],
+
+            ["LEMONADE", "aespa", "Digital"],
+
+            ["It's Me", "ILLIT", "Digital"],
+
+            ["LOVE ATTACK", "RESCENE", "Digital"]
+
+        ]
+
+    },
+
+
+    album: {
+
+        title: "💿 Album Chart",
+
+        songs: [
+
+            ["THE SIN : VANISH", "ENHYPEN", "Album"],
+
+            ["RE-FLOW", "ZEROBASEONE", "Album"],
+
+            ["SHOT CALLERS", "LNGSHOT", "Album"],
+
+            ["II", "RIIZE", "Album"],
+
+            ["GOLDEN HOUR", "ATEEZ", "Album"]
+
+        ]
+
+    },
+
+
+    download: {
+
+        title: "⬇️ Download Chart",
+
+        songs: [
+
+            ["GO", "BLACKPINK", "Download"],
+
+            ["BLACKHOLE", "IVE", "Download"],
+
+            ["BANG BANG", "IVE", "Download"],
+
+            ["RUDE!", "Hearts2Hearts", "Download"],
+
+            ["Champion", "BLACKPINK", "Download"]
+
+        ]
 
     }
 
-
-    function showRating(rating) {
-
-        updateStars(rating);
-
-        ratingResult.textContent =
-            "Your rating: " + rating + " / 5 ⭐";
-
-        ratingMessage.textContent =
-            "Thank you for rating K-POP LYRICS! ♡";
-
-        localStorage.setItem(
-            "kloudCoreWebsiteRating",
-            rating
-        );
-
-    }
+};
 
 
-    stars.forEach(function(star) {
+/* =========================
+   SHOW RANKINGS
+========================= */
 
-        star.addEventListener("click", function() {
+function showChart(type) {
 
-            const rating =
-                Number(this.dataset.rating);
+    const chart = charts[type];
 
-            showRating(rating);
+    document.getElementById("chartTitle").textContent =
+        chart.title;
 
-        });
+    const list =
+        document.getElementById("rankingList");
+
+    list.innerHTML = "";
+
+
+    chart.songs.forEach((song, index) => {
+
+        const rank = document.createElement("div");
+
+        rank.className = "rank";
+
+
+        rank.innerHTML = `
+
+            <div class="number">
+                ${index + 1}
+            </div>
+
+            <div class="song">
+
+                <strong>
+                    ${song[0]}
+                </strong>
+
+                <span>
+                    ${song[1]} • ${song[2]}
+                </span>
+
+            </div>
+
+            <div class="badge">
+
+                ${index === 0
+                    ? "TOP ENTRY"
+                    : "CHARTED"}
+
+            </div>
+
+        `;
+
+
+        list.appendChild(rank);
 
     });
 
-
-    const savedRating =
-        localStorage.getItem("kloudCoreWebsiteRating");
+}
 
 
-    if (savedRating) {
+/* =========================
+   TAB BUTTONS
+========================= */
 
-        showRating(Number(savedRating));
+document.querySelectorAll(".tab").forEach(button => {
 
-    }
+    button.addEventListener("click", () => {
+
+        document
+            .querySelectorAll(".tab")
+            .forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+        button.classList.add("active");
+
+        showChart(
+            button.dataset.chart
+        );
+
+    });
+
+});
+
+
+/* =========================
+   SAVE FEEDBACK
+========================= */
+
+function saveFeedback() {
+
+    const feedback = {
+
+        name:
+            document.getElementById("name").value,
+
+        answer1:
+            document.getElementById("answer1").value,
+
+        answer2:
+            document.getElementById("answer2").value,
+
+        answer3:
+            document.getElementById("answer3").value,
+
+        answer4:
+            document.getElementById("answer4").value,
+
+        answer5:
+            document.getElementById("answer5").value,
+
+        answer6:
+            document.getElementById("answer6").value
+
+    };
+
+
+    localStorage.setItem(
+        "kpopLyricsFeedback",
+        JSON.stringify(feedback)
+    );
+
+
+    document.getElementById(
+        "thankYou"
+    ).style.display = "block";
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+showChart("global");
 
 </script>
 
 
 </body>
-
 </html>
-```
