@@ -1,1287 +1,637 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>K-POP LYRICS</title>
+    <title>K-POP LYRICS ♡</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-
-            background:
-                radial-gradient(circle at 7% 14%, #eadfff 0 13px, transparent 14px),
-                radial-gradient(circle at 93% 17%, #dff3ff 0 12px, transparent 13px),
-                radial-gradient(circle at 7% 80%, #f2e4ff 0 11px, transparent 12px),
-                radial-gradient(circle at 94% 84%, #e2f5ff 0 12px, transparent 13px),
-                linear-gradient(135deg, #f8f3ff, #eef9ff, #fdf7ff);
-
-            color: #4d4366;
-            overflow-x: hidden;
-        }
-
-
-        /* ==================================================
-           FLOATING DECORATIONS
-           ================================================== */
-
-        .floating {
-            position: fixed;
-            z-index: 1;
-            pointer-events: none;
-            user-select: none;
-            font-size: 24px;
-            opacity: 0.75;
-        }
-
-        .float-1 {
-            top: 130px;
-            left: 18px;
-            animation: floatA 4s ease-in-out infinite;
-        }
-
-        .float-2 {
-            top: 260px;
-            left: 24px;
-            animation: floatB 4.5s ease-in-out infinite;
-        }
-
-        .float-3 {
-            top: 405px;
-            left: 15px;
-            animation: floatA 5s ease-in-out infinite;
-        }
-
-        .float-4 {
-            top: 135px;
-            right: 18px;
-            animation: floatB 4.2s ease-in-out infinite;
-        }
-
-        .float-5 {
-            top: 270px;
-            right: 24px;
-            animation: floatA 4.7s ease-in-out infinite;
-        }
-
-        .float-6 {
-            top: 410px;
-            right: 15px;
-            animation: floatB 5s ease-in-out infinite;
-        }
-
-        @keyframes floatA {
-
-            0%, 100% {
-                transform: translateY(0) rotate(-5deg);
-            }
-
-            50% {
-                transform: translateY(-9px) rotate(5deg);
-            }
-
-        }
-
-        @keyframes floatB {
-
-            0%, 100% {
-                transform: translateY(0) rotate(5deg);
-            }
-
-            50% {
-                transform: translateY(9px) rotate(-5deg);
-            }
-
-        }
-
-
-        /* ==================================================
-           HEADER
-           ================================================== */
-
-        header {
-            position: relative;
-            z-index: 10;
-
-            background: linear-gradient(90deg, #8060bd, #78a7d5);
-
-            padding: 24px 15px;
-
-            text-align: center;
-
-            color: white;
-
-            box-shadow: 0 7px 22px rgba(90, 70, 140, 0.2);
-        }
-
-        header h1 {
-            margin: 0 0 17px;
-
-            font-size: 34px;
-
-            letter-spacing: 4px;
-
-            text-shadow: 2px 2px 0 rgba(255,255,255,0.15);
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 9px;
-            <nav>
-    <a href="index.html">Home</a>
-    <a href="groups.html">Groups</a>
-    <a href="songs.html">Songs</a>
-    <a href="members.html">Members</a>
-    <a href="soloists.html">Soloists</a>
-    <a href="releases.html">Releases</a>
-    <a href="rankings.html">Rankings</a>
-    <a href="news.html">News</a>
-</nav>
-        }
-
-        nav a {
-            text-decoration: none;
-
-            color: white;
-
-            padding: 9px 14px;
-
-            border-radius: 25px;
-
-            background: rgba(255,255,255,0.16);
-
-            border: 1px solid rgba(255,255,255,0.23);
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        nav a::before {
-            content: "♡ ";
-        }
-
-        nav a:hover {
-            background: white;
-
-            color: #7054a0;
-
-            transform: translateY(-3px);
-        }
-
-
-        /* ==================================================
-           MAIN
-           ================================================== */
-
-        .home-container {
-            position: relative;
-            z-index: 3;
-
-            width: 90%;
-
-            max-width: 1100px;
-
-            margin: 50px auto;
-        }
-
-
-        /* ==================================================
-           HERO
-           ================================================== */
-
-        .hero {
-            position: relative;
-
-            text-align: center;
-
-            padding: 62px 30px;
-
-            background: linear-gradient(
-                135deg,
-                rgba(255,255,255,0.97),
-                rgba(245,239,255,0.97),
-                rgba(239,249,255,0.97)
-            );
-
-            border-radius: 32px;
-
-            border: 2px solid #e1d6fa;
-
-            box-shadow: 0 10px 30px rgba(90,70,140,0.12);
-
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: "🎀";
-
-            position: absolute;
-
-            top: 18px;
-
-            left: 25px;
-
-            font-size: 26px;
-        }
-
-        .hero::after {
-            content: "✦";
-
-            position: absolute;
-
-            bottom: 18px;
-
-            right: 25px;
-
-            font-size: 25px;
-
-            color: #b59bdd;
-        }
-
-        .hero h2 {
-            margin: 0;
-
-            color: #674b9d;
-
-            font-size: 48px;
-
-            text-shadow: 2px 3px 0 #e3d8ff;
-        }
-
-        .hero p {
-            max-width: 780px;
-
-            margin: 20px auto 0;
-
-            color: #777;
-
-            font-size: 18px;
-
-            line-height: 1.8;
-        }
-
-
-        /* ==================================================
-           DECORATIVE TITLES
-           ================================================== */
-
-        .home-title {
-            text-align: center;
-
-            color: #674b9d;
-
-            font-size: 32px;
-
-            margin: 60px 0 22px;
-        }
-
-        .home-title::before {
-            content: "✦ ";
-
-            color: #a084d1;
-        }
-
-        .home-title::after {
-            content: " ✦";
-
-            color: #a084d1;
-        }
-
-
-        .cute-divider {
-            text-align: center;
-
-            color: #9a7bc9;
-
-            font-size: 22px;
-
-            letter-spacing: 8px;
-
-            margin: 32px 0;
-        }
-
-
-        /* ==================================================
-           INTRODUCTION
-           ================================================== */
-
-        .intro-box {
-            position: relative;
-
-            background: rgba(255,255,255,0.96);
-
-            padding: 32px;
-
-            border-radius: 25px;
-
-            border: 2px solid #e4daf8;
-
-            box-shadow: 0 8px 22px rgba(90,70,140,0.10);
-
-            overflow: hidden;
-        }
-
-        .intro-box::before {
-            content: "🎀";
-
-            position: absolute;
-
-            top: 17px;
-
-            left: 18px;
-
-            font-size: 23px;
-        }
-
-        .intro-box::after {
-            content: "♡";
-
-            position: absolute;
-
-            bottom: 17px;
-
-            right: 18px;
-
-            font-size: 22px;
-
-            color: #b096d8;
-        }
-
-        .intro-box h3 {
-            color: #7056a0;
-
-            font-size: 25px;
-
-            margin-top: 0;
-        }
-
-        .intro-box p {
-            color: #666;
-
-            line-height: 1.9;
-
-            font-size: 16px;
-        }
-
-
-        /* ==================================================
-           SOLOIST BOX
-           ================================================== */
-
-        .soloist-box {
-            position: relative;
-
-            background: rgba(255,255,255,0.96);
-
-            padding: 32px;
-
-            border-radius: 25px;
-
-            border: 2px solid #e4daf8;
-
-            box-shadow: 0 8px 22px rgba(90,70,140,0.10);
-        }
-
-        .soloist-box::before {
-            content: "🎤";
-
-            position: absolute;
-
-            top: 17px;
-
-            left: 18px;
-
-            font-size: 23px;
-        }
-
-        .soloist-box::after {
-            content: "✦";
-
-            position: absolute;
-
-            bottom: 17px;
-
-            right: 18px;
-
-            font-size: 22px;
-
-            color: #b096d8;
-        }
-
-        .soloist-intro {
-            text-align: center;
-
-            color: #777;
-
-            line-height: 1.8;
-
-            margin-bottom: 24px;
-        }
-
-        .soloist-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(190px, 1fr));
-
-            gap: 20px;
-        }
-
-        .soloist-card {
-            position: relative;
-
-            background: white;
-
-            padding: 22px;
-
-            text-align: center;
-
-            border-radius: 20px;
-
-            border: 2px solid #e7ddf8;
-
-            box-shadow: 0 6px 18px rgba(90,70,140,0.08);
-
-            transition: 0.3s;
-
-            overflow: hidden;
-        }
-
-        .soloist-card::before {
-            content: "✧";
-
-            position: absolute;
-
-            top: 8px;
-
-            left: 10px;
-
-            color: #b298d9;
-        }
-
-        .soloist-card::after {
-            content: "♡";
-
-            position: absolute;
-
-            bottom: 8px;
-
-            right: 10px;
-
-            color: #b298d9;
-        }
-
-        .soloist-card:hover {
-            transform: translateY(-6px);
-
-            box-shadow: 0 12px 25px rgba(90,70,140,0.14);
-        }
-
-        .soloist-icon {
-            font-size: 42px;
-        }
-
-        .soloist-card h4 {
-            color: #6b5597;
-
-            margin: 12px 0 7px;
-
-            font-size: 20px;
-        }
-
-        .soloist-card p {
-            color: #777;
-
-            margin: 0;
-
-            line-height: 1.5;
-
-            font-size: 14px;
-        }
-
-        .soloist-button {
-            display: inline-block;
-
-            margin-top: 25px;
-
-            padding: 11px 24px;
-
-            border-radius: 23px;
-
-            background: linear-gradient(
-                90deg,
-                #b89bdd,
-                #91b9dc
-            );
-
-            color: white;
-
-            text-decoration: none;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        .soloist-button:hover {
-            transform: scale(1.05);
-        }
-
-
-        /* ==================================================
-           ABOUT ME
-           ================================================== */
-
-        .owner-box {
-            position: relative;
-
-            background: rgba(255,255,255,0.96);
-
-            padding: 32px;
-
-            border-radius: 25px;
-
-            border: 2px solid #e4daf8;
-
-            box-shadow: 0 8px 22px rgba(90,70,140,0.10);
-
-            overflow: hidden;
-        }
-
-        .owner-box::before {
-            content: "🌷";
-
-            position: absolute;
-
-            top: 17px;
-
-            left: 18px;
-
-            font-size: 23px;
-        }
-
-        .owner-box::after {
-            content: "♡";
-
-            position: absolute;
-
-            bottom: 17px;
-
-            right: 18px;
-
-            font-size: 22px;
-
-            color: #b096d8;
-        }
-
-        .owner-card {
-            text-align: center;
-
-            background: linear-gradient(
-                135deg,
-                #fbf8ff,
-                #f1faff
-            );
-
-            padding: 28px;
-
-            border-radius: 21px;
-
-            border: 2px dashed #d7c8f3;
-        }
-
-        .owner-icon {
-            font-size: 58px;
-
-            margin-bottom: 8px;
-        }
-
-        .owner-card h4 {
-            color: #624c93;
-
-            font-size: 27px;
-
-            margin: 10px 0 18px;
-        }
-
-        .owner-card p {
-            max-width: 720px;
-
-            margin: 10px auto;
-
-            color: #666;
-
-            line-height: 1.8;
-        }
-
-        .credit-note {
-            margin-top: 20px;
-
-            padding: 17px;
-
-            border-radius: 15px;
-
-            background: #f7f2ff;
-
-            border: 2px solid #e2d7f7;
-
-            color: #75658e;
-        }
-
-
-        /* ==================================================
-           EXPLORE WEBSITE
-           ================================================== */
-
-        .feature-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(210px, 1fr));
-
-            gap: 20px;
-        }
-
-        .feature-card {
-            position: relative;
-
-            background: rgba(255,255,255,0.96);
-
-            padding: 27px;
-
-            text-align: center;
-
-            border-radius: 21px;
-
-            border: 2px solid #e7ddf9;
-
-            box-shadow: 0 6px 18px rgba(90,70,140,0.09);
-
-            transition: 0.3s;
-
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: "✦";
-
-            position: absolute;
-
-            top: 9px;
-
-            left: 12px;
-
-            color: #b298d9;
-        }
-
-        .feature-card::after {
-            content: "♡";
-
-            position: absolute;
-
-            bottom: 8px;
-
-            right: 12px;
-
-            color: #b298d9;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-6px);
-
-            box-shadow: 0 12px 24px rgba(90,70,140,0.14);
-        }
-
-        .feature-card .icon {
-            font-size: 38px;
-        }
-
-        .feature-card h4 {
-            color: #6b5597;
-
-            margin: 12px 0 8px;
-
-            font-size: 20px;
-        }
-
-        .feature-card p {
-            color: #777;
-
-            line-height: 1.6;
-        }
-
-
-        /* ==================================================
-           WELCOME NOTE
-           ================================================== */
-
-        .welcome-note {
-            position: relative;
-
-            text-align: center;
-
-            margin-top: 45px;
-
-            padding: 28px;
-
-            border-radius: 23px;
-
-            background: linear-gradient(
-                135deg,
-                #faf7ff,
-                #eef9ff
-            );
-
-            color: #786a91;
-
-            border: 2px dashed #d9caf3;
-
-            font-size: 17px;
-
-            line-height: 1.7;
-        }
-
-        .welcome-note::before {
-            content: "✦  ♡  🎀  ♡  ✦";
-
-            display: block;
-
-            margin-bottom: 12px;
-
-            color: #a084d0;
-        }
-
-
-        /* ==================================================
-           FOOTER
-           ================================================== */
-
-        footer {
-            position: relative;
-
-            z-index: 5;
-
-            text-align: center;
-
-            background: linear-gradient(
-                90deg,
-                #6d559e,
-                #7399c5
-            );
-
-            color: white;
-
-            padding: 30px;
-
-            margin-top: 70px;
-        }
-
-        footer::before {
-            content: "✦ ♡ 🎀 ♫ 🎀 ♡ ✦";
-
-            display: block;
-
-            font-size: 20px;
-
-            margin-bottom: 10px;
-        }
-
-
-        /* ==================================================
-           MOBILE
-           ================================================== */
-
-        @media (max-width: 700px) {
-
-            .floating {
-                display: none;
-            }
-
-            .hero h2 {
-                font-size: 35px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .home-title {
-                font-size: 27px;
-            }
-
-            .intro-box,
-            .owner-box,
-            .soloist-box {
-                padding: 22px;
-            }
-
-        }
-
-    </style>
-
 </head>
-
 
 <body>
 
+    <!-- FLOATING IDOLS -->
 
-<!-- ==================================================
-     FLOATING DECORATIONS
-     ================================================== -->
+    <div class="floating-idols">
 
-<div class="floating float-1">🎀</div>
-<div class="floating float-2">✦</div>
-<div class="floating float-3">♡</div>
+        <img src="images/niki.png"
+             class="idol idol-1"
+             alt="Ni-ki">
 
-<div class="floating float-4">♫</div>
-<div class="floating float-5">☆</div>
-<div class="floating float-6">✧</div>
+        <img src="images/lisa.png"
+             class="idol idol-2"
+             alt="Lisa">
 
+        <img src="images/juhoon.png"
+             class="idol idol-3"
+             alt="Juhoon">
 
-<!-- ==================================================
-     HEADER
-     ================================================== -->
+        <img src="images/chiquita.png"
+             class="idol idol-4"
+             alt="Chiquita">
 
-<header>
-
-    <h1>K-POP LYRICS</h1>
-
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="groups.html">Groups</a>
-
-        <a href="songs.html">Songs</a>
-
-        <a href="members.html">Members</a>
-
-        <a href="soloists.html">Soloists</a>
-
-        <a href="releases.html">Releases</a>
-
-        <a href="rankings.html">Rankings</a>
-
-        <a href="news.html">News</a>
-
-    </nav>
-
-</header>
-
-
-<!-- ==================================================
-     MAIN
-     ================================================== -->
-
-<main class="home-container">
-
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <h2>
-            🎀 Welcome to K-POP LYRICS 🎀
-        </h2>
-
-        <p>
-            ♡ Your little corner for K-Pop groups, songs, members,
-            soloists, releases, rankings and news! ♡
-        </p>
-
-        <div class="cute-divider">
-            ✦ ♡ 🎀 ♫ ✧ ☆ ♡ 🎀 ♫ ✦
-        </div>
-
-    </section>
-
-
-    <!-- WHAT IS K-POP -->
-
-    <h2 class="home-title">
-        ♡ What is K-Pop? ♡
-    </h2>
-
-    <section class="intro-box">
-
-        <h3>
-            🎵 About K-Pop
-        </h3>
-
-        <p>
-            K-Pop means Korean popular music. It is a style of music from South Korea
-            that combines catchy songs, singing, dancing, fashion, performances and
-            creative music videos.
-        </p>
-
-        <p>
-            K-Pop has become popular around the world, with fans enjoying many different
-            groups, artists and concepts. Every group has its own sound, style and identity.
-        </p>
-
-        <p>
-            This website is made to explore K-Pop groups, songs, members, soloists,
-            new releases, rankings and news all in one place!
-        </p>
-
-    </section>
-
-
-    <div class="cute-divider">
-        ♡ ✦ ♫ ✦ ♡
     </div>
 
 
-    <!-- SOLOISTS -->
+    <!-- DECORATIONS -->
 
-    <h2 class="home-title">
-        🎤 Soloists 🎤
-    </h2>
+    <div class="sticker sticker-1">♡</div>
+    <div class="sticker sticker-2">✦</div>
+    <div class="sticker sticker-3">🎀</div>
+    <div class="sticker sticker-4">★</div>
 
-    <section class="soloist-box">
 
-        <div class="soloist-intro">
-            ♡ Discover talented K-Pop artists who shine on their own! ♡
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="brand">
+            ✦ K-POP LYRICS ♡
+        </div>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+            <a href="groups.html">Groups</a>
+            <a href="songs.html">Songs</a>
+            <a href="members.html">Members</a>
+            <a href="soloists.html">Soloists</a>
+            <a href="releases.html">Releases</a>
+            <a href="rankings.html">Rankings</a>
+            <a href="news.html">News</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-note">
+                ✎ MY LITTLE K-POP SCRAPBOOK
+            </div>
+
+            <p class="small-korean">
+                음악 · 아이돌 · 노래 · 팬덤
+            </p>
+
+            <div class="title-paper">
+
+                <h1 id="main-title">
+
+                    <span>K</span>
+                    <span>-</span>
+                    <span>P</span>
+                    <span>O</span>
+                    <span>P</span>
+
+                    <br>
+
+                    <span>L</span>
+                    <span>Y</span>
+                    <span>R</span>
+                    <span>I</span>
+                    <span>C</span>
+                    <span>S</span>
+
+                </h1>
+
+            </div>
+
+            <div class="hero-description">
+
+                A pastel little universe
+                for K-Pop lovers. ♡
+
+            </div>
+
+            <button id="scatter-button">
+                ✦ scatter the title ✦
+            </button>
+
+            <div class="hero-note note-right">
+                made with ♡
+            </div>
+
+        </section>
+
+
+        <!-- TICKER -->
+
+        <div class="ticker">
+
+            ♡ K-POP ♡ MUSIC ♡ IDOLS ♡ SONGS ♡
+            GROUPS ♡ COMEBACKS ♡ FANDOMS ♡
+
         </div>
 
 
-        <div class="soloist-grid">
+        <!-- WELCOME -->
+
+        <section class="welcome-section">
+
+            <div class="section-label">
+                01 — WELCOME
+            </div>
+
+            <div class="welcome-grid">
 
 
-            <div class="soloist-card">
+                <!-- PHOTO -->
 
-                <div class="soloist-icon">
-                    🌷
+                <div class="intro-photo">
+
+                    <div class="photo-frame">
+
+                        <div class="photo-placeholder">
+                            🎧
+                        </div>
+
+                        <span>
+                            PLAY IT LOUD ♡
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <h4>
-                    JESSI
-                </h4>
 
-                <p>
-                    Soloist • Rapper • Singer
-                </p>
+                <!-- NOTES -->
+
+                <div class="welcome-notes">
+
+                    <div class="paper-note pink-note">
+
+                        <p class="note-label">
+                            ✦ NOTE #01
+                        </p>
+
+                        <h2>
+                            Find your<br>
+                            next K-Pop obsession. ♡
+                        </h2>
+
+                    </div>
+
+
+                    <div class="paper-note blue-note">
+
+                        🎧 Browse through songs from
+                        your favorite K-Pop groups.
+
+                    </div>
+
+
+                    <div class="paper-note yellow-note">
+
+                        ✦ Each little card is a place
+                        for songs, lyrics & memories. ♡
+
+                    </div>
+
+
+                    <a href="songs.html"
+                       class="pink-button">
+
+                        Open the song scrapbook → ♡
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUOTE -->
+
+        <section class="quote-card">
+
+            <div class="quote-stars">
+                ✦　♡　✧
+            </div>
+
+            <div class="quote-paper">
+
+                <h2>
+                    "Music makes everything
+                    a little brighter." ♡
+                </h2>
+
+            </div>
+
+            <p>
+                — K-POP LYRICS
+            </p>
+
+        </section>
+
+
+        <!-- EXPLORE -->
+
+        <section class="explore">
+
+            <div class="section-label">
+                02 — EXPLORE
+            </div>
+
+            <div class="heading-paper">
+
+                <h2>
+                    Pick your vibe. ♡
+                </h2>
 
             </div>
 
 
-            <div class="soloist-card">
+            <div class="explore-grid">
 
-                <div class="soloist-icon">
-                    🌼
-                </div>
 
-                <h4>
-                    YENA
-                </h4>
+                <a href="songs.html"
+                   class="explore-card card-pink">
 
-                <p>
-                    Soloist • Singer
-                </p>
+                    <span class="card-number">01</span>
+                    <span class="card-icon">🎧</span>
+
+                    <h3>SONGS</h3>
+
+                    <p>
+                        Find your next favorite track. ♡
+                    </p>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a href="groups.html"
+                   class="explore-card card-blue">
+
+                    <span class="card-number">02</span>
+                    <span class="card-icon">👥</span>
+
+                    <h3>GROUPS</h3>
+
+                    <p>
+                        Discover your favorite groups. ♡
+                    </p>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a href="members.html"
+                   class="explore-card card-yellow">
+
+                    <span class="card-number">03</span>
+                    <span class="card-icon">⭐</span>
+
+                    <h3>MEMBERS</h3>
+
+                    <p>
+                        Meet the idols behind the music.
+                    </p>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a href="soloists.html"
+                   class="explore-card card-green">
+
+                    <span class="card-number">04</span>
+                    <span class="card-icon">🎤</span>
+
+                    <h3>SOLOISTS</h3>
+
+                    <p>
+                        Artists shining on their own.
+                    </p>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a href="releases.html"
+                   class="explore-card card-purple">
+
+                    <span class="card-number">05</span>
+                    <span class="card-icon">💿</span>
+
+                    <h3>RELEASES</h3>
+
+                    <p>
+                        New music and comebacks.
+                    </p>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+
+                <a href="news.html"
+                   class="explore-card card-orange">
+
+                    <span class="card-number">06</span>
+                    <span class="card-icon">📰</span>
+
+                    <h3>NEWS</h3>
+
+                    <p>
+                        K-Pop updates and stories.
+                    </p>
+
+                    <span class="arrow">↗</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTIST WALL -->
+
+        <section class="artist-section">
+
+            <div class="section-label">
+                03 — ARTIST WALL
+            </div>
+
+            <div class="heading-paper">
+
+                <h2>
+                    The idols are here. ✦
+                </h2>
+
+            </div>
+
+            <div class="artist-caption">
+
+                A few faces from the K-Pop universe. ♡
 
             </div>
 
 
-            <div class="soloist-card">
+            <div class="artist-wall">
 
-                <div class="soloist-icon">
-                    ⭐
+
+                <div class="artist-photo photo-one">
+
+                    <img src="images/niki.png"
+                         alt="Ni-ki">
+
+                    <span>
+                        NI-KI ♡
+                    </span>
+
                 </div>
 
-                <h4>
-                    EVAN
-                </h4>
 
-                <p>
-                    Soloist • Singer • Songwriter
-                </p>
+                <div class="artist-photo photo-two">
+
+                    <img src="images/lisa.png"
+                         alt="Lisa">
+
+                    <span>
+                        LISA ♡
+                    </span>
+
+                </div>
+
+
+                <div class="artist-photo photo-three">
+
+                    <img src="images/juhoon.png"
+                         alt="Juhoon">
+
+                    <span>
+                        JUHOON ♡
+                    </span>
+
+                </div>
+
+
+                <div class="artist-photo photo-four">
+
+                    <img src="images/chiquita.png"
+                         alt="Chiquita">
+
+                    <span>
+                        CHIQUITA ♡
+                    </span>
+
+                </div>
 
             </div>
 
+        </section>
 
-            <div class="soloist-card">
 
-                <div class="soloist-icon">
-                    💜
+        <!-- ABOUT -->
+
+        <section class="about-section">
+
+            <div class="about-card">
+
+                <div class="section-label">
+                    04 — ABOUT THE CREATOR
                 </div>
 
-                <h4>
-                    MORE
-                </h4>
+                <div class="creator-title">
 
-                <p>
-                    More artists can be added!
-                </p>
+                    <h2>
+                        Made because<br>
+                        K-Pop is fun. ♡
+                    </h2>
+
+                </div>
+
+                <div class="creator-note green-note">
+
+                    💻🎧 K-POP LYRICS is a personal
+                    web project combining K-Pop
+                    and coding.
+
+                </div>
+
+                <div class="creator-note pink-note">
+
+                    ✦ The website is continuously
+                    being updated with new pages,
+                    artists and features. ♡
+
+                </div>
+
+                <div class="about-sticker">
+                    ♡ coding + K-Pop ♡
+                </div>
 
             </div>
 
+        </section>
+
+
+        <!-- FINAL -->
+
+        <section class="final-note">
+
+            <div class="final-stars">
+                ☆ ✦ ♡ ✧ ☆
+            </div>
+
+            <div class="final-paper">
+
+                <h2>
+                    Thanks for visiting! ♡
+                </h2>
+
+            </div>
+
+            <div class="final-message">
+
+                Come back whenever you need
+                a little K-Pop. 🎧
+
+            </div>
+
+            <div class="final-stars">
+                ♡ ✦ ♡ ✧ ♡
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            K-POP LYRICS ♡
         </div>
 
+        <p>
+            A little pastel corner of the K-Pop universe.
+        </p>
 
-        <div style="text-align:center;">
+        <div class="social-links">
 
-            <a href="soloists.html"
-               class="soloist-button">
+            <a href="https://www.tiktok.com/@itxx_aeri_core"
+               target="_blank">
+                TikTok
+            </a>
 
-                🎤 Explore Soloists ♡
+            <a href="https://www.youtube.com/@Itxx_aericore"
+               target="_blank">
+                YouTube
+            </a>
 
+            <a href="https://www.facebook.com/Ameliaanamtarain/"
+               target="_blank">
+                Facebook
             </a>
 
         </div>
 
-    </section>
+        <small>
+            © 2026 K-POP LYRICS
+        </small>
 
+    </footer>
 
-    <div class="cute-divider">
-        ✦ ♡ 🎀 ♫ 🎤 ♫ 🎀 ♡ ✦
-    </div>
 
+    <!-- TITLE SCATTER -->
 
-    <!-- ABOUT ME -->
+    <script>
 
-    <h2 class="home-title">
-        🎀 About Me 🎀
-    </h2>
+        const title =
+            document.getElementById("main-title");
 
-    <section class="owner-box">
+        const button =
+            document.getElementById("scatter-button");
 
-        <div class="owner-card">
 
-            <div class="owner-icon">
-                🌷
-            </div>
+        function scatterTitle() {
 
-            <h4>
-                The Creator of K-POP LYRICS
-            </h4>
+            const letters =
+                title.querySelectorAll("span");
 
-            <p>
-                Hi! I'm a girl from Pakistan who is currently focused on my studies
-                while also loving coding and creating websites. 💻♡
-            </p>
 
-            <p>
-                I created K-POP LYRICS because I love K-Pop and wanted to make
-                a fun website where fans can explore groups, songs, members,
-                soloists and more.
-            </p>
+            letters.forEach((letter) => {
 
-            <p>
-                Coding is something I enjoy learning alongside my studies,
-                and this website is one of my projects. 🎀✨
-            </p>
+                const x =
+                    Math.random() * 600 - 300;
 
-            <div class="credit-note">
+                const y =
+                    Math.random() * 400 - 200;
 
-                <strong>
-                    ♡ Please respect my work!
-                </strong>
+                const rotation =
+                    Math.random() * 120 - 60;
 
-                <br><br>
 
-                Please do not copy my personal information or my website content.
-                If you share or post about my website, please give credit to me
-                as the creator.
+                letter.style.setProperty(
+                    "--x",
+                    x + "px"
+                );
 
-            </div>
+                letter.style.setProperty(
+                    "--y",
+                    y + "px"
+                );
 
-            <div class="cute-divider">
-                ✦ ♡ 🎀 💻 🎀 ♡ ✦
-            </div>
+                letter.style.setProperty(
+                    "--rotation",
+                    rotation + "deg"
+                );
 
-            <p>
-                Thank you for visiting K-POP LYRICS! 💜
-            </p>
+                letter.classList.remove("scatter");
 
-        </div>
+                void letter.offsetWidth;
 
-    </section>
+                letter.classList.add("scatter");
 
+            });
 
-    <div class="cute-divider">
-        ♡ ✦ 🎀 ✦ ♡
-    </div>
 
+            setTimeout(() => {
 
-    <!-- EXPLORE -->
+                letters.forEach((letter) => {
 
-    <h2 class="home-title">
-        ✦ Explore the Website ✦
-    </h2>
+                    letter.classList.remove("scatter");
 
+                });
 
-    <div class="feature-grid">
+            }, 1700);
 
+        }
 
-        <div class="feature-card">
 
-            <div class="icon">
-                🎵
-            </div>
+        title.addEventListener(
+            "click",
+            scatterTitle
+        );
 
-            <h4>
-                Songs
-            </h4>
 
-            <p>
-                Explore K-Pop songs and lyric sections.
-            </p>
+        button.addEventListener(
+            "click",
+            scatterTitle
+        );
 
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="icon">
-                👥
-            </div>
-
-            <h4>
-                Groups
-            </h4>
-
-            <p>
-                Discover different K-Pop groups.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="icon">
-                🌟
-            </div>
-
-            <h4>
-                Members
-            </h4>
-
-            <p>
-                Meet the members and view their information.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="icon">
-                🎤
-            </div>
-
-            <h4>
-                Soloists
-            </h4>
-
-            <p>
-                Discover artists who shine as solo performers.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="icon">
-                📅
-            </div>
-
-            <h4>
-                Releases
-            </h4>
-
-            <p>
-                Keep up with new and upcoming K-Pop releases.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="icon">
-                🏆
-            </div>
-
-            <h4>
-                Rankings
-            </h4>
-
-            <p>
-                Check fun K-Pop group, song and artist rankings.
-            </p>
-
-        </div>
-
-
-        <div class="feature-card">
-
-            <div class="icon">
-                📰
-            </div>
-
-            <h4>
-                News
-            </h4>
-
-            <p>
-                Read the latest K-Pop updates and stories.
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- WELCOME -->
-
-    <div class="welcome-note">
-
-        Thank you for visiting K-POP LYRICS! ♡
-
-        <br><br>
-
-        ✦ Made with love for K-Pop fans ✦
-
-    </div>
-
-
-    <div class="cute-divider">
-        ♡ ✦ 🎀 ♫ ✧ ☆ ✧ ♫ 🎀 ✦ ♡
-    </div>
-
-
-</main>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-    <p>
-        ♡ K-POP LYRICS ♡
-    </p>
-
-</footer>
-
+    </script>
 
 </body>
 
 </html>
-```
