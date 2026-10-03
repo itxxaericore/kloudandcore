@@ -1,796 +1,1099 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Members ♡ K-POP LYRICS</title>
+    <meta charset="UTF-8">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poppins:wght@400;500;600;700&display=swap');
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-*{
-  box-sizing:border-box;
-}
+    <title>Members • K-POP LYRICS ♡</title>
 
-body{
-  margin:0;
-  color:#29272b;
-  background:#f7f1e7;
-  font-family:Poppins,sans-serif;
-}
+    <link rel="stylesheet"
+        href="style.css">
 
-/* paper texture */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.18;
-  background:
-    linear-gradient(#cfc7bb 1px,transparent 1px),
-    linear-gradient(90deg,#cfc7bb 1px,transparent 1px);
-  background-size:30px 30px;
-  z-index:-1;
-}
-
-/* ================= HEADER ================= */
-
-header{
-  width:94%;
-  max-width:1200px;
-  margin:24px auto;
-  padding:17px 20px;
-  background:#fffdf8;
-  border:2px solid #29272b;
-  box-shadow:6px 6px 0 #29272b;
-  transform:rotate(-.3deg);
-  position:relative;
-}
-
-.logo{
-  font-family:"Patrick Hand",cursive;
-  font-size:30px;
-  margin-bottom:10px;
-}
-
-header::after{
-  content:"♡ K-POP SCRAPBOOK";
-  position:absolute;
-  right:20px;
-  top:-14px;
-  background:#f3c7d5;
-  border:1px solid #29272b;
-  padding:4px 12px;
-  font-family:"Patrick Hand",cursive;
-  transform:rotate(3deg);
-}
-
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#29272b;
-  font-size:11px;
-  padding:6px 11px;
-  border:1.5px solid #29272b;
-  box-shadow:2px 2px 0 #29272b;
-  background:#dcecf3;
-}
-
-nav a:nth-child(2){background:#f4d5df}
-nav a:nth-child(3){background:#f5e5aa}
-nav a:nth-child(4){background:#dcebdc}
-nav a:nth-child(5){background:#e1d8ef}
-nav a:nth-child(6){background:#f5dccb}
-nav a:nth-child(7){background:#d8e8f1}
-nav a:nth-child(8){background:#eadce7}
-
-nav a:hover{
-  transform:translateY(-2px) rotate(-1deg);
-}
-
-/* ================= MAIN ================= */
-
-main{
-  width:94%;
-  max-width:1200px;
-  margin:35px auto;
-}
-
-/* title */
-
-.title-paper{
-  background:#fffdf8;
-  border:2px solid #29272b;
-  box-shadow:7px 7px 0 #29272b;
-  padding:27px;
-  margin-bottom:28px;
-  position:relative;
-}
-
-.title-paper::after{
-  content:"02";
-  position:absolute;
-  right:25px;
-  bottom:5px;
-  font-family:"Patrick Hand",cursive;
-  font-size:55px;
-  color:#eadfe4;
-}
-
-.label{
-  font-family:"Patrick Hand",cursive;
-  font-size:18px;
-  color:#777;
-}
-
-h1{
-  font-family:"Patrick Hand",cursive;
-  font-size:52px;
-  margin:0;
-}
-
-.title-paper p{
-  font-size:13px;
-  margin:4px 0 0;
-}
-
-/* note */
-
-.note{
-  display:inline-block;
-  background:#f4e4a9;
-  border:1.5px solid #29272b;
-  box-shadow:3px 3px 0 #29272b;
-  padding:7px 14px;
-  font-family:"Patrick Hand",cursive;
-  font-size:17px;
-  transform:rotate(-1.5deg);
-  margin-bottom:28px;
-}
-
-/* ================= GROUP ================= */
-
-.group{
-  background:#fffdf8;
-  border:2px solid #29272b;
-  box-shadow:7px 7px 0 #29272b;
-  padding:20px;
-  margin-bottom:38px;
-  position:relative;
-}
-
-.group:nth-of-type(even){
-  transform:rotate(.15deg);
-}
-
-.group:nth-of-type(odd){
-  transform:rotate(-.12deg);
-}
-
-/* tape */
-
-.group::before{
-  content:"";
-  position:absolute;
-  width:75px;
-  height:23px;
-  top:-13px;
-  left:45px;
-  background:#edccd5;
-  opacity:.8;
-  transform:rotate(-4deg);
-  border:1px solid #d4aeb9;
-}
-
-/* group heading */
-
-.group-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:17px;
-}
-
-.group-number{
-  background:#dcebdc;
-  border:1.5px solid #29272b;
-  padding:5px 11px;
-  font-family:"Patrick Hand",cursive;
-  font-size:17px;
-}
-
-.group-head h2{
-  margin:0;
-  font-family:"Patrick Hand",cursive;
-  font-size:32px;
-}
-
-.group-meta{
-  font-size:10px;
-  color:#777;
-}
-
-/* ================= SMALL MEMBER ROWS ================= */
-
-.member-grid{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:13px;
-}
-
-.member{
-  background:#fff;
-  border:1.5px solid #29272b;
-  box-shadow:3px 3px 0 #29272b;
-  padding:7px;
-  cursor:pointer;
-  position:relative;
-  transition:.2s;
-}
-
-.member:nth-child(odd){
-  transform:rotate(-1deg);
-}
-
-.member:nth-child(even){
-  transform:rotate(1deg);
-}
-
-.member:hover{
-  transform:translateY(-5px) rotate(0);
-  box-shadow:5px 6px 0 #29272b;
-}
-
-.member img{
-  width:100%;
-  aspect-ratio:1/1;
-  object-fit:cover;
-  display:block;
-  border:1px solid #29272b;
-}
-
-.member-name{
-  font-family:"Patrick Hand",cursive;
-  font-size:16px;
-  text-align:center;
-  margin-top:5px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-.member-mini{
-  text-align:center;
-  color:#777;
-  font-size:7px;
-  margin-top:1px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-.member::after{
-  content:"♡";
-  position:absolute;
-  right:-6px;
-  top:-8px;
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#f4bfd0;
-  border:1px solid #29272b;
-  font-size:10px;
-}
-
-/* ================= POPUP ================= */
-
-#popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(40,37,42,.42);
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  z-index:1000;
-}
-
-.info-paper{
-  width:min(440px,95%);
-  background:#fffdf8;
-  border:2px solid #29272b;
-  box-shadow:9px 9px 0 #29272b;
-  padding:27px;
-  position:relative;
-  transform:rotate(-1deg);
-}
-
-.info-paper::before{
-  content:"MEMBER PROFILE ♡";
-  position:absolute;
-  top:-15px;
-  left:25px;
-  background:#f4d3dd;
-  border:1px solid #29272b;
-  padding:4px 12px;
-  font-family:"Patrick Hand",cursive;
-}
-
-.info-paper h2{
-  font-family:"Patrick Hand",cursive;
-  font-size:34px;
-  margin:3px 0 17px;
-}
-
-.info-row{
-  background:#f3efe8;
-  border:1px solid #c7c0b6;
-  padding:8px 10px;
-  margin:7px 0;
-  font-size:12px;
-}
-
-.info-row b{
-  font-family:"Patrick Hand",cursive;
-  font-size:16px;
-}
-
-.close{
-  margin-top:12px;
-  background:#f4bfd0;
-  border:1.5px solid #29272b;
-  box-shadow:3px 3px 0 #29272b;
-  padding:7px 17px;
-  font-family:"Patrick Hand",cursive;
-  font-size:17px;
-  cursor:pointer;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  width:94%;
-  max-width:1200px;
-  margin:45px auto 25px;
-  background:#fffdf8;
-  border:2px solid #29272b;
-  box-shadow:5px 5px 0 #29272b;
-  padding:14px;
-  text-align:center;
-  font-family:"Patrick Hand",cursive;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:950px){
-  .member-grid{
-    grid-template-columns:repeat(5,1fr);
-  }
-}
-
-@media(max-width:750px){
-  .member-grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-
-  h1{
-    font-size:43px;
-  }
-}
-
-@media(max-width:520px){
-  .member-grid{
-    grid-template-columns:repeat(3,1fr);
-    gap:9px;
-  }
-
-  .group{
-    padding:13px;
-  }
-
-  .member{
-    padding:5px;
-  }
-
-  .member-name{
-    font-size:13px;
-  }
-
-  .member-mini{
-    font-size:6px;
-  }
-
-  .group-head h2{
-    font-size:25px;
-  }
-}
-</style>
 </head>
+
 
 <body>
 
-<header>
-  <div class="logo">K-POP LYRICS ♡</div>
 
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="groups.html">GROUPS</a>
-    <a href="songs.html">SONGS</a>
-    <a href="members.html">MEMBERS</a>
-    <a href="soloists.html">SOLOISTS</a>
-    <a href="releases.html">RELEASES</a>
-    <a href="rankings.html">RANKINGS</a>
-    <a href="news.html">NEWS</a>
-  </nav>
+<header>
+
+    <div class="logo">
+        K-POP LYRICS ♡
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">HOME</a>
+        <a href="groups.html">GROUPS</a>
+        <a href="songs.html">SONGS</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="soloists.html">SOLOISTS</a>
+        <a href="releases.html">RELEASES</a>
+        <a href="rankings.html">RANKINGS</a>
+        <a href="news.html">NEWS</a>
+
+    </nav>
+
 </header>
+
 
 
 <main>
 
-  <section class="title-paper">
-    <div class="label">02 — MEMBERS</div>
-    <h1>meet the members ♡</h1>
-    <p>little scrapbook cards for your favorite K-pop stars!</p>
-  </section>
 
-  <div class="note">✿ click any tiny card for the full profile!</div>
+<!-- =========================================
+     HERO
+========================================= -->
 
-  <div id="groups"></div>
+<section class="hero-box">
+
+    <div class="hero-top">
+
+        <div class="tiny-label">
+            ♡ SCRAPBOOK PAGE 04
+        </div>
+
+        <div class="sticker sticker-pink">
+            MEMBER ARCHIVE
+        </div>
+
+    </div>
+
+
+    <h1>
+
+        meet the<br>
+
+        <span>members ☆</span>
+
+    </h1>
+
+
+    <p class="hero-text">
+
+        Current member rosters, birthdays and photos
+        for the groups in this scrapbook.
+        Tap a card for the full member file.
+
+    </p>
+
+
+    <div class="music-doodles">
+        ♡ ☆ ✦ 👤 ♪ ✂ ★
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MEMBERS GENERATED HERE
+========================================= -->
+
+<div id="membersContainer"></div>
+
+
+
+<!-- =========================================
+     FORMER MEMBER
+========================================= -->
+
+<section class="former-member-section">
+
+    <div class="former-heading">
+
+        <div>
+
+            <span>
+                ✂ FORMER MEMBER FILE
+            </span>
+
+            <h2>
+                a little goodbye
+            </h2>
+
+            <p>
+                kept separately from the current ENHYPEN roster
+            </p>
+
+        </div>
+
+
+        <div class="sad-sticker">
+            😢 SO SAD
+        </div>
+
+    </div>
+
+
+
+    <div class="former-member-card">
+
+
+        <div class="former-photo-wrap">
+
+            <img
+                src="images/evan.png"
+                alt="EVAN"
+
+            <div class="former-photo-note">
+                FORMER MEMBER
+            </div>
+
+        </div>
+
+
+
+        <div class="former-info">
+
+            <span class="former-label">
+                FORMER ENHYPEN MEMBER
+            </span>
+
+
+            <h3>
+                EVAN
+            </h3>
+
+
+            <p class="former-real-name">
+                formerly known as HEESEUNG
+            </p>
+
+
+            <div class="former-facts">
+
+                <span>
+                    ENHYPEN
+                </span>
+
+                <span>
+                    LEFT IN 2026
+                </span>
+
+                <span>
+                    SOLO ARTIST
+                </span>
+
+            </div>
+
+
+            <div class="sad-note">
+
+                😢 SO SAD
+
+                <p>
+                    A former member of ENHYPEN,
+                    now continuing as solo artist EVAN.
+                </p>
+
+            </div>
+
+
+            <a
+                class="former-source"
+                href="https://weverse.io/enhypen/notice/34159"
+                target="_blank"
+                rel="noopener">
+
+                OFFICIAL NOTICE ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     NOTES
+========================================= -->
+
+<section class="section-box yellow-box">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="paper-number">
+                02
+            </span>
+
+            <h2>
+                📌 member notes
+            </h2>
+
+            <p>
+                your little personal scrapbook for member facts and more!
+            </p>
+
+        </div>
+
+
+        <div class="sticker sticker-blue">
+            PIN PIN!
+        </div>
+
+    </div>
+
+
+    <div class="member-sticky-wall">
+
+
+        <div class="member-sticky sticky-pink">
+
+            📌
+
+            <h3>
+                BIAS
+            </h3>
+
+            <p>
+                RAMI,OT7 EN, AND MORE
+                <br>
+                
+            </p>
+
+            <small>
+                current favorite ♡
+            </small>
+
+        </div>
+
+
+        <div class="member-sticky sticky-blue">
+
+            📌
+
+            <h3>
+                BIAS WRECKER
+            </h3>
+
+            <p>
+                __________________
+                <br>
+                __________________
+            </p>
+
+            <small>
+                dangerous territory ☆
+            </small>
+
+        </div>
+
+
+        <div class="member-sticky sticky-yellow">
+
+            📌
+
+            <h3>
+                NEW DISCOVERY
+            </h3>
+
+            <p>
+                __________________
+                <br>
+                __________________
+            </p>
+
+            <small>
+                new member obsession?
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL
+========================================= -->
+
+<section class="final-note">
+
+    <div class="final-sticker">
+        💌 MEMBER SCRAPBOOK
+    </div>
+
+
+    <h2>
+        everyone gets their own little card ♡
+    </h2>
+
+
+    <p>
+        Keep your favorite member moments,
+        birthdays and discoveries here.
+    </p>
+
+
+    <div class="final-doodles">
+        ☆ ♡ ✦ ♪ 👤 ✂ ★
+    </div>
+
+</section>
+
 
 </main>
 
 
-<footer>
-  made with ♡ for K-pop lovers — K-POP LYRICS
-</footer>
+
+<!-- =========================================
+     MEMBER POPUP
+========================================= -->
+
+<div
+    class="member-popup"
+    id="memberPopup">
 
 
-<!-- POPUP -->
+    <div class="member-popup-paper">
 
-<div id="popup">
 
-  <div class="info-paper">
+        <button
+            class="close-btn"
+            onclick="closeMember()">
 
-    <h2 id="popupName"></h2>
+            ×
 
-    <div class="info-row">
-      <b>GROUP</b><br>
-      <span id="popupGroup"></span>
+        </button>
+
+
+
+        <div class="popup-member-left">
+
+            <img
+                id="popupMemberImage"
+                src=""
+                alt="Member">
+
+
+            <div class="popup-photo-label">
+                MEMBER FILE
+            </div>
+
+        </div>
+
+
+
+        <div class="popup-member-right">
+
+            <div class="popup-label">
+                ♡ FULL MEMBER FILE
+            </div>
+
+
+            <h2 id="popupMemberName">
+                NAME
+            </h2>
+
+
+            <p
+                class="popup-member-group"
+                id="popupMemberGroup">
+            </p>
+
+
+            <div class="popup-info">
+
+                <p>
+
+                    <strong>
+                        BIRTHDAY
+                    </strong>
+
+                    <span id="popupBirthday">
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        STATUS
+                    </strong>
+
+                    <span id="popupStatus">
+                    CURRENT
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <div class="popup-member-note">
+
+                📌
+
+                <span>
+                    Member information checked
+                    against current group rosters.
+                </span>
+
+            </div>
+
+
+            <div class="popup-heart">
+                ☆ ♡ ☆
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="info-row">
-      <b>BIRTHDAY</b><br>
-      <span id="popupBirthday"></span>
-    </div>
-
-    <div class="info-row">
-      <b>POSITION</b><br>
-      <span id="popupPosition"></span>
-    </div>
-
-    <div class="info-row">
-      <b>DEBUT</b><br>
-      <span id="popupDebut"></span>
-    </div>
-
-    <div class="info-row">
-      <b>AGE</b><br>
-      <span id="popupAge"></span>
-    </div>
-
-    <button class="close" onclick="closePopup()">close ♡</button>
-
-  </div>
 
 </div>
 
 
+
+<footer>
+
+    <div class="footer-doodles">
+        ☆ ♡ ✦ ♪ ✂ ☆
+    </div>
+
+    made with ♡ for K-pop lovers
+
+    <br>
+
+    <span>
+        K-POP LYRICS • 2026
+    </span>
+
+</footer>
+
+
+
 <script>
 
-/*
-==================================================
-MEMBER DATA
-Birthday format:
-Month Day, Year
 
-Positions are commonly listed K-pop positions.
-==================================================
-*/
+/* =========================================================
+   CURRENT MEMBER DATABASE
+========================================================= */
+
 
 const groups = [
 
-{
-  name:"BABYMONSTER",
-  agency:"YG ENTERTAINMENT",
-  debut:"April 1, 2024",
-  members:[
-    ["RUKA","March 20, 2002","Rapper • Dancer","images/ruka.png"],
-    ["PHARITA","August 26, 2005","Vocalist","images/pharita.png"],
-    ["ASA","April 17, 2006","Rapper • Dancer","images/asa.png"],
-    ["AHYEON","April 11, 2007","Vocalist • Rapper • Dancer","images/ahyeon.png"],
-    ["RAMI","October 17, 2007","Main Vocalist","images/rami.png"],
-    ["RORA","August 14, 2008","Vocalist","images/rora.png"],
-    ["CHIQUITA","February 17, 2009","Vocalist • Dancer","images/chiquita.png"]
-  ]
-},
+    {
+        name: "BABYMONSTER",
+        emoji: "♡",
+        color: "group-pink",
+        agency: "YG ENTERTAINMENT",
+        source: "https://ygfamily.com/en/artists/babymonster/profile",
 
-{
-  name:"IVE",
-  agency:"STARSHIP ENTERTAINMENT",
-  debut:"December 1, 2021",
-  members:[
-    ["GAEUL","September 24, 2002","Rapper • Dancer","images/gaeul.png"],
-    ["YUJIN","September 1, 2003","Leader • Vocalist","images/yujin.png"],
-    ["REI","February 3, 2004","Rapper • Vocalist","images/rei.png"],
-    ["WONYOUNG","August 31, 2004","Vocalist","images/wonyoung.png"],
-    ["LIZ","November 21, 2004","Main Vocalist","images/liz.png"],
-    ["LEESEO","February 21, 2007","Vocalist","images/leeseo.png"]
-  ]
-},
+        members: [
 
-{
-  name:"TUIDE",
-  agency:"TUIDE",
-  debut:"August 24, 2026",
-  members:[
-    ["SEOHEE","October 11, 2006","Member","images/seohee.png"],
-    ["SEOYEON","March 4, 2008","Member","images/seoyeon.png"],
-    ["ELENA","April 11, 2008","Member","images/elena.png"],
-    ["JIA","August 22, 2008","Member","images/jia.png"],
-    ["SAKI","October 9, 2010","Member","images/saki.png"],
-    ["SEAH","January 4, 2011","Member","images/seah.png"],
-    ["YI HANI","January 7, 2011","Member","images/yihani.png"]
-  ]
-},
+            ["RUKA", "2002-03-20", "images/ruka.png"],
 
-{
-  name:"ENHYPEN",
-  agency:"BELIFT LAB",
-  debut:"November 30, 2020",
-  members:[
-    ["JUNGWON","February 9, 2004","Leader • Vocalist","images/enhypen.img.png"],
-    ["JAY","April 20, 2002","Rapper • Vocalist","images/jay.png"],
-    ["JAKE","November 15, 2002","Vocalist • Dancer","images/jake.png"],
-    ["SUNGHOON","December 8, 2002","Vocalist • Dancer","images/sunghoon.png"],
-    ["SUNOO","June 24, 2003","Vocalist","images/sunoo.png"],
-    ["NI-KI","December 9, 2005","Main Dancer • Vocalist","images/niki.png"]
-  ]
-},
+            ["PHARITA", "2005-08-26", "images/pharita.png"],
 
-{
-  name:"ATEEZ",
-  agency:"KQ ENTERTAINMENT",
-  debut:"October 24, 2018",
-  members:[
-    ["HONGJOONG","November 7, 1998","Leader • Rapper","images/hongjoong.png"],
-    ["SEONGHWA","April 3, 1998","Vocalist • Performer","images/seonghwa.png"],
-    ["YUNHO","March 23, 1999","Dancer • Vocalist","images/yunho.png"],
-    ["YEOSANG","June 15, 1999","Vocalist • Dancer","images/yeosang.png"],
-    ["SAN","July 10, 1999","Vocalist • Performer","images/san.png"],
-    ["MINGI","August 9, 1999","Main Rapper • Dancer","images/mingi.png"],
-    ["WOOYOUNG","November 26, 1999","Main Dancer • Vocalist","images/wooyoung.png"],
-    ["JONGHO","October 12, 2000","Main Vocalist","images/jongho.png"]
-  ]
-},
+            ["ASA", "2006-04-17", "images/asa.png"],
 
-{
-  name:"EXO",
-  agency:"SM ENTERTAINMENT",
-  debut:"April 8, 2012",
-  members:[
-    ["XIUMIN","March 26, 1990","Vocalist • Dancer","images/xiumin.png"],
-    ["SUHO","May 22, 1991","Leader • Vocalist","images/suho.png"],
-    ["LAY","October 7, 1991","Dancer • Vocalist","images/lay.png"],
-    ["BAEKHYUN","May 6, 1992","Main Vocalist","images/baekhyun.png"],
-    ["CHEN","September 21, 1992","Main Vocalist","images/chen.png"],
-    ["CHANYEOL","November 27, 1992","Main Rapper • Vocalist","images/chanyeol.png"],
-    ["D.O.","January 12, 1993","Main Vocalist","images/D.O.png"],
-    ["KAI","January 14, 1994","Main Dancer • Vocalist","images/kai.png"],
-    ["SEHUN","April 12, 1994","Dancer • Rapper","images/sehun.png"]
-  ]
-},
+            ["AHYEON", "2007-04-11", "images/ahyeon.png"],
 
-{
-  name:"STRAY KIDS",
-  agency:"JYP ENTERTAINMENT",
-  debut:"March 25, 2018",
-  members:[
-    ["BANG CHAN","October 3, 1997","Leader • Vocalist • Rapper","images/bangchan.png"],
-    ["LEE KNOW","October 25, 1998","Main Dancer • Vocalist","images/lee know.png"],
-    ["CHANGBIN","August 11, 1999","Main Rapper • Producer","images/changbin.png"],
-    ["HYUNJIN","March 20, 2000","Main Dancer • Rapper","images/hyunjin.png"],
-    ["HAN","September 14, 2000","Main Rapper • Vocalist","images/han.png"],
-    ["FELIX","September 15, 2000","Dancer • Rapper","images/felix.png"],
-    ["SEUNGMIN","September 22, 2000","Main Vocalist","images/seungmin.png"],
-    ["I.N","February 8, 2001","Vocalist","images/I.N.png"]
-  ]
-},
+            ["RAMI", "2007-10-17", "images/rami.png"],
 
-{
-  name:"BLACKPINK",
-  agency:"YG ENTERTAINMENT",
-  debut:"August 8, 2016",
-  members:[
-    ["JISOO","January 3, 1995","Lead Vocalist","images/jisoo.png"],
-    ["JENNIE","January 16, 1996","Main Rapper • Vocalist","images/jennie.png"],
-    ["ROSÉ","February 11, 1997","Main Vocalist • Dancer","images/rose.png"],
-    ["LISA","March 27, 1997","Main Dancer • Rapper","images/lisa.png"]
-  ]
-},
+            ["RORA", "2008-08-14", "images/rora.png"],
 
-{
-  name:"ILLIT",
-  agency:"BELIFT LAB",
-  debut:"March 25, 2024",
-  members:[
-    ["YUNAH","January 15, 2004","Vocalist • Dancer","images/yunah.png"],
-    ["MINJU","May 11, 2004","Vocalist","images/minju.png"],
-    ["MOKA","October 8, 2004","Dancer • Vocalist","images/moka.png"],
-    ["WONHEE","June 26, 2007","Vocalist","images/wonhee.png"],
-    ["IROHA","February 4, 2008","Main Dancer • Vocalist","images/iroha.png"]
-  ]
-},
+            ["CHIQUITA", "2009-02-17", "images/chiquita.png"]
 
-{
-  name:"CORTIS",
-  agency:"BIGHIT MUSIC",
-  debut:"August 18, 2025",
-  members:[
-    ["JAMES","October 14, 2005","Dancer • Rapper • Vocalist","images/james.png"],
-    ["JUHOON","January 3, 2008","Vocalist • Rapper","images/juhoon.png"],
-    ["MARTIN","March 20, 2008","Leader • Rapper • Vocalist","images/martin.png"],
-    ["SEONGHYEON","January 13, 2009","Vocalist • Dancer","images/seonghyeon.png"],
-    ["KEONHO","February 14, 2009","Vocalist • Dancer","images/keonho.png"]
-  ]
-}
+        ]
+
+    },
+
+
+    {
+        name: "IVE",
+        emoji: "✦",
+        color: "group-blue",
+        agency: "STARSHIP ENTERTAINMENT",
+        source: "https://ive-official.jp/mob/pageShw.php?aff=ROBO004&cd=profile&ima=4930&site=DIVE",
+
+        members: [
+
+            ["YUJIN", "2003-09-01", "images/yujin.png"],
+
+            ["GAEUL", "2002-09-24", "images/gaeul.png"],
+
+            ["REI", "2004-02-03", "images/rei.png"],
+
+            ["WONYOUNG", "2004-08-31", "images/wonyoung.png"],
+
+            ["LIZ", "2004-11-21", "images/liz.png"],
+
+            ["LEESEO", "2007-02-21", "images/leeseo.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "aespa",
+        emoji: "★",
+        color: "group-yellow",
+        agency: "SM ENTERTAINMENT",
+        source: "https://smtown-official.jp/pickup/",
+
+        members: [
+
+            ["KARINA", "2000-04-11", "images/karina.png"],
+
+            ["GISELLE", "2000-10-30", "images/giselle.png"],
+
+            ["WINTER", "2001-01-01", "images/winter.png"],
+
+            ["NINGNING", "2002-10-23", "images/ningning.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "TUIDE",
+        emoji: "☁",
+        color: "group-purple",
+        agency: "ABD • HYBE",
+        source: "https://en.yna.co.kr/view/AEN20260824010400315",
+
+        members: [
+
+            ["SEOHEE", "2006-10-11", "images/seohee.png"],
+
+            ["SEOYEON", "2008-03-04", "images/seoyeon.png"],
+
+            ["ELENA", "2008-04-11", "images/elena.png"],
+
+            ["JIA", "2008-08-22", "images/jia.png"],
+
+            ["SAKI", "2010-10-09", "images/saki.png"],
+
+            ["SEAH", "2011-01-04", "images/seah.png"],
+
+            ["YI HANI", "2011-01-07", "images/yihani.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "ENHYPEN",
+        emoji: "☾",
+        color: "group-blue",
+        agency: "BELIFT LAB",
+        source: "https://enhypen-jp.weverse.io/profile",
+
+        members: [
+
+            ["JUNGWON", "2004-02-09", "images/jungwon.png"],
+
+            ["JAY", "2002-04-20", "images/jay.png"],
+
+            ["JAKE", "2002-11-15", "images/jake.png"],
+
+            ["SUNGHOON", "2002-12-08", "images/sunghoon.png"],
+
+            ["SUNOO", "2003-06-24", "images/sunoo.png"],
+
+            ["NI-KI", "2005-12-09", "images/niki.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "ATEEZ",
+        emoji: "⚡",
+        color: "group-green",
+        agency: "KQ ENTERTAINMENT",
+        source: "https://ateez-official.jp/profiles",
+
+        members: [
+
+            ["HONGJOONG", "1998-11-07", "images/hongjoong.png"],
+
+            ["SEONGHWA", "1998-04-03", "images/seonghwa.png"],
+
+            ["YUNHO", "1999-03-23", "images/yunho.png"],
+
+            ["YEOSANG", "1999-06-15", "images/yeosang.png"],
+
+            ["SAN", "1999-07-10", "images/san.png"],
+
+            ["MINGI", "1999-08-09", "images/mingi.png"],
+
+            ["WOOYOUNG", "1999-11-26", "images/wooyoung.png"],
+
+            ["JONGHO", "2000-10-12", "images/jongho.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "EXO",
+        emoji: "☆",
+        color: "group-yellow",
+        agency: "SM ENTERTAINMENT",
+        source: "https://weverse.io/exo/highlight",
+
+        members: [
+
+            ["XIUMIN", "1990-03-26", "images/xiumin.png"],
+
+            ["SUHO", "1991-05-22", "images/suho.png"],
+
+            ["LAY", "1991-10-07", "images/lay.png"],
+
+            ["BAEKHYUN", "1992-05-06", "images/baekhyun.png"],
+
+            ["CHEN", "1992-09-21", "images/chen.png"],
+
+            ["CHANYEOL", "1992-11-27", "images/chanyeol.png"],
+
+            ["D.O.", "1993-01-12", "images/D.O.png"],
+
+            ["KAI", "1994-01-14", "images/kai.png"],
+
+            ["SEHUN", "1994-04-12", "images/sehun.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "STRAY KIDS",
+        emoji: "✂",
+        color: "group-pink",
+        agency: "JYP ENTERTAINMENT",
+        source: "https://straykids.jype.com/Default/Profile?Idx=6",
+
+        members: [
+
+            ["BANG CHAN", "1997-10-03", "images/bangchan.png"],
+
+            ["LEE KNOW", "1998-10-25", "images/lee know.png"],
+
+            ["CHANGBIN", "1999-08-11", "images/changbin.png"],
+
+            ["HYUNJIN", "2000-03-20", "images/hyunjin.png"],
+
+            ["HAN", "2000-09-14", "images/han.png"],
+
+            ["FELIX", "2000-09-15", "images/felix.png"],
+
+            ["SEUNGMIN", "2000-09-22", "images/seungmin.png"],
+
+            ["I.N", "2001-02-08", "images/I.N.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "BLACKPINK",
+        emoji: "♥",
+        color: "group-blue",
+        agency: "YG ENTERTAINMENT",
+        source: "https://ygfamily.com/en/artists/blackpink/profile",
+
+        members: [
+
+            ["JISOO", "1995-01-03", "images/jisoo.png"],
+
+            ["JENNIE", "1996-01-16", "images/jennie.png"],
+
+            ["ROSÉ", "1997-02-11", "images/rose.png"],
+
+            ["LISA", "1997-03-27", "images/lisa.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "ILLIT",
+        emoji: "☁",
+        color: "group-purple",
+        agency: "BELIFT LAB",
+        source: "https://beliftlab.com/artist/profile/ILLIT",
+
+        members: [
+
+            ["YUNAH", "2004-01-15", "images/yunah.png"],
+
+            ["MINJU", "2004-05-11", "images/minju.png"],
+
+            ["MOKA", "2004-10-08", "images/moka.png"],
+
+            ["WONHEE", "2007-06-26", "images/wonhee.png"],
+
+            ["IROHA", "2008-02-04", "images/iroha.png"]
+
+        ]
+
+    },
+
+
+    {
+        name: "CORTIS",
+        emoji: "★",
+        color: "group-green",
+        agency: "BIGHIT MUSIC",
+        source: "https://cortis-official.jp/profile",
+
+        members: [
+
+            ["MARTIN", "2008-03-20", "images/martin.png"],
+
+            ["JAMES", "2005-10-14", "images/james.png"],
+
+            ["JUHOON", "2008-01-03", "images/juhoon.png"],
+
+            ["SEONGHYEON", "2009-01-13", "images/seonghyeon.png"],
+
+            ["KEONHO", "2009-02-14", "images/keonho.png"]
+
+        ]
+
+    }
 
 ];
 
 
-/* =========================
-   CREATE GROUPS
-========================= */
 
-const container = document.getElementById("groups");
+/* =========================================
+   DATE FORMAT
+========================================= */
 
-groups.forEach((group,index)=>{
 
-  const section = document.createElement("section");
-  section.className = "group";
+function formatBirthday(date) {
 
-  section.innerHTML = `
-    <div class="group-head">
+    const parts =
+        date.split("-");
 
-      <div class="group-number">
-        ${String(index+1).padStart(2,"0")}
-      </div>
 
-      <div>
-        <h2>${group.name}</h2>
-        <div class="group-meta">
-          ${group.agency} • DEBUT ${group.debut}
-        </div>
-      </div>
+    const year =
+        parts[0];
 
-    </div>
+    const month =
+        Number(parts[1]);
 
-    <div class="member-grid"></div>
-  `;
+    const day =
+        Number(parts[2]);
 
-  const grid = section.querySelector(".member-grid");
 
-  group.members.forEach(member=>{
+    const monthNames = [
 
-    const card = document.createElement("div");
-    card.className = "member";
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
 
-    card.innerHTML = `
-      <img src="${member[3]}" alt="${member[0]}">
-      <div class="member-name">${member[0]}</div>
-      <div class="member-mini">${member[2]}</div>
-    `;
+    ];
 
-    card.onclick = () => showPopup(
-      member[0],
-      group.name,
-      member[1],
-      member[2],
-      group.debut
+
+    return `${monthNames[month - 1]} ${day}, ${year}`;
+
+}
+
+
+
+/* =========================================
+   BUILD GROUP SECTIONS
+========================================= */
+
+
+const container =
+    document.getElementById(
+        "membersContainer"
     );
 
-    grid.appendChild(card);
 
-  });
-
-  container.appendChild(section);
-
-});
+groups.forEach(
+    (group, groupIndex) => {
 
 
-/* =========================
-   AGE CALCULATOR
-========================= */
+        const section =
+            document.createElement(
+                "section"
+            );
 
-function calculateAge(birthday){
 
-  const birth = new Date(birthday);
+        section.className =
+            `member-group-section ${group.color}`;
 
-  const today = new Date();
 
-  let age = today.getFullYear() - birth.getFullYear();
+        section.innerHTML = `
 
-  const monthDifference =
-    today.getMonth() - birth.getMonth();
+            <div class="member-group-heading">
 
-  if(
-    monthDifference < 0 ||
-    (
-      monthDifference === 0 &&
-      today.getDate() < birth.getDate()
-    )
-  ){
-    age--;
-  }
+                <div>
 
-  return age;
+                    <span class="member-paper-number">
+                        ${String(groupIndex + 1).padStart(2, "0")}
+                    </span>
+
+
+                    <h2>
+                        ${group.emoji}
+                        ${group.name}
+                    </h2>
+
+
+                    <p>
+                        ${group.agency}
+                    </p>
+
+                </div>
+
+
+                <div class="member-heading-right">
+
+                    <div class="member-group-count">
+                        ${group.members.length} MEMBERS
+                    </div>
+
+
+                    <a
+                        href="${group.source}"
+                        target="_blank"
+                        rel="noopener"
+                        class="member-source">
+
+                        SOURCE ↗
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="member-photo-grid">
+            </div>
+
+        `;
+
+
+        const grid =
+            section.querySelector(
+                ".member-photo-grid"
+            );
+
+
+        group.members.forEach(
+            (member, memberIndex) => {
+
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+
+                card.className =
+                    "member-photo-card";
+
+
+                card.onclick =
+                    function() {
+
+                        openMember(
+
+                            member[0],
+
+                            group.name,
+
+                            formatBirthday(
+                                member[1]
+                            ),
+
+                            member[2]
+
+                        );
+
+                    };
+
+
+                card.innerHTML = `
+
+                    <div class="member-card-tape">
+                    </div>
+
+
+                    <div class="member-card-number">
+                        ${String(memberIndex + 1).padStart(2, "0")}
+                    </div>
+
+
+                    <div class="member-image-wrap">
+
+                        <img
+                            src="${member[2]}"
+                            alt="${member[0]}"
+                            loading="lazy">
+
+                    </div>
+
+
+                    <div class="member-mini-label">
+                        ${group.name}
+                    </div>
+
+
+                    <h3>
+                        ${member[0]}
+                    </h3>
+
+
+                    <p>
+                        ${formatBirthday(member[1])}
+                    </p>
+
+
+                    <span class="member-open">
+                        OPEN ♡
+                    </span>
+
+                `;
+
+
+                grid.appendChild(
+                    card
+                );
+
+            }
+
+        );
+
+
+        container.appendChild(
+            section
+        );
+
+    }
+
+);
+
+
+
+/* =========================================
+   MEMBER POPUP
+========================================= */
+
+
+function openMember(
+    name,
+    group,
+    birthday,
+    image
+) {
+
+
+    document.getElementById(
+        "popupMemberName"
+    ).textContent =
+        name;
+
+
+    document.getElementById(
+        "popupMemberGroup"
+    ).textContent =
+        group;
+
+
+    document.getElementById(
+        "popupBirthday"
+    ).textContent =
+        birthday;
+
+
+    document.getElementById(
+        "popupMemberImage"
+    ).src =
+        image;
+
+
+    document.getElementById(
+        "popupStatus"
+    ).textContent =
+        "CURRENT";
+
+
+    document.getElementById(
+        "memberPopup"
+    ).classList.add(
+        "show"
+    );
+
 }
 
 
-/* =========================
-   POPUP
-========================= */
 
-function showPopup(name,group,birthday,position,debut){
+function closeMember() {
 
-  document.getElementById("popupName").textContent = name;
-  document.getElementById("popupGroup").textContent = group;
-  document.getElementById("popupBirthday").textContent = birthday;
-  document.getElementById("popupPosition").textContent = position;
-  document.getElementById("popupDebut").textContent = debut;
-
-  const age = calculateAge(birthday);
-
-  document.getElementById("popupAge").textContent =
-    age + " years old";
-
-  document.getElementById("popup").style.display = "flex";
-}
-
-
-function closePopup(){
-
-  document.getElementById("popup").style.display = "none";
+    document
+        .getElementById(
+            "memberPopup"
+        )
+        .classList.remove(
+            "show"
+        );
 
 }
 
 
-document.getElementById("popup").addEventListener("click",function(event){
 
-  if(event.target === this){
-    closePopup();
-  }
+window.onclick =
+function(event) {
 
-});
+    const popup =
+        document.getElementById(
+            "memberPopup"
+        );
 
 
-document.addEventListener("keydown",function(event){
+    if (
+        event.target === popup
+    ) {
 
-  if(event.key === "Escape"){
-    closePopup();
-  }
+        closeMember();
 
-});
+    }
+
+};
 
 </script>
 
+
 </body>
+
 </html>

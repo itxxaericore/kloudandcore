@@ -1,830 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>News ♡ K-POP LYRICS</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
+    <title>K-POP LYRICS ♡ | News</title>
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    color: #5d5260;
-    background: #fffafa;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    background: #f3dce8;
-    border-bottom: 3px solid #dfc2d1;
-    padding: 25px 15px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0 0 18px;
-    font-family: Georgia, serif;
-    color: #75596b;
-    font-size: 32px;
-    letter-spacing: 3px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #705869;
-    background: white;
-
-    border: 2px solid #e2ccd7;
-    border-radius: 8px;
-
-    padding: 8px 12px;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    box-shadow: 2px 3px 0 #ddccd5;
-
-    transition: .2s;
-}
-
-nav a:hover {
-    transform: translateY(-3px) rotate(-1deg);
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-.container {
-    width: 92%;
-    max-width: 1100px;
-    margin: 45px auto;
-}
-
-
-/* =========================
-   TITLE
-========================= */
-
-.title {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.title h2 {
-    display: inline-block;
-
-    margin: 0;
-    padding: 18px 32px;
-
-    background: #fff9d9;
-
-    border: 2px solid #e5d9a9;
-
-    font-family: Georgia, serif;
-    color: #756747;
-
-    box-shadow: 5px 6px 0 #e9dfb9;
-
-    transform: rotate(-1deg);
-}
-
-.title p {
-    margin-top: 20px;
-    font-size: 13px;
-    color: #8b7d88;
-}
-
-
-/* =========================
-   BREAKING NEWS
-========================= */
-
-.breaking {
-
-    background: #e8d5f0;
-
-    border: 2px solid #d2b9dc;
-
-    padding: 10px 15px;
-
-    box-shadow: 4px 5px 0 #dfd0e5;
-
-    margin-bottom: 35px;
-
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    overflow: hidden;
-}
-
-.breaking strong {
-
-    background: #795d80;
-
-    color: white;
-
-    padding: 6px 9px;
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-
-    flex-shrink: 0;
-}
-
-.breaking span {
-
-    font-size: 11px;
-
-    white-space: nowrap;
-
-    animation: ticker 15s linear infinite;
-}
-
-@keyframes ticker {
-
-    from {
-        transform: translateX(100%);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-
-}
-
-
-/* =========================
-   MAIN NEWS BOARD
-========================= */
-
-.news-board {
-
-    display: grid;
-
-    grid-template-columns:
-        1.7fr
-        1fr;
-
-    gap: 20px;
-
-    margin-bottom: 45px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-
-    background: #fffdf8;
-
-    border: 2px solid #e3d8cd;
-
-    box-shadow: 7px 8px 0 #e9dfd8;
-
-    padding: 28px;
-
-    position: relative;
-}
-
-.hero::before {
-
-    content: "TOP STORY";
-
-    position: absolute;
-
-    top: -12px;
-    left: 25px;
-
-    background: #f0cedd;
-
-    border: 2px solid #dbb6c8;
-
-    padding: 6px 11px;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    transform: rotate(-2deg);
-}
-
-.hero h2 {
-
-    margin: 8px 0 10px;
-
-    font-family: Georgia, serif;
-
-    color: #6e5363;
-
-    font-size: 27px;
-
-    line-height: 1.3;
-}
-
-.hero .date {
-
-    color: #ae7792;
-
-    font-size: 10px;
-
-    font-weight: bold;
-
-    margin-bottom: 17px;
-}
-
-.hero p {
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-    color: #756a72;
-}
-
-.hero button {
-
-    border: 2px solid #d9b8c8;
-
-    background: #f1dce6;
-
-    color: #705467;
-
-    padding: 9px 14px;
-
-    border-radius: 7px;
-
-    font-family: inherit;
-
-    font-weight: bold;
-
-    font-size: 10px;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   PIN BOARD
-========================= */
-
-.pin-board {
-
-    background: #f7e8ee;
-
-    border: 2px solid #e1cad6;
-
-    box-shadow: 5px 6px 0 #eadde3;
-
-    padding: 22px;
-}
-
-.pin-board h2 {
-
-    margin-top: 0;
-
-    font-family: Georgia, serif;
-
-    color: #76596c;
-
-    text-align: center;
-}
-
-.pin {
-
-    background: white;
-
-    border: 2px solid #eadde4;
-
-    padding: 12px;
-
-    margin-bottom: 10px;
-
-    position: relative;
-
-    font-size: 11px;
-
-    line-height: 1.5;
-}
-
-.pin:nth-child(odd) {
-    transform: rotate(-1deg);
-}
-
-.pin:nth-child(even) {
-    transform: rotate(1deg);
-}
-
-.pin::before {
-
-    content: "📌";
-
-    position: absolute;
-
-    right: 8px;
-    top: 5px;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   SECTION TITLES
-========================= */
-
-.section-title {
-
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    color: #76596c;
-
-    margin: 0 0 22px;
-}
-
-
-/* =========================
-   NEWS CARDS
-========================= */
-
-.news-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 16px;
-
-    margin-bottom: 50px;
-}
-
-.news-card {
-
-    background: white;
-
-    border: 2px solid #eadfe4;
-
-    padding: 18px;
-
-    min-height: 210px;
-
-    box-shadow: 3px 4px 0 #eee3e8;
-
-    transition: .2s;
-
-    position: relative;
-}
-
-.news-card:hover {
-
-    transform:
-        translateY(-5px)
-        rotate(.5deg);
-
-    box-shadow: 5px 7px 0 #e3d5dd;
-}
-
-.news-card:nth-child(2n) {
-    transform: rotate(.7deg);
-}
-
-.news-card:nth-child(3n) {
-    transform: rotate(-.6deg);
-}
-
-.tag {
-
-    display: inline-block;
-
-    background: #f1dce7;
-
-    color: #805f72;
-
-    padding: 5px 7px;
-
-    font-size: 8px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-.news-card h3 {
-
-    margin: 0 0 7px;
-
-    font-family: Georgia, serif;
-
-    color: #66515e;
-
-    font-size: 17px;
-
-    line-height: 1.35;
-}
-
-.news-card .date {
-
-    font-size: 9px;
-
-    color: #ad7a94;
-
-    margin-bottom: 10px;
-}
-
-.news-card p {
-
-    font-size: 11px;
-
-    line-height: 1.6;
-
-    color: #7a7077;
-
-    margin-bottom: 13px;
-}
-
-.news-card a {
-
-    text-decoration: none;
-
-    color: #91647d;
-
-    font-size: 10px;
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   TRENDING
-========================= */
-
-.trending {
-
-    background: #e6f2f7;
-
-    border: 2px solid #c8dde6;
-
-    box-shadow: 5px 6px 0 #dbe7eb;
-
-    padding: 25px;
-
-    margin-bottom: 45px;
-}
-
-.trending h2 {
-
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    color: #617985;
-
-    margin-top: 0;
-}
-
-.trending-list {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-}
-
-.trend {
-
-    background: white;
-
-    border: 2px solid #d4e4e9;
-
-    padding: 10px 13px;
-
-    font-size: 10px;
-
-    color: #637781;
-}
-
-.trend strong {
-
-    color: #9a6f87;
-
-    margin-right: 4px;
-}
-
-
-/* =========================
-   COMEBACK RADAR
-========================= */
-
-.radar {
-
-    background: #fff4c9;
-
-    border: 2px solid #e3d49b;
-
-    box-shadow: 5px 6px 0 #e8dfbb;
-
-    padding: 25px;
-
-    margin-bottom: 45px;
-}
-
-.radar h2 {
-
-    text-align: center;
-
-    margin-top: 0;
-
-    font-family: Georgia, serif;
-
-    color: #756747;
-}
-
-.radar-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 10px;
-}
-
-.radar-item {
-
-    background: white;
-
-    border: 2px solid #e6dbb9;
-
-    padding: 13px;
-
-    text-align: center;
-}
-
-.radar-item .date {
-
-    font-family: Georgia, serif;
-
-    font-size: 19px;
-
-    color: #b07b91;
-}
-
-.radar-item strong {
-
-    display: block;
-
-    margin-top: 7px;
-
-    font-size: 11px;
-
-    color: #695b50;
-}
-
-.radar-item span {
-
-    display: block;
-
-    margin-top: 4px;
-
-    font-size: 9px;
-
-    color: #938677;
-}
-
-
-/* =========================
-   NEWS MOOD
-========================= */
-
-.mood {
-
-    background: #eadff3;
-
-    border: 2px solid #d5c2df;
-
-    box-shadow: 5px 6px 0 #e0d5e7;
-
-    padding: 25px;
-
-    text-align: center;
-
-    margin-bottom: 45px;
-}
-
-.mood h2 {
-
-    margin-top: 0;
-
-    font-family: Georgia, serif;
-
-    color: #705a79;
-}
-
-.mood p {
-
-    font-size: 12px;
-
-    color: #776980;
-
-    margin-bottom: 20px;
-}
-
-.mood-buttons {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 9px;
-}
-
-.mood-buttons button {
-
-    background: white;
-
-    border: 2px solid #d7c7df;
-
-    padding: 9px 12px;
-
-    border-radius: 7px;
-
-    color: #735d7c;
-
-    font-family: inherit;
-
-    font-size: 10px;
-
-    cursor: pointer;
-}
-
-.mood-buttons button:hover {
-
-    transform: translateY(-2px);
-
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    background: #eadcf2;
-
-    border-top: 3px solid #d7c2e2;
-
-    text-align: center;
-
-    padding: 30px;
-
-    color: #705b78;
-
-    font-family: Georgia, serif;
-}
-
-
-/* =========================
-   POPUP
-========================= */
-
-.popup {
-
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(70,55,65,.35);
-
-    align-items: center;
-
-    justify-content: center;
-
-    z-index: 99;
-}
-
-.popup-box {
-
-    width: 90%;
-
-    max-width: 450px;
-
-    background: #fffdf8;
-
-    border: 3px solid #dfc8d4;
-
-    box-shadow: 7px 8px 0 #d8c5cf;
-
-    padding: 25px;
-
-    position: relative;
-}
-
-.popup-box h2 {
-
-    margin-top: 0;
-
-    font-family: Georgia, serif;
-
-    color: #705467;
-}
-
-.popup-box p {
-
-    font-size: 12px;
-
-    line-height: 1.7;
-}
-
-.close {
-
-    position: absolute;
-
-    right: 10px;
-    top: 10px;
-
-    width: 28px;
-    height: 28px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #f0dce5;
-
-    color: #705467;
-
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .news-board {
-        grid-template-columns: 1fr;
-    }
-
-    .news-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .radar-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-}
-
-@media (max-width: 550px) {
-
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .radar-grid {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-</style>
+    <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
@@ -834,111 +21,249 @@ footer {
 
 <header>
 
-    <h1>K-POP LYRICS ♡</h1>
+    <h1 class="logo">
+        K-POP LYRICS ♡
+    </h1>
+
 
     <nav>
 
-        <a href="index.html">Home</a>
-        <a href="groups.html">Groups</a>
-        <a href="songs.html">Songs</a>
-        <a href="members.html">Members</a>
-        <a href="soloists.html">Soloists</a>
-        <a href="releases.html">Releases</a>
-        <a href="rankings.html">Rankings</a>
-        <a href="news.html">News</a>
+        <a href="index.html">HOME</a>
+        <a href="groups.html">GROUPS</a>
+        <a href="songs.html">SONGS</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="soloists.html">SOLOISTS</a>
+        <a href="releases.html">RELEASES</a>
+        <a href="rankings.html">RANKINGS</a>
+        <a href="news.html">NEWS</a>
 
     </nav>
 
 </header>
 
 
-<main class="container">
+
+<main class="news-container">
 
 
-<!-- TITLE -->
+<!-- =========================================
+     HERO
+========================================= -->
 
-<section class="title">
+<section class="news-hero-paper">
 
-    <h2>📰 K-POP NEWS ♡</h2>
+    <div class="news-hero-tape"></div>
+
+
+    <div class="news-hero-top">
+
+        <span class="news-small-label">
+            ♡ SCRAPBOOK PAGE 08
+        </span>
+
+
+        <span class="news-sticker">
+            NEWS ARCHIVE
+        </span>
+
+    </div>
+
+
+    <h1>
+        what's happening
+        <br>
+        <span>in K-pop? ☆</span>
+    </h1>
+
 
     <p>
-        Headlines • comebacks • announcements • everything happening in K-pop
+        Fresh comeback announcements, new releases,
+        performances and other K-pop updates —
+        all pinned to one little scrapbook.
     </p>
+
+
+    <div class="news-doodles">
+        📰 ☆ ♡ ✦ 📌 ♪ ✂
+    </div>
 
 </section>
 
 
-<!-- BREAKING -->
 
-<div class="breaking">
+<!-- =========================================
+     BREAKING STRIP
+========================================= -->
 
-    <strong>BREAKING</strong>
+<section class="breaking">
 
-    <span id="ticker">
-        ✦ K-pop news desk is open! ✦ New comebacks • new music • new stages • new announcements ✦
-    </span>
-
-</div>
-
-
-<!-- =========================
-     MAIN BOARD
-========================= -->
-
-<section class="news-board">
+    <strong>
+        LATEST
+    </strong>
 
 
-    <!-- HERO -->
+    <div class="ticker">
 
-    <article class="hero">
+        <span>
+            ✦ MEOVV • EVNNE • ILLIT • RIIZE • CORTIS • TEEN TOP • ✦
+        </span>
 
-        <h2>
-            K-pop's October comeback season is officially here 🎀
-        </h2>
+    </div>
 
-        <div class="date">
-            OCTOBER 2026 • K-POP NEWS DESK
+</section>
+
+
+
+<!-- =========================================
+     FEATURE + PIN BOARD
+========================================= -->
+
+<section class="news-layout">
+
+
+    <!-- FEATURE -->
+
+    <article class="hero-news featured-news-paper">
+
+        <div class="paper-tape"></div>
+
+
+        <span class="tag">
+            TOP STORY • OCT 3
+        </span>
+
+
+        <div class="featured-news-icon">
+            ✦
         </div>
 
-        <p>
-            October is bringing a packed lineup of new music,
-            comeback announcements, solo releases and special
-            projects from artists across the K-pop scene.
-        </p>
+
+        <h2>
+            MEOVV is getting ready
+            to <span>GO HARD</span> ♡
+        </h2>
+
 
         <p>
-            Check the stories below for individual updates,
-            then visit the official sources for the complete reports.
+            MEOVV is preparing to release its
+            new single album “GO HARD” on
+            October 12 at 6 PM KST.
+            New teaser images and individual
+            teaser clips have been released.
         </p>
 
-        <button onclick="openStory()">
-            ✦ OPEN NEWS CARD
-        </button>
+
+        <div class="featured-meta">
+
+            <span>
+                📅 OCT 12
+            </span>
+
+            <span>
+                💿 SINGLE ALBUM
+            </span>
+
+            <span>
+                🐾 MEOVV
+            </span>
+
+        </div>
+
+
+        <a
+            href="https://www.soompi.com/article/1874791wpp/update-meovv-stars-in-teasers-for-new-single-album-go-hard"
+            target="_blank"
+            rel="noopener"
+            class="read-source">
+
+            READ SOURCE ↗
+
+        </a>
 
     </article>
+
 
 
     <!-- PIN BOARD -->
 
     <aside class="pin-board">
 
-        <h2>📌 News Pins</h2>
+        <div class="pin-board-header">
 
+            <h2>
+                📌 PIN BOARD
+            </h2>
 
-        <div class="pin">
-            🎤 New comeback announcements are arriving throughout October.
+            <span>
+                08
+            </span>
+
         </div>
 
-        <div class="pin">
-            💿 Several artists have new albums and mini albums scheduled.
+
+
+        <div class="pin-note pin-pink">
+
+            <b>
+                MEOVV
+            </b>
+
+            <span>
+                “GO HARD” • OCT 12
+            </span>
+
         </div>
 
-        <div class="pin">
-            🌎 K-pop continues to expand into international events.
+
+        <div class="pin-note pin-blue">
+
+            <b>
+                EVNNE
+            </b>
+
+            <span>
+                “on: our noise” • OCT 19
+            </span>
+
         </div>
 
-        <div class="pin">
-            ✨ Watch official artist accounts for teaser updates.
+
+        <div class="pin-note pin-yellow">
+
+            <b>
+                ILLIT
+            </b>
+
+            <span>
+                “BREAK EVEN” • OCT 26
+            </span>
+
+        </div>
+
+
+        <div class="pin-note pin-purple">
+
+            <b>
+                RIIZE
+            </b>
+
+            <span>
+                Digital single • OCT 26
+            </span>
+
+        </div>
+
+
+        <div class="pin-note pin-green">
+
+            <b>
+                TEEN TOP
+            </b>
+
+            <span>
+                “DON'T STOP” • OCT 15
+            </span>
+
         </div>
 
     </aside>
@@ -947,273 +272,592 @@ footer {
 </section>
 
 
-<!-- =========================
-     LATEST
-========================= -->
 
-<h2 class="section-title">
-    ✦ Latest Headlines ✦
-</h2>
+<!-- =========================================
+     LATEST HEADLINES
+========================================= -->
 
-
-<section class="news-grid">
+<section class="paper latest-paper">
 
 
-    <article class="news-card">
+    <div class="paper-heading">
 
-        <span class="tag">COMEBACK</span>
+        <div>
 
-        <h3>
-            MEOVV Announces “GO HARD”
-        </h3>
+            <span>
+                01
+            </span>
 
-        <div class="date">
-            OCTOBER 1, 2026
+            <h2>
+                ✂ LATEST HEADLINES
+            </h2>
+
+            <p>
+                real stories with source links
+            </p>
+
         </div>
 
-        <p>
-            MEOVV revealed new teaser material for
-            their upcoming single album “GO HARD.”
-        </p>
 
-        <a
-            href="https://www.allkpop.com/article/2026/09/meovv-announces-their-comeback-with-new-single-album-go-hard-with-new-teaser-photos"
-            target="_blank"
-        >
-            READ STORY ↗
-        </a>
-
-    </article>
-
-
-    <article class="news-card">
-
-        <span class="tag">COMEBACK</span>
-
-        <h3>
-            EVNNE Announces October Return
-        </h3>
-
-        <div class="date">
-            OCTOBER 1, 2026
+        <div class="cutout yellow-cutout">
+            READ + SAVE
         </div>
 
-        <p>
-            EVNNE confirmed their sixth mini album
-            “on: our noise.”
-        </p>
-
-        <a
-            href="https://www.allkpop.com/article/2026/09/evnne-confirm-october-19-comeback-with-sixth-mini-album-on-our-noise"
-            target="_blank"
-        >
-            READ STORY ↗
-        </a>
-
-    </article>
+    </div>
 
 
-    <article class="news-card">
 
-        <span class="tag">NEW MUSIC</span>
-
-        <h3>
-            WAYF BOYS Release “A4M”
-        </h3>
-
-        <div class="date">
-            OCTOBER 2, 2026
-        </div>
-
-        <p>
-            WAYF BOYS are releasing “A4M,” following
-            their previous performances of the song.
-        </p>
-
-        <a
-            href="https://www.allkpop.com/article/2026/09/wayf-boys-set-october-2-for-a4m-the-last-of-the-songs-they-first-performed-at-waterbomb"
-            target="_blank"
-        >
-            READ STORY ↗
-        </a>
-
-    </article>
+    <div class="news-grid">
 
 
-    <article class="news-card">
+        <!-- EVNNE -->
 
-        <span class="tag">IVE</span>
+        <article class="news-card news-pink">
 
-        <h3>
-            IVE Reveals “Looks Can Kill” Schedule
-        </h3>
+            <span class="news-number">
+                01
+            </span>
 
-        <div class="date">
-            SEPTEMBER 30, 2026
-        </div>
-
-        <p>
-            IVE released the schedule for their
-            upcoming mini album “Looks Can Kill.”
-        </p>
-
-        <a
-            href="https://www.allkpop.com/article/2026/09/ive-reveal-their-comeback-schedule-for-new-mini-album-looks-can-kill"
-            target="_blank"
-        >
-            READ STORY ↗
-        </a>
-
-    </article>
+            <span class="news-date">
+                OCT 2 • 2026
+            </span>
 
 
-    <article class="news-card">
-
-        <span class="tag">SOLO</span>
-
-        <h3>
-            Park Woo Jin Prepares “Solstice”
-        </h3>
-
-        <div class="date">
-            SEPTEMBER 29, 2026
-        </div>
-
-        <p>
-            Park Woo Jin is preparing his second EP,
-            “Solstice.”
-        </p>
-
-        <a
-            href="https://www.allkpop.com/article/2026/09/park-woo-jin-gears-up-for-his-solo-comeback-with-new-scheduler-teaser"
-            target="_blank"
-        >
-            READ STORY ↗
-        </a>
-
-    </article>
+            <div class="news-card-icon">
+                ✦
+            </div>
 
 
-    <article class="news-card">
-
-        <span class="tag">PLAVE</span>
-
-        <h3>
-            PLAVE Announces “HYPERDRIVE”
-        </h3>
-
-        <div class="date">
-            SEPTEMBER 2026
-        </div>
-
-        <p>
-            PLAVE revealed plans for their fifth mini
-            album “HYPERDRIVE.”
-        </p>
-
-        <a
-            href="https://www.allkpop.com/article/2026/09/plave-reveal-the-schedule-for-their-october-comeback-with-hyperdrive"
-            target="_blank"
-        >
-            READ STORY ↗
-        </a>
-
-    </article>
+            <h3>
+                EVNNE starts
+                comeback countdown
+            </h3>
 
 
-</section>
+            <p>
+                EVNNE revealed its promotion schedule
+                for sixth mini album
+                “on: our noise.”
+                The album and title-track MV
+                are set for October 19 at 6 PM KST.
+            </p>
 
 
-<!-- =========================
-     TRENDING
-========================= -->
+            <a
+                href="https://www.soompi.com/article/1875065wpp/evnne-drops-promotion-schedule-for-upcoming-album-on-our-noise"
+                target="_blank"
+                rel="noopener">
 
-<section class="trending">
+                SOURCE ↗
 
-    <h2>🔥 What's Trending</h2>
+            </a>
 
-    <div class="trending-list">
+        </article>
 
-        <div class="trend">
-            <strong>#01</strong> October Comebacks
-        </div>
 
-        <div class="trend">
-            <strong>#02</strong> New Albums
-        </div>
 
-        <div class="trend">
-            <strong>#03</strong> Teaser Photos
-        </div>
+        <!-- ILLIT -->
 
-        <div class="trend">
-            <strong>#04</strong> Solo Releases
-        </div>
+        <article class="news-card news-blue">
 
-        <div class="trend">
-            <strong>#05</strong> Music Videos
-        </div>
+            <span class="news-number">
+                02
+            </span>
 
-        <div class="trend">
-            <strong>#06</strong> World Tours
-        </div>
+            <span class="news-date">
+                SEP 2026
+            </span>
+
+
+            <div class="news-card-icon">
+                ♡
+            </div>
+
+
+            <h3>
+                ILLIT announces
+                “BREAK EVEN”
+            </h3>
+
+
+            <p>
+                ILLIT's fifth mini album
+                “BREAK EVEN” is scheduled for
+                October 26 at 6 PM KST.
+            </p>
+
+
+            <a
+                href="https://weverse.io/illit/notice/39196"
+                target="_blank"
+                rel="noopener">
+
+                OFFICIAL SOURCE ↗
+
+            </a>
+
+        </article>
+
+
+
+        <!-- RIIZE -->
+
+        <article class="news-card news-yellow">
+
+            <span class="news-number">
+                03
+            </span>
+
+            <span class="news-date">
+                SEP 13 • 2026
+            </span>
+
+
+            <div class="news-card-icon">
+                ★
+            </div>
+
+
+            <h3>
+                RIIZE announces
+                October comeback
+            </h3>
+
+
+            <p>
+                RIIZE announced a new digital single
+                for October 26, followed by plans
+                for a second full-length album in
+                spring 2027.
+            </p>
+
+
+            <a
+                href="https://www.soompi.com/article/1870026wpp/riize-announces-october-comeback-and-2027-plans-for-new-full-length-album"
+                target="_blank"
+                rel="noopener">
+
+                SOURCE ↗
+
+            </a>
+
+        </article>
+
+
+
+        <!-- CORTIS -->
+
+        <article class="news-card news-purple">
+
+            <span class="news-number">
+                04
+            </span>
+
+            <span class="news-date">
+                OCT 2 • 2026
+            </span>
+
+
+            <div class="news-card-icon">
+                🏆
+            </div>
+
+
+            <h3>
+                CORTIS gets
+                12th Music Bank win
+            </h3>
+
+
+            <p>
+                CORTIS won this week's
+                Music Bank K-Chart with
+                “REDRED,” bringing the song's
+                total to 12 music-show trophies.
+            </p>
+
+
+            <a
+                href="https://www.soompi.com/article/1875044wpp/cortis-takes-12th-win-for-redred-on-music-bank"
+                target="_blank"
+                rel="noopener">
+
+                SOURCE ↗
+
+            </a>
+
+        </article>
+
+
+
+        <!-- TEEN TOP -->
+
+        <article class="news-card news-green">
+
+            <span class="news-number">
+                05
+            </span>
+
+            <span class="news-date">
+                SEP 29 • 2026
+            </span>
+
+
+            <div class="news-card-icon">
+                ☆
+            </div>
+
+
+            <h3>
+                TEEN TOP announces
+                “DON'T STOP”
+            </h3>
+
+
+            <p>
+                TEEN TOP will return with its
+                11th mini album “DON'T STOP”
+                on October 15 at 6 PM KST.
+            </p>
+
+
+            <a
+                href="https://www.soompi.com/article/1874172wpp/teen-top-announces-october-comeback-with-schedule-for-dont-stop"
+                target="_blank"
+                rel="noopener">
+
+                SOURCE ↗
+
+            </a>
+
+        </article>
+
+
+
+        <!-- MEOVV INSTAGRAM -->
+
+        <article class="news-card news-pink">
+
+            <span class="news-number">
+                06
+            </span>
+
+            <span class="news-date">
+                OCT 1 • 2026
+            </span>
+
+
+            <div class="news-card-icon">
+                📱
+            </div>
+
+
+            <h3>
+                MEOVV members
+                open Instagram accounts
+            </h3>
+
+
+            <p>
+                Sooin, Gawon, Anna and Narin
+                launched individual Instagram accounts,
+                joining Ella's existing account.
+            </p>
+
+
+            <a
+                href="https://www.soompi.com/article/1874819wpp/meovv-members-launch-individual-instagram-accounts"
+                target="_blank"
+                rel="noopener">
+
+                SOURCE ↗
+
+            </a>
+
+        </article>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =========================================
+     TRENDING
+========================================= -->
+
+<section class="paper blue-paper trending-paper">
+
+
+    <div class="paper-heading">
+
+        <div>
+
+            <span>
+                02
+            </span>
+
+            <h2>
+                🔥 TRENDING
+            </h2>
+
+            <p>
+                topics appearing in the current news cycle
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="trend-tags">
+
+        <span>
+            #MEOVV
+        </span>
+
+        <span>
+            #GOHARD
+        </span>
+
+        <span>
+            #EVNNE
+        </span>
+
+        <span>
+            #ONOURNOISE
+        </span>
+
+        <span>
+            #ILLIT
+        </span>
+
+        <span>
+            #BREAKEVEN
+        </span>
+
+        <span>
+            #RIIZE
+        </span>
+
+        <span>
+            #CORTIS
+        </span>
+
+        <span>
+            #TEENTOP
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
      COMEBACK RADAR
-========================= -->
+========================================= -->
 
-<section class="radar">
+<section class="paper yellow-paper radar-paper">
 
-    <h2>📡 COMEBACK RADAR</h2>
+
+    <div class="paper-heading">
+
+        <div>
+
+            <span>
+                03
+            </span>
+
+            <h2>
+                📡 COMEBACK RADAR
+            </h2>
+
+            <p>
+                upcoming dates worth remembering
+            </p>
+
+        </div>
+
+    </div>
+
+
 
     <div class="radar-grid">
 
 
-        <div class="radar-item">
+        <div class="radar-item radar-one">
 
-            <div class="date">02 OCT</div>
+            <span>
+                OCT 12
+            </span>
 
-            <strong>WAYF BOYS</strong>
+            <strong>
+                MEOVV
+            </strong>
 
-            <span>A4M</span>
-
-        </div>
-
-
-        <div class="radar-item">
-
-            <div class="date">08 OCT</div>
-
-            <strong>YUQI</strong>
-
-            <span>27</span>
+            <small>
+                GO HARD
+            </small>
 
         </div>
 
 
-        <div class="radar-item">
+        <div class="radar-item radar-two">
 
-            <div class="date">12 OCT</div>
+            <span>
+                OCT 15
+            </span>
 
-            <strong>MEOVV</strong>
+            <strong>
+                TEEN TOP
+            </strong>
 
-            <span>GO HARD</span>
+            <small>
+                DON'T STOP
+            </small>
 
         </div>
 
 
-        <div class="radar-item">
+        <div class="radar-item radar-three">
 
-            <div class="date">19 OCT</div>
+            <span>
+                OCT 19
+            </span>
 
-            <strong>EVNNE</strong>
+            <strong>
+                EVNNE
+            </strong>
 
-            <span>on: our noise</span>
+            <small>
+                on: our noise
+            </small>
+
+        </div>
+
+
+        <div class="radar-item radar-four">
+
+            <span>
+                OCT 26
+            </span>
+
+            <strong>
+                ILLIT
+            </strong>
+
+            <small>
+                BREAK EVEN
+            </small>
+
+        </div>
+
+
+        <div class="radar-item radar-five">
+
+            <span>
+                OCT 26
+            </span>
+
+            <strong>
+                RIIZE
+            </strong>
+
+            <small>
+                DIGITAL SINGLE
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     NEWSROOM NOTES
+========================================= -->
+
+<section class="newsroom-section">
+
+
+    <div class="newsroom-heading">
+
+        <div>
+
+            <span>
+                04
+            </span>
+
+            <h2>
+                📌 newsroom notes
+            </h2>
+
+            <p>
+                tiny pieces of paper from the news desk
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="newsroom-notes">
+
+
+        <div class="newsroom-note note-pink">
+
+            📌
+
+            <h3>
+                CHECK THE DATE
+            </h3>
+
+            <p>
+                K-pop release schedules
+                can change, so check the
+                source before updating
+                your scrapbook.
+            </p>
+
+        </div>
+
+
+        <div class="newsroom-note note-yellow">
+
+            📌
+
+            <h3>
+                OCTOBER IS BUSY
+            </h3>
+
+            <p>
+                MEOVV • TEEN TOP • EVNNE
+                • ILLIT • RIIZE
+                all have October dates
+                on the board.
+            </p>
+
+        </div>
+
+
+        <div class="newsroom-note note-blue">
+
+            📌
+
+            <h3>
+                SOURCE FIRST
+            </h3>
+
+            <p>
+                Every news card has
+                a source button so readers
+                can check the original story.
+            </p>
 
         </div>
 
@@ -1223,40 +867,65 @@ footer {
 </section>
 
 
-<!-- =========================
-     NEWS MOOD
-========================= -->
 
-<section class="mood">
+<!-- =========================================
+     CUT OUTS
+========================================= -->
 
-    <h2>💭 What's Your K-pop News Mood?</h2>
+<section class="news-cutout-section">
+
+    <span class="news-cutout pink-cutout">
+        BREAKING ♡
+    </span>
+
+    <span class="news-cutout blue-cutout">
+        COMEBACK
+    </span>
+
+    <span class="news-cutout yellow-cutout">
+        NEW MUSIC
+    </span>
+
+    <span class="news-cutout purple-cutout">
+        STAGE ☆
+    </span>
+
+    <span class="news-cutout green-cutout">
+        OCTOBER
+    </span>
+
+    <span class="news-cutout pink-cutout">
+        READ MORE →
+    </span>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER NOTE
+========================================= -->
+
+<section class="news-last-note">
+
+    <div class="news-last-sticker">
+        📰 LAST PIN
+    </div>
+
+
+    <h2>
+        keep the scrapbook updated with the real stuff ♡
+    </h2>
+
 
     <p>
-        Click one and see your totally unofficial news-desk mood!
+        News cards show the date and source
+        so you can check the original information.
     </p>
 
-    <div class="mood-buttons">
 
-        <button onclick="showMood('🎀 COMEBACK CHAOS')">
-            🎀 COMEBACK CHAOS
-        </button>
-
-        <button onclick="showMood('💿 ALBUM COLLECTOR')">
-            💿 ALBUM COLLECTOR
-        </button>
-
-        <button onclick="showMood('👀 TEASER DETECTIVE')">
-            👀 TEASER DETECTIVE
-        </button>
-
-        <button onclick="showMood('🎤 STAGE WATCHER')">
-            🎤 STAGE WATCHER
-        </button>
-
-        <button onclick="showMood('🌎 GLOBAL K-POP')">
-            🌎 GLOBAL K-POP
-        </button>
-
+    <div>
+        ☆ ♡ ✦ 📌 📰 ♪
     </div>
 
 </section>
@@ -1265,101 +934,19 @@ footer {
 </main>
 
 
-<!-- POPUP -->
-
-<div class="popup" id="popup">
-
-    <div class="popup-box">
-
-        <button
-            class="close"
-            onclick="closePopup()"
-        >
-            ×
-        </button>
-
-        <h2 id="popupTitle">
-            📰 K-pop News Desk
-        </h2>
-
-        <p id="popupText"></p>
-
-    </div>
-
-</div>
-
 
 <footer>
 
-    ♡ K-POP LYRICS ♡
+    <p>
+        📰 cut it out • pin it • save it ♡
+    </p>
 
-    <br><br>
-
-    Made with HTML, music & scrapbook energy 🎀
+    <span>
+        K-POP LYRICS • 2026
+    </span>
 
 </footer>
 
-
-<script>
-
-
-/* =========================
-   HERO POPUP
-========================= */
-
-function openStory() {
-
-    document.getElementById("popupTitle").textContent =
-        "📰 October K-pop News";
-
-    document.getElementById("popupText").textContent =
-        "October 2026 has a busy K-pop release schedule, with comeback announcements, albums, singles and solo projects being revealed throughout the month.";
-
-    document.getElementById("popup").style.display =
-        "flex";
-}
-
-
-/* =========================
-   MOOD POPUP
-========================= */
-
-function showMood(mood) {
-
-    document.getElementById("popupTitle").textContent =
-        mood;
-
-    document.getElementById("popupText").textContent =
-        "Your K-pop newsroom personality has been detected! 🎀 Keep checking the News page for more updates.";
-
-    document.getElementById("popup").style.display =
-        "flex";
-}
-
-
-/* =========================
-   CLOSE
-========================= */
-
-function closePopup() {
-
-    document.getElementById("popup").style.display =
-        "none";
-}
-
-
-document.getElementById("popup").addEventListener(
-    "click",
-    function(event) {
-
-        if (event.target === this) {
-            closePopup();
-        }
-
-    }
-);
-
-</script>
 
 
 </body>

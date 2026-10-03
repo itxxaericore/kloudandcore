@@ -1,915 +1,864 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rankings ♡ K-POP LYRICS</title>
+    <title>Rankings • K-POP LYRICS ♡</title>
 
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    color: #5d5260;
-
-    background:
-        linear-gradient(#fffafa, #fffafa);
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    background: #f3dce8;
-    border-bottom: 3px solid #dfc2d1;
-    padding: 25px 15px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0 0 18px;
-    font-family: Georgia, serif;
-    color: #75596b;
-    font-size: 32px;
-    letter-spacing: 3px;
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #705869;
-    background: white;
-
-    border: 2px solid #e2ccd7;
-    border-radius: 8px;
-
-    padding: 8px 12px;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    box-shadow: 2px 3px 0 #ddccd5;
-
-    transition: .2s;
-}
-
-nav a:hover {
-    transform: translateY(-3px) rotate(-1deg);
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-.container {
-    width: 92%;
-    max-width: 1050px;
-    margin: 45px auto;
-}
-
-
-/* =========================
-   TITLE
-========================= */
-
-.title {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.title h2 {
-    display: inline-block;
-
-    margin: 0;
-
-    padding: 18px 30px;
-
-    background: #fff9d9;
-
-    border: 2px solid #e5d9a9;
-
-    font-family: Georgia, serif;
-    color: #756747;
-
-    box-shadow: 5px 6px 0 #e9dfb9;
-
-    transform: rotate(-1deg);
-}
-
-.title p {
-    margin-top: 20px;
-    font-size: 13px;
-    color: #8b7d88;
-}
-
-
-/* =========================
-   OFFICIAL CHART BOX
-========================= */
-
-.official {
-
-    background: #e7f4fa;
-
-    border: 2px solid #c9dfe8;
-
-    padding: 20px;
-
-    box-shadow: 5px 6px 0 #d7e6ec;
-
-    margin-bottom: 35px;
-
-    position: relative;
-}
-
-.official::before {
-
-    content: "OFFICIAL";
-
-    position: absolute;
-
-    top: -12px;
-    right: 20px;
-
-    background: #f1d1df;
-
-    border: 2px solid #ddbaca;
-
-    padding: 5px 10px;
-
-    font-size: 9px;
-    font-weight: bold;
-
-    transform: rotate(3deg);
-}
-
-.official h3 {
-
-    margin: 0 0 8px;
-
-    color: #607989;
-
-    font-family: Georgia, serif;
-}
-
-.official p {
-
-    font-size: 12px;
-
-    line-height: 1.6;
-
-    margin: 0;
-}
-
-.official a {
-
-    display: inline-block;
-
-    margin-top: 15px;
-
-    padding: 8px 13px;
-
-    background: white;
-
-    border: 2px solid #c8dce5;
-
-    border-radius: 7px;
-
-    text-decoration: none;
-
-    color: #607989;
-
-    font-size: 11px;
-
-    font-weight: bold;
-}
-
-
-/* =========================
-   CHART TABS
-========================= */
-
-.tabs {
-
-    display: flex;
-
-    justify-content: center;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-
-    margin-bottom: 25px;
-}
-
-.tab {
-
-    cursor: pointer;
-
-    border: 2px solid #dfccd7;
-
-    background: #fff;
-
-    color: #725d6c;
-
-    padding: 9px 13px;
-
-    border-radius: 7px;
-
-    font-family: inherit;
-
-    font-size: 11px;
-
-    font-weight: bold;
-}
-
-.tab:hover {
-    transform: translateY(-2px);
-}
-
-.tab.active {
-
-    background: #eccddd;
-
-    border-color: #d9afc2;
-}
-
-
-/* =========================
-   RANKING PAPER
-========================= */
-
-.ranking-paper {
-
-    background: #fffdf8;
-
-    border: 2px solid #e4d9cf;
-
-    box-shadow: 5px 6px 0 #e9dfd7;
-
-    padding: 25px;
-
-    margin-bottom: 50px;
-}
-
-.ranking-title {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    border-bottom: 2px dashed #dfd0d8;
-
-    padding-bottom: 15px;
-
-    margin-bottom: 18px;
-}
-
-.ranking-title h2 {
-
-    margin: 0;
-
-    font-family: Georgia, serif;
-
-    color: #76596c;
-}
-
-.week {
-
-    background: #fff0b7;
-
-    padding: 6px 9px;
-
-    font-size: 9px;
-
-    border: 1px solid #e0d292;
-}
-
-
-/* =========================
-   RANK CARDS
-========================= */
-
-.rank {
-
-    display: grid;
-
-    grid-template-columns: 55px 1fr auto;
-
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 13px;
-
-    margin-bottom: 9px;
-
-    background: white;
-
-    border: 2px solid #eee1e7;
-
-    transition: .2s;
-}
-
-.rank:hover {
-
-    transform: translateX(4px);
-
-    border-color: #dfc2d1;
-}
-
-.number {
-
-    font-family: Georgia, serif;
-
-    font-size: 27px;
-
-    text-align: center;
-
-    color: #a27c91;
-}
-
-.rank:first-child .number {
-    color: #c18b47;
-}
-
-.song strong {
-
-    display: block;
-
-    font-size: 14px;
-
-    color: #62515d;
-}
-
-.song span {
-
-    display: block;
-
-    margin-top: 4px;
-
-    font-size: 11px;
-
-    color: #91828c;
-}
-
-.badge {
-
-    background: #f3e6ed;
-
-    border-radius: 6px;
-
-    padding: 6px 8px;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    color: #806274;
-}
-
-
-/* =========================
-   FEEDBACK
-========================= */
-
-.feedback {
-
-    background: #fdf0c9;
-
-    border: 2px solid #e5d69e;
-
-    box-shadow: 6px 7px 0 #e8dfb9;
-
-    padding: 30px;
-
-    margin-bottom: 50px;
-
-    position: relative;
-}
-
-.feedback::before {
-
-    content: "♡ YOUR OPINION MATTERS ♡";
-
-    position: absolute;
-
-    top: -15px;
-
-    left: 25px;
-
-    background: #e7d3f1;
-
-    border: 2px solid #d3bcdc;
-
-    padding: 6px 12px;
-
-    font-size: 9px;
-
-    font-weight: bold;
-
-    transform: rotate(-2deg);
-}
-
-.feedback h2 {
-
-    margin: 8px 0 5px;
-
-    text-align: center;
-
-    font-family: Georgia, serif;
-
-    color: #706548;
-
-    font-size: 27px;
-}
-
-.feedback-intro {
-
-    text-align: center;
-
-    font-size: 12px;
-
-    color: #82765c;
-
-    margin-bottom: 28px;
-}
-
-
-/* =========================
-   QUESTIONS
-========================= */
-
-.question {
-
-    margin-bottom: 25px;
-}
-
-.question label {
-
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: #685b50;
-
-    font-size: 13px;
-
-    font-weight: bold;
-}
-
-.question-number {
-
-    color: #ba7895;
-
-    margin-right: 5px;
-}
-
-
-/* =========================
-   ANSWER BOX
-========================= */
-
-textarea {
-
-    width: 100%;
-
-    min-height: 90px;
-
-    resize: vertical;
-
-    padding: 12px;
-
-    background: #fffdf7;
-
-    border: 2px solid #ddcfaa;
-
-    border-radius: 5px;
-
-    font-family: "Trebuchet MS", Arial, sans-serif;
-
-    font-size: 12px;
-
-    color: #5d5260;
-
-    outline: none;
-
-    box-shadow: 2px 3px 0 #e9dfbd;
-}
-
-textarea:focus {
-
-    border-color: #c9a9ba;
-
-    background: white;
-}
-
-
-/* =========================
-   SMALL INPUT
-========================= */
-
-input {
-
-    width: 100%;
-
-    padding: 11px;
-
-    background: #fffdf7;
-
-    border: 2px solid #ddcfaa;
-
-    border-radius: 5px;
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    outline: none;
-}
-
-input:focus {
-    border-color: #c9a9ba;
-}
-
-
-/* =========================
-   SUBMIT
-========================= */
-
-.submit {
-
-    display: block;
-
-    margin: 30px auto 5px;
-
-    padding: 12px 25px;
-
-    background: #e9c9d9;
-
-    border: 2px solid #d5adbf;
-
-    border-radius: 8px;
-
-    color: #694f60;
-
-    font-family: inherit;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow: 3px 4px 0 #ddc2ce;
-}
-
-.submit:hover {
-
-    transform: translateY(-2px);
-
-}
-
-
-/* =========================
-   THANK YOU
-========================= */
-
-#thankYou {
-
-    display: none;
-
-    margin-top: 20px;
-
-    padding: 15px;
-
-    text-align: center;
-
-    background: #e4f2e4;
-
-    border: 2px solid #c8dec8;
-
-    color: #637a63;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    background: #eadcf2;
-
-    border-top: 3px solid #d7c2e2;
-
-    text-align: center;
-
-    padding: 30px;
-
-    color: #705b78;
-
-    font-family: Georgia, serif;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 650px) {
-
-    .rank {
-        grid-template-columns: 45px 1fr;
-    }
-
-    .badge {
-        grid-column: 2;
-        width: fit-content;
-    }
-
-    .ranking-title {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
 
 <header>
 
-    <h1>K-POP LYRICS ♡</h1>
+    <div class="logo">
+        K-POP LYRICS ♡
+    </div>
 
     <nav>
-
-        <a href="index.html">Home</a>
-        <a href="groups.html">Groups</a>
-        <a href="songs.html">Songs</a>
-        <a href="members.html">Members</a>
-        <a href="soloists.html">Soloists</a>
-        <a href="releases.html">Releases</a>
-        <a href="rankings.html">Rankings</a>
-        <a href="news.html">News</a>
-
+        <a href="index.html">HOME</a>
+        <a href="groups.html">GROUPS</a>
+        <a href="songs.html">SONGS</a>
+        <a href="members.html">MEMBERS</a>
+        <a href="soloists.html">SOLOISTS</a>
+        <a href="releases.html">RELEASES</a>
+        <a href="rankings.html">RANKINGS</a>
+        <a href="news.html">NEWS</a>
     </nav>
 
 </header>
 
 
-<main class="container">
+<main>
 
 
-<!-- TITLE -->
+<!-- ================= HERO ================= -->
 
-<section class="title">
+<section class="hero-box">
 
-    <h2>📊 K-POP RANKINGS ♡</h2>
+    <div class="hero-top">
+
+        <div class="tiny-label">
+            ♡ SCRAPBOOK PAGE 07
+        </div>
+
+        <div class="sticker sticker-pink">
+            REAL CHARTS
+        </div>
+
+    </div>
+
+
+    <h1>
+        K-pop<br>
+        <span>rankings ☆</span>
+    </h1>
+
+
+    <p class="hero-text">
+        Real chart snapshots from official chart websites.
+        The chart source and week/date are shown so you know
+        exactly where the numbers came from.
+    </p>
+
+
+    <div class="music-doodles">
+        📊 01 ✦ 02 ♡ 03 ☆ 04
+    </div>
+
+</section>
+
+
+
+<!-- ================= CHART NOTE ================= -->
+
+<section class="chart-source-note">
+
+    <div class="chart-source-tape"></div>
+
+    <div class="tiny-label">
+        📌 HOW THIS PAGE WORKS
+    </div>
+
+    <h2>
+        these are official chart results ♡
+    </h2>
 
     <p>
-        Official chart categories + your personal website feedback!
+        Rankings depend on the chart. Circle Chart's Global K-pop
+        Chart uses worldwide K-pop streaming usage, while Hanteo
+        tracks physical album sales from participating retailers.
     </p>
 
 </section>
 
 
-<!-- OFFICIAL -->
 
-<section class="official">
+<!-- ================= GLOBAL KPOP ================= -->
 
-    <h3>🏆 Official K-pop Charts</h3>
+<section class="section-box pink-box">
 
-    <p>
-        This page is connected to the idea of official CIRCLE CHART rankings.
-        CIRCLE CHART has different charts for Global K-pop, Digital, Streaming,
-        Download, Album, Retail Album and Social performance.
-    </p>
+    <div class="section-heading">
+
+        <div>
+
+            <span class="paper-number">
+                01
+            </span>
+
+            <h2>
+                🌎 global K-pop
+            </h2>
+
+            <p>
+                Circle Chart • Week 39, 2026
+            </p>
+
+        </div>
+
+        <div class="sticker sticker-yellow">
+            OFFICIAL
+        </div>
+
+    </div>
+
+
+    <div class="chart-label-card">
+
+        <span>
+            CIRCLE GLOBAL K-POP CHART
+        </span>
+
+        <p>
+            Worldwide K-pop streaming usage
+        </p>
+
+    </div>
+
+
+    <div class="real-chart">
+
+
+        <div class="real-chart-head">
+
+            <span>
+                RANK
+            </span>
+
+            <span>
+                SONG
+            </span>
+
+            <span>
+                ARTIST
+            </span>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                01
+            </strong>
+
+            <div class="chart-song">
+                GOLDEN
+            </div>
+
+            <div>
+                HUNTR/X
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                02
+            </strong>
+
+            <div class="chart-song">
+                SWIM
+            </div>
+
+            <div>
+                BTS
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                03
+            </strong>
+
+            <div class="chart-song">
+                BAD
+            </div>
+
+            <div>
+                ATEEZ
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                04
+            </strong>
+
+            <div class="chart-song">
+                APT.
+            </div>
+
+            <div>
+                ROSÉ & Bruno Mars
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                05
+            </strong>
+
+            <div class="chart-song">
+                REDRED
+            </div>
+
+            <div>
+                CORTIS
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                06
+            </strong>
+
+            <div class="chart-song">
+                It's Me
+            </div>
+
+            <div>
+                ILLIT
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                07
+            </strong>
+
+            <div class="chart-song">
+                LEMONADE
+            </div>
+
+            <div>
+                aespa
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                08
+            </strong>
+
+            <div class="chart-song">
+                퇴사할게여
+            </div>
+
+            <div>
+                SOYEON
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                09
+            </strong>
+
+            <div class="chart-song">
+                new trick
+            </div>
+
+            <div>
+                ROSÉ
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                10
+            </strong>
+
+            <div class="chart-song">
+                ICONIC BY MISTAKE
+            </div>
+
+            <div>
+                LE SSERAFIM / ILLIT / KATSEYE
+            </div>
+
+        </div>
+
+
+    </div>
+
 
     <a
-        href="https://circlechart.kr/"
+        class="official-chart-button"
+        href="https://circlechart.kr/page_chart/global.circle?termGbn=week"
         target="_blank"
-        rel="noopener"
-    >
-        VIEW OFFICIAL CIRCLE CHART ↗
+        rel="noopener">
+
+        OPEN CIRCLE CHART ↗
+
     </a>
 
 </section>
 
 
-<!-- TABS -->
 
-<div class="tabs">
+<!-- ================= HANTEO ================= -->
 
-    <button class="tab active" data-chart="global">
-        🌎 Global
-    </button>
+<section class="section-box blue-box">
 
-    <button class="tab" data-chart="digital">
-        📱 Digital
-    </button>
+    <div class="section-heading">
 
-    <button class="tab" data-chart="album">
-        💿 Album
-    </button>
+        <div>
 
-    <button class="tab" data-chart="download">
-        ⬇️ Download
-    </button>
+            <span class="paper-number">
+                02
+            </span>
 
-</div>
+            <h2>
+                💿 physical albums
+            </h2>
 
+            <p>
+                Hanteo • September 30, 2026
+            </p>
 
-<!-- RANKING -->
+        </div>
 
-<section class="ranking-paper">
-
-    <div class="ranking-title">
-
-        <h2 id="chartTitle">
-            🌎 Global K-pop
-        </h2>
-
-        <span class="week">
-            OFFICIAL CHART
-        </span>
+        <div class="sticker sticker-pink">
+            ALBUMS
+        </div>
 
     </div>
 
-    <div id="rankingList"></div>
+
+    <div class="chart-label-card">
+
+        <span>
+            HANTEO DAILY ALBUM CHART
+        </span>
+
+        <p>
+            Physical album sales • September 30, 2026
+        </p>
+
+    </div>
+
+
+    <div class="real-chart">
+
+
+        <div class="real-chart-head">
+
+            <span>
+                RANK
+            </span>
+
+            <span>
+                ALBUM
+            </span>
+
+            <span>
+                ARTIST
+            </span>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                01
+            </strong>
+
+            <div class="chart-song">
+                256th Note
+            </div>
+
+            <div>
+                CLOSE YOUR EYES
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                02
+            </strong>
+
+            <div class="chart-song">
+                sonorous
+            </div>
+
+            <div>
+                CRAVITY
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                03
+            </strong>
+
+            <div class="chart-song">
+                CRASH
+            </div>
+
+            <div>
+                ALLDAY PROJECT
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                04
+            </strong>
+
+            <div class="chart-song">
+                HOME: DELUXE
+            </div>
+
+            <div>
+                BOYNEXTDOOR
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                05
+            </strong>
+
+            <div class="chart-song">
+                TUNE & PLAY
+            </div>
+
+            <div>
+                TUIDE
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                06
+            </strong>
+
+            <div class="chart-song">
+                REVIVE+
+            </div>
+
+            <div>
+                IVE
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                07
+            </strong>
+
+            <div class="chart-song">
+                Mixtape : A1ㄱ
+            </div>
+
+            <div>
+                Keyveatz
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                08
+            </strong>
+
+            <div class="chart-song">
+                THE SIN : BLISS
+            </div>
+
+            <div>
+                ENHYPEN
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                09
+            </strong>
+
+            <div class="chart-song">
+                THE WONDER LAND
+            </div>
+
+            <div>
+                Jaurim
+            </div>
+
+        </div>
+
+
+        <div class="real-chart-row">
+
+            <strong>
+                10
+            </strong>
+
+            <div class="chart-song">
+                Sour Grapes
+            </div>
+
+            <div>
+                NiziU
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <a
+        class="official-chart-button"
+        href="https://hanteochart.com/en/charts/album/daily/2026-09-30"
+        target="_blank"
+        rel="noopener">
+
+        OPEN HANTEO ↗
+
+    </a>
 
 </section>
 
 
-<!-- =========================
-     WEBSITE FEEDBACK
-========================= -->
 
-<section class="feedback">
+<!-- ================= WHERE TO CHECK ================= -->
 
-    <h2>💌 Tell Me About My Website!</h2>
+<section class="section-box yellow-box">
 
-    <p class="feedback-intro">
-        You can actually type your answers below ♡
+    <div class="section-heading">
+
+        <div>
+
+            <span class="paper-number">
+                03
+            </span>
+
+            <h2>
+                🔎 want to know more?
+            </h2>
+
+            <p>
+                useful chart websites to bookmark
+            </p>
+
+        </div>
+
+        <div class="sticker sticker-blue">
+            SAVE THESE!
+        </div>
+
+    </div>
+
+
+    <div class="website-wall">
+
+
+        <a
+            class="website-card website-pink"
+            href="https://circlechart.kr/"
+            target="_blank"
+            rel="noopener">
+
+            <span>
+                01
+            </span>
+
+            <div class="website-icon">
+                ◎
+            </div>
+
+            <h3>
+                CIRCLE CHART
+            </h3>
+
+            <p>
+                Korean and global K-pop
+                charts, albums, downloads
+                and streaming.
+            </p>
+
+            <b>
+                VISIT ↗
+            </b>
+
+        </a>
+
+
+
+        <a
+            class="website-card website-blue"
+            href="https://hanteochart.com/"
+            target="_blank"
+            rel="noopener">
+
+            <span>
+                02
+            </span>
+
+            <div class="website-icon">
+                💿
+            </div>
+
+            <h3>
+                HANTEO CHART
+            </h3>
+
+            <p>
+                Real-time and daily physical
+                K-pop album sales charts.
+            </p>
+
+            <b>
+                VISIT ↗
+            </b>
+
+        </a>
+
+
+
+        <a
+            class="website-card website-yellow"
+            href="https://www.billboard.com/charts/"
+            target="_blank"
+            rel="noopener">
+
+            <span>
+                03
+            </span>
+
+            <div class="website-icon">
+                ♫
+            </div>
+
+            <h3>
+                BILLBOARD
+            </h3>
+
+            <p>
+                Global, U.S. and other
+                Billboard music charts.
+            </p>
+
+            <b>
+                VISIT ↗
+            </b>
+
+        </a>
+
+
+
+        <a
+            class="website-card website-purple"
+            href="https://charts.spotify.com/"
+            target="_blank"
+            rel="noopener">
+
+            <span>
+                04
+            </span>
+
+            <div class="website-icon">
+                🎧
+            </div>
+
+            <h3>
+                SPOTIFY CHARTS
+            </h3>
+
+            <p>
+                Daily and weekly streaming
+                charts from Spotify.
+            </p>
+
+            <b>
+                VISIT ↗
+            </b>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SCRAPBOOK NOTES ================= -->
+
+<section class="section-box green-box">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="paper-number">
+                04
+            </span>
+
+            <h2>
+                📌 chart notes
+            </h2>
+
+            <p>
+                little reminders for reading rankings
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="ranking-note-wall">
+
+
+        <div class="big-ranking-note yellow-sticky">
+
+            📌
+
+            <h3>
+                STREAMING ≠ SALES
+            </h3>
+
+            <p>
+                A streaming chart and an album
+                sales chart measure different things.
+            </p>
+
+        </div>
+
+
+        <div class="big-ranking-note pink-sticky">
+
+            📌
+
+            <h3>
+                CHECK THE DATE
+            </h3>
+
+            <p>
+                Rankings change every day
+                or every week depending on
+                the chart.
+            </p>
+
+        </div>
+
+
+        <div class="big-ranking-note blue-sticky">
+
+            📌
+
+            <h3>
+                CHECK THE SOURCE
+            </h3>
+
+            <p>
+                Click the official chart website
+                to see the full ranking.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FINAL NOTE ================= -->
+
+<section class="final-note">
+
+    <div class="final-sticker">
+        📊 CHART NOTE
+    </div>
+
+    <h2>
+        real numbers, real sources, tiny scrapbook ♡
+    </h2>
+
+    <p>
+        Rankings can change quickly, so the source and
+        chart period are always shown here.
     </p>
 
-
-    <!-- NAME -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">♡</span>
-            What should I call you? (optional)
-        </label>
-
-        <input
-            type="text"
-            id="name"
-            placeholder="Your name or nickname..."
-        >
-
-    </div>
-
-
-    <!-- QUESTION 1 -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">01.</span>
-            What do you think about my website?
-        </label>
-
-        <textarea
-            id="answer1"
-            placeholder="Write your answer here..."
-        ></textarea>
-
-    </div>
-
-
-    <!-- QUESTION 2 -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">02.</span>
-            Which page is your favorite?
-        </label>
-
-        <textarea
-            id="answer2"
-            placeholder="Home, Groups, Songs, Members, etc..."
-        ></textarea>
-
-    </div>
-
-
-    <!-- QUESTION 3 -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">03.</span>
-            What should I add to the website?
-        </label>
-
-        <textarea
-            id="answer3"
-            placeholder="Tell me your ideas..."
-        ></textarea>
-
-    </div>
-
-
-    <!-- QUESTION 4 -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">04.</span>
-            What should I improve?
-        </label>
-
-        <textarea
-            id="answer4"
-            placeholder="Be honest! What could be better?"
-        ></textarea>
-
-    </div>
-
-
-    <!-- QUESTION 5 -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">05.</span>
-            What K-pop group should I add more content about?
-        </label>
-
-        <textarea
-            id="answer5"
-            placeholder="Your favorite group..."
-        ></textarea>
-
-    </div>
-
-
-    <!-- QUESTION 6 -->
-
-    <div class="question">
-
-        <label>
-            <span class="question-number">06.</span>
-            Rate the scrapbook style in your own words!
-        </label>
-
-        <textarea
-            id="answer6"
-            placeholder="Cute? Pretty? Needs something? Tell me!"
-        ></textarea>
-
-    </div>
-
-
-    <button
-        class="submit"
-        onclick="saveFeedback()"
-    >
-        💗 SAVE MY ANSWERS
-    </button>
-
-
-    <div id="thankYou">
-
-        ♡ Thank you for your feedback! ♡
-        <br><br>
-        Your answers have been saved in this browser.
-
+    <div class="final-doodles">
+        01 ☆ 02 ♡ 03 ✦ 04 ♪ 05 ★
     </div>
 
 </section>
@@ -918,249 +867,22 @@ footer {
 </main>
 
 
+
 <footer>
 
-    ♡ K-POP LYRICS ♡
+    <div class="footer-doodles">
+        ☆ ♡ ✦ ♪ ✂ ☆
+    </div>
 
-    <br><br>
+    made with ♡ for K-pop lovers
 
-    Made with music, HTML & a little bit of chaos 🎀
+    <br>
+
+    <span>
+        K-POP LYRICS • 2026
+    </span>
 
 </footer>
-
-
-<script>
-
-
-/* =========================
-   RANKING DATA
-========================= */
-
-const charts = {
-
-    global: {
-
-        title: "🌎 Global K-pop",
-
-        songs: [
-
-            ["Golden", "HUNTR/X", "Global K-pop"],
-
-            ["REDRED", "CORTIS", "Global K-pop"],
-
-            ["LEMONADE", "aespa", "Global K-pop"],
-
-            ["LOVE ATTACK", "RESCENE", "Global K-pop"],
-
-            ["RUDE!", "Hearts2Hearts", "Global K-pop"]
-
-        ]
-
-    },
-
-
-    digital: {
-
-        title: "📱 Digital Chart",
-
-        songs: [
-
-            ["REDRED", "CORTIS", "Digital"],
-
-            ["갑자기", "I.O.I", "Digital"],
-
-            ["LEMONADE", "aespa", "Digital"],
-
-            ["It's Me", "ILLIT", "Digital"],
-
-            ["LOVE ATTACK", "RESCENE", "Digital"]
-
-        ]
-
-    },
-
-
-    album: {
-
-        title: "💿 Album Chart",
-
-        songs: [
-
-            ["THE SIN : VANISH", "ENHYPEN", "Album"],
-
-            ["RE-FLOW", "ZEROBASEONE", "Album"],
-
-            ["SHOT CALLERS", "LNGSHOT", "Album"],
-
-            ["II", "RIIZE", "Album"],
-
-            ["GOLDEN HOUR", "ATEEZ", "Album"]
-
-        ]
-
-    },
-
-
-    download: {
-
-        title: "⬇️ Download Chart",
-
-        songs: [
-
-            ["GO", "BLACKPINK", "Download"],
-
-            ["BLACKHOLE", "IVE", "Download"],
-
-            ["BANG BANG", "IVE", "Download"],
-
-            ["RUDE!", "Hearts2Hearts", "Download"],
-
-            ["Champion", "BLACKPINK", "Download"]
-
-        ]
-
-    }
-
-};
-
-
-/* =========================
-   SHOW RANKINGS
-========================= */
-
-function showChart(type) {
-
-    const chart = charts[type];
-
-    document.getElementById("chartTitle").textContent =
-        chart.title;
-
-    const list =
-        document.getElementById("rankingList");
-
-    list.innerHTML = "";
-
-
-    chart.songs.forEach((song, index) => {
-
-        const rank = document.createElement("div");
-
-        rank.className = "rank";
-
-
-        rank.innerHTML = `
-
-            <div class="number">
-                ${index + 1}
-            </div>
-
-            <div class="song">
-
-                <strong>
-                    ${song[0]}
-                </strong>
-
-                <span>
-                    ${song[1]} • ${song[2]}
-                </span>
-
-            </div>
-
-            <div class="badge">
-
-                ${index === 0
-                    ? "TOP ENTRY"
-                    : "CHARTED"}
-
-            </div>
-
-        `;
-
-
-        list.appendChild(rank);
-
-    });
-
-}
-
-
-/* =========================
-   TAB BUTTONS
-========================= */
-
-document.querySelectorAll(".tab").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        document
-            .querySelectorAll(".tab")
-            .forEach(btn =>
-                btn.classList.remove("active")
-            );
-
-        button.classList.add("active");
-
-        showChart(
-            button.dataset.chart
-        );
-
-    });
-
-});
-
-
-/* =========================
-   SAVE FEEDBACK
-========================= */
-
-function saveFeedback() {
-
-    const feedback = {
-
-        name:
-            document.getElementById("name").value,
-
-        answer1:
-            document.getElementById("answer1").value,
-
-        answer2:
-            document.getElementById("answer2").value,
-
-        answer3:
-            document.getElementById("answer3").value,
-
-        answer4:
-            document.getElementById("answer4").value,
-
-        answer5:
-            document.getElementById("answer5").value,
-
-        answer6:
-            document.getElementById("answer6").value
-
-    };
-
-
-    localStorage.setItem(
-        "kpopLyricsFeedback",
-        JSON.stringify(feedback)
-    );
-
-
-    document.getElementById(
-        "thankYou"
-    ).style.display = "block";
-
-}
-
-
-/* =========================
-   START
-========================= */
-
-showChart("global");
-
-</script>
 
 
 </body>
